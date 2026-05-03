@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ExamMaster — PHY 102 Battle</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold:#f5c518; --gold2:#e8a000; --navy:#1a3a6b; --red:#e8213a;
+  --black:#06060a; --dark:#0d0d14; --card:#13131e; --border:#252535;
+  --muted:#7070a0; --white:#f0f0f8; --green:#00ff88;
+}
+body { background:var(--black); color:var(--white); font-family:'Inter',sans-serif; min-height:100vh; overflow-x:hidden; }
+nav { background:rgba(6,6,10,.96); border-bottom:1px solid rgba(245,197,24,.18); padding:0 24px; position:sticky; top:0; z-index:200; backdrop-filter:blur(14px); }
+.nav-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; height:60px; }
+.nav-brand { font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:2px; }
+.nav-brand span { color:var(--gold); }
+.nav-right { display:flex; align-items:center; gap:12px; }
+.live-score { font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:1px; color:var(--gold); background:rgba(245,197,24,.1); border:1px solid rgba(245,197,24,.28); border-radius:7px; padding:5px 14px; display:none; }
+.live-score.show { display:block; }
+.nav-badge { font-family:'Oswald',sans-serif; font-size:11px; letter-spacing:2px; color:var(--muted); text-transform:uppercase; }
+.screen { display:none; }
+.screen.active { display:block; }
+
+/* LANDING */
+.hero { position:relative; overflow:hidden; padding:80px 24px 70px; text-align:center; min-height:calc(100vh - 60px); display:flex; flex-direction:column; align-items:center; justify-content:center; background:linear-gradient(rgba(6,6,10,.70),rgba(6,6,10,.88)),url('https://i.postimg.cc/bvScYVHH/download-id-1Ap8y-Bz9TZRn2Qg-F6gchl8fp03Usy557P-export-view.jpg') center/cover no-repeat; }
+.hero::before { content:''; position:absolute; inset:0; pointer-events:none; background-image:linear-gradient(rgba(245,197,24,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(245,197,24,.04) 1px,transparent 1px); background-size:56px 56px; mask-image:radial-gradient(ellipse 85% 85% at 50% 50%,black,transparent); }
+.hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(232,33,58,.18); border:1px solid rgba(232,33,58,.35); color:var(--red); font-family:'Oswald',sans-serif; font-size:11px; letter-spacing:3px; padding:7px 18px; border-radius:99px; margin-bottom:26px; position:relative; z-index:1; animation:bp 2s ease-in-out infinite; }
+@keyframes bp { 0%,100%{box-shadow:0 0 0 0 rgba(232,33,58,.35);}50%{box-shadow:0 0 0 10px rgba(232,33,58,0);} }
+.hero h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(52px,11vw,106px); line-height:.92; letter-spacing:4px; margin-bottom:16px; position:relative; z-index:1; }
+.hero h1 .w1 { display:block; color:var(--white); }
+.hero h1 .w2 { display:block; background:linear-gradient(135deg,var(--gold) 0%,#fff176 50%,var(--gold2) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; filter:drop-shadow(0 0 40px rgba(245,197,24,.5)); }
+.hero h1 .w3 { display:block; color:var(--white); }
+.hero-sub { font-family:'Oswald',sans-serif; font-size:clamp(12px,2.5vw,16px); color:rgba(240,240,248,.65); letter-spacing:3px; text-transform:uppercase; margin-bottom:32px; max-width:560px; position:relative; z-index:1; }
+.form-card { background:rgba(13,13,20,.9); border:1px solid rgba(245,197,24,.2); border-radius:14px; padding:26px 22px; width:100%; max-width:440px; margin:0 auto 22px; position:relative; z-index:1; backdrop-filter:blur(10px); }
+.form-row { margin-bottom:14px; text-align:left; }
+.form-label { font-family:'Oswald',sans-serif; font-size:10px; letter-spacing:2px; color:var(--muted); text-transform:uppercase; display:block; margin-bottom:6px; }
+input[type="text"],input[type="email"] { width:100%; padding:11px 14px; background:rgba(6,6,10,.8); border:1px solid var(--border); border-radius:8px; color:var(--white); font-family:'Inter',sans-serif; font-size:.92rem; outline:none; transition:border-color .2s; }
+input:focus { border-color:var(--gold); }
+.terms-row { display:flex; align-items:flex-start; gap:9px; text-align:left; margin-top:4px; }
+.terms-row input[type="checkbox"] { margin-top:3px; accent-color:var(--gold); flex-shrink:0; }
+.terms-row label { font-size:.77rem; color:var(--muted); cursor:pointer; line-height:1.5; }
+.terms-row a { color:var(--gold); text-decoration:none; }
+.btn-gold { display:inline-block; width:100%; max-width:400px; background:linear-gradient(135deg,var(--gold),var(--gold2)); color:#000; font-family:'Oswald',sans-serif; font-size:16px; font-weight:700; letter-spacing:2px; padding:16px 36px; border-radius:10px; border:none; cursor:pointer; text-align:center; transition:all .2s; text-transform:uppercase; box-shadow:0 4px 24px rgba(245,197,24,.38); text-decoration:none; position:relative; z-index:1; }
+.btn-gold:hover:not(:disabled) { transform:translateY(-2px); box-shadow:0 8px 32px rgba(245,197,24,.55); }
+.btn-gold:disabled { opacity:.38; cursor:not-allowed; }
+.btn-outline { display:inline-block; width:100%; max-width:400px; background:transparent; border:2px solid rgba(245,197,24,.4); color:var(--gold); font-family:'Oswald',sans-serif; font-size:15px; font-weight:700; letter-spacing:2px; padding:13px 30px; border-radius:10px; cursor:pointer; text-align:center; transition:all .2s; text-transform:uppercase; }
+.btn-outline:hover { border-color:var(--gold); background:rgba(245,197,24,.08); }
+.btn-green { display:inline-block; width:100%; max-width:400px; background:linear-gradient(135deg,#00c96e,var(--green)); color:#000; font-family:'Oswald',sans-serif; font-size:15px; font-weight:700; letter-spacing:2px; padding:14px 30px; border-radius:10px; border:none; cursor:pointer; text-align:center; transition:all .2s; text-transform:uppercase; box-shadow:0 4px 20px rgba(0,255,136,.22); }
+.btn-green:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(0,255,136,.4); }
+.fomo-bar { display:inline-flex; align-items:center; gap:10px; background:rgba(232,33,58,.12); border:1px solid rgba(232,33,58,.22); border-radius:99px; padding:10px 22px; font-size:13px; color:rgba(240,240,248,.82); position:relative; z-index:1; }
+.fomo-dot { width:8px; height:8px; border-radius:50%; background:var(--red); animation:bl .9s ease-in-out infinite; }
+@keyframes bl { 0%,100%{opacity:1;}50%{opacity:.25;} }
+
+/* QUIZ */
+#quizScreen { background:linear-gradient(rgba(6,6,10,.88),rgba(6,6,10,.97)),url('https://i.postimg.cc/bvScYVHH/download-id-1Ap8y-Bz9TZRn2Qg-F6gchl8fp03Usy557P-export-view.jpg') center/cover no-repeat fixed; min-height:calc(100vh - 60px); padding:32px 20px 60px; display:none; flex-direction:column; align-items:center; }
+#quizScreen.active { display:flex; }
+.progress-wrap { width:100%; max-width:640px; margin:0 auto 24px; }
+.progress-info { display:flex; justify-content:space-between; align-items:center; font-family:'Oswald',sans-serif; font-size:12px; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:8px; }
+.timer { font-family:'Oswald',sans-serif; font-size:13px; font-weight:600; letter-spacing:2px; color:var(--gold); background:rgba(245,197,24,.1); border:1px solid rgba(245,197,24,.25); border-radius:6px; padding:4px 12px; }
+.timer.warn { color:var(--red); border-color:var(--red); background:rgba(232,33,58,.1); animation:pulse .7s infinite alternate; }
+@keyframes pulse { from{opacity:1;}to{opacity:.5;} }
+.progress-bar-bg { height:4px; background:var(--border); border-radius:99px; overflow:hidden; }
+.progress-bar-fill { height:100%; background:linear-gradient(90deg,var(--gold),#fff176); border-radius:99px; transition:width .4s ease; }
+.quiz-wrap { width:100%; max-width:640px; margin:0 auto; }
+.q-meta { display:flex; gap:10px; align-items:center; justify-content:center; margin-bottom:16px; flex-wrap:wrap; }
+.pill { font-family:'Oswald',sans-serif; font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase; border-radius:99px; padding:4px 14px; }
+.pill-soft   { background:rgba(0,255,136,.1);  color:var(--green); border:1px solid rgba(0,255,136,.3); }
+.pill-medium { background:rgba(245,197,24,.1); color:var(--gold);  border:1px solid rgba(245,197,24,.3); }
+.pill-hard   { background:rgba(232,33,58,.1);  color:var(--red);   border:1px solid rgba(232,33,58,.35); }
+.pts-pill { font-family:'Oswald',sans-serif; font-size:12px; letter-spacing:1px; color:var(--muted); }
+.q-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:28px 24px 22px; box-shadow:0 8px 40px rgba(0,0,0,.6); margin-bottom:14px; position:relative; overflow:hidden; }
+.q-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--gold),transparent); }
+.q-text { font-family:'Oswald',sans-serif; font-size:1.15rem; font-weight:500; line-height:1.5; margin-bottom:22px; color:var(--white); }
+.options { display:grid; gap:9px; }
+.opt-btn { background:rgba(255,255,255,.03); border:1px solid var(--border); border-radius:10px; padding:13px 16px; color:var(--white); font-family:'Inter',sans-serif; font-size:.9rem; text-align:left; cursor:pointer; transition:all .18s; display:flex; align-items:center; gap:12px; width:100%; }
+.opt-btn:hover:not(:disabled) { border-color:rgba(245,197,24,.4); background:rgba(245,197,24,.06); }
+.opt-btn.correct { border-color:var(--green); background:rgba(0,255,136,.1); color:var(--green); }
+.opt-btn.wrong   { border-color:var(--red);   background:rgba(232,33,58,.1);  color:var(--red); }
+.opt-btn:disabled { cursor:default; }
+.opt-letter { width:28px; height:28px; border-radius:7px; flex-shrink:0; background:rgba(245,197,24,.1); border:1px solid rgba(245,197,24,.25); display:flex; align-items:center; justify-content:center; font-family:'Oswald',sans-serif; font-weight:700; font-size:12px; color:var(--gold); }
+.explanation { background:rgba(26,58,107,.25); border-left:3px solid var(--gold); border-radius:10px; padding:15px 17px; font-size:.85rem; line-height:1.7; color:var(--muted); margin-top:14px; display:none; text-align:left; }
+.explanation.show { display:block; animation:fadeUp .3s ease forwards; }
+.explanation strong { color:var(--gold); }
+.next-wrap { margin-top:14px; text-align:center; }
+
+/* RESULT */
+#resultScreen { background:linear-gradient(rgba(6,6,10,.82),rgba(6,6,10,.97)),url('https://i.postimg.cc/bvScYVHH/download-id-1Ap8y-Bz9TZRn2Qg-F6gchl8fp03Usy557P-export-view.jpg') center/cover no-repeat; min-height:calc(100vh - 60px); padding:60px 20px; display:none; flex-direction:column; align-items:center; text-align:center; }
+#resultScreen.active { display:flex; }
+#resultScreen h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(42px,8vw,72px); letter-spacing:3px; margin-bottom:6px; }
+#resultScreen h1 span { color:var(--gold); }
+.sec-label { font-family:'Oswald',sans-serif; font-size:10px; color:var(--gold); letter-spacing:4px; text-transform:uppercase; margin-bottom:8px; }
+.stats-row { display:flex; gap:12px; justify-content:center; margin:24px 0; flex-wrap:wrap; }
+.stat-box { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:16px 20px; text-align:center; min-width:90px; }
+.stat-num { font-family:'Bebas Neue',sans-serif; font-size:2rem; color:var(--gold); line-height:1; }
+.stat-lbl { font-family:'Oswald',sans-serif; font-size:9px; letter-spacing:2px; color:var(--muted); margin-top:3px; text-transform:uppercase; }
+.rank-card { background:linear-gradient(135deg,rgba(26,58,107,.35),rgba(13,13,20,.9)); border:1px solid rgba(245,197,24,.28); border-radius:14px; padding:28px 24px; margin:6px 0 22px; width:100%; max-width:440px; position:relative; overflow:hidden; }
+.rank-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--gold),transparent); }
+.rank-icon  { font-size:2.8rem; margin-bottom:8px; }
+.rank-title { font-family:'Bebas Neue',sans-serif; font-size:2rem; letter-spacing:2px; color:var(--gold); margin-bottom:5px; }
+.rank-sub   { font-size:.84rem; color:var(--muted); }
+.final-msg { font-family:'Oswald',sans-serif; font-size:14px; font-weight:500; letter-spacing:1px; color:var(--white); margin-bottom:20px; background:rgba(232,33,58,.08); border:1px solid rgba(232,33,58,.18); border-radius:10px; padding:14px 20px; max-width:440px; }
+.result-btns { display:flex; flex-direction:column; gap:10px; width:100%; max-width:360px; }
+
+/* CARD */
+#cardScreen { background:var(--black); min-height:calc(100vh - 60px); padding:60px 20px; display:none; flex-direction:column; align-items:center; text-align:center; }
+#cardScreen.active { display:flex; }
+#cardScreen h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(40px,8vw,70px); letter-spacing:3px; margin-bottom:8px; }
+#cardScreen h1 span { color:var(--gold); }
+#idanCanvas { border-radius:14px; box-shadow:0 12px 50px rgba(0,0,0,.7); max-width:100%; height:auto; display:block; margin:0 auto 20px; }
+.card-btns { display:flex; flex-direction:column; gap:10px; width:100%; max-width:360px; margin:0 auto; }
+
+/* VIBE */
+.vibe-popup { position:fixed; top:72px; left:50%; transform:translateX(-50%) translateY(-14px); background:var(--card); border:1.5px solid var(--gold); border-radius:12px; padding:12px 20px; font-family:'Oswald',sans-serif; font-size:14px; font-weight:600; letter-spacing:.5px; color:var(--gold); z-index:999; opacity:0; transition:all .3s ease; pointer-events:none; text-align:center; max-width:300px; width:88%; box-shadow:0 8px 32px rgba(245,197,24,.25); }
+.vibe-popup.bad    { border-color:var(--red);   color:var(--red);   box-shadow:0 8px 32px rgba(232,33,58,.22); }
+.vibe-popup.rankup { border-color:var(--green);  color:var(--green); box-shadow:0 8px 32px rgba(0,255,136,.22); }
+.vibe-popup.show   { opacity:1; transform:translateX(-50%) translateY(0); }
+
+/* WARN */
+.warn-overlay { display:none; position:fixed; inset:0; z-index:500; background:rgba(6,6,10,.94); align-items:center; justify-content:center; backdrop-filter:blur(8px); }
+.warn-overlay.show { display:flex; }
+.warn-box { background:var(--card); border:2px solid var(--red); border-radius:14px; padding:32px 26px; text-align:center; max-width:370px; width:90%; box-shadow:0 0 60px rgba(232,33,58,.28); }
+.warn-count { font-family:'Bebas Neue',sans-serif; font-size:3rem; color:var(--red); letter-spacing:2px; margin-bottom:6px; }
+.warn-box h2 { font-family:'Bebas Neue',sans-serif; color:var(--red); font-size:1.6rem; letter-spacing:2px; margin-bottom:10px; }
+.warn-box p  { color:var(--muted); font-size:.88rem; line-height:1.65; margin-bottom:20px; }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);} }
+.fadeUp { animation:fadeUp .4s ease forwards; }
+::-webkit-scrollbar{width:5px;} ::-webkit-scrollbar-track{background:var(--black);} ::-webkit-scrollbar-thumb{background:rgba(245,197,24,.25);border-radius:4px;}
+@media(max-width:480px){ .q-card{padding:20px 14px;} .q-text{font-size:1rem;} .opt-btn{font-size:.84rem;padding:11px 12px;} nav{padding:0 14px;} }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">Exam<span>Master</span> ⚡</div>
+    <div class="nav-right">
+      <div class="live-score" id="liveScore">⚡ <span id="liveScoreNum">0</span> PTS</div>
+      <div class="nav-badge">PHY 102 · Battle</div>
+    </div>
+  </div>
+</nav>
+
+<div class="screen active" id="landingScreen">
+  <div class="hero">
+    <div class="hero-badge">🔥 Season 2026 — PHY 102 Edition</div>
+    <h1><span class="w1">ELECTRIC</span><span class="w2">FIELD</span><span class="w3">BATTLE ⚡</span></h1>
+    <p class="hero-sub">10 Questions · Coulomb's Law · Gauss's Law · Point Charges<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
+    <div class="form-card fadeUp">
+      <div class="form-row">
+        <label class="form-label" for="uName">Your Full Name</label>
+        <input type="text" id="uName" placeholder="e.g. Tunde Adeleke" />
+      </div>
+      <div class="form-row">
+        <label class="form-label" for="uEmail">Your Email</label>
+        <input type="email" id="uEmail" placeholder="e.g. tunde@unilorin.edu.ng" />
+      </div>
+      <div class="terms-row">
+        <input type="checkbox" id="agreeTerms" />
+        <label for="agreeTerms">I agree to the <a href="#" onclick="return false">ExamMaster Terms</a>: No cheating, No multi-accounting, and I promise to study my PDFs alongside this quiz.</label>
+      </div>
+    </div>
+    <button class="btn-gold" id="startBtn" onclick="startQuiz()" disabled style="margin-bottom:16px;">🏛️ ENTER THE CBT CENTER →</button>
+    <div class="fomo-bar"><div class="fomo-dot"></div><span><strong>247 students</strong> already battling — secure your rank now!</span></div>
+  </div>
+</div>
+
+<div class="screen" id="quizScreen">
+  <div class="progress-wrap">
+    <div class="progress-info"><span id="qCounter">Question 1 of 10</span><div class="timer" id="timerDisplay">⏱ 00:00</div></div>
+    <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill" style="width:10%"></div></div>
+  </div>
+  <div class="quiz-wrap">
+    <div class="q-meta"><span class="pill" id="diffPill">Soft</span><span class="pts-pill" id="ptsPill">+5 PTS</span></div>
+    <div class="q-card fadeUp" id="qCard">
+      <div class="q-text" id="qText"></div>
+      <div class="options" id="optionsWrap"></div>
+      <div class="explanation" id="explanation"></div>
+    </div>
+    <div class="next-wrap" id="nextWrap" style="display:none;">
+      <button class="btn-gold" onclick="nextQuestion()" id="nextBtn">NEXT QUESTION →</button>
+    </div>
+  </div>
+</div>
+
+<div class="screen" id="resultScreen">
+  <div class="sec-label">🏁 Quiz Complete — The Verdict Is In</div>
+  <h1>YOUR <span>RESULTS</span></h1>
+  <div class="stats-row" id="statsRow"></div>
+  <div class="final-msg" id="finalMsg"></div>
+  <div class="rank-card"><div class="rank-icon" id="rankIcon"></div><div class="rank-title" id="rankTitle"></div><div class="rank-sub" id="rankSub"></div></div>
+  <div class="result-btns">
+    <button class="btn-gold" onclick="goToCard()">🏆 CLAIM MY RANK CARD</button>
+    <button class="btn-outline" onclick="restartQuiz()">🔄 TRY AGAIN</button>
+  </div>
+</div>
+
+<div class="screen" id="cardScreen">
+  <div class="sec-label">🎴 Idan Certificate Generator</div>
+  <h1>YOUR <span>RANK CARD</span></h1>
+  <p style="color:var(--muted);font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;">Download &amp; flex on the WhatsApp group</p>
+  <canvas id="idanCanvas" width="600" height="400"></canvas>
+  <div class="card-btns">
+    <button class="btn-green" onclick="downloadCard()">📥 DOWNLOAD TO GALLERY</button>
+    <button class="btn-outline" onclick="restartQuiz()">🔄 ATTEMPT AGAIN</button>
+  </div>
+</div>
+
+<div class="vibe-popup" id="vibePopup"></div>
+<div class="warn-overlay" id="warnOverlay">
+  <div class="warn-box">
+    <div class="warn-count" id="warnCount">⚠️</div>
+    <h2 id="warnTitle">IDAN, RELAX!</h2>
+    <p id="warnMsg">The CBT invigilator is watching you. Stay in the room!</p>
+    <button class="btn-gold" style="max-width:100%;" onclick="dismissWarn()">I won't do it again 🙏</button>
+  </div>
+</div>
+
+<script>
+const isBossBattle = false;
+const V = {
+  correct:["Oshey! Your brain is currently on 5G network. Keep it moving! 📶","Scholar behavior! Even the Vice-Chancellor is hearing about your progress. 👑","Haba! Are you the one that set this exam? This Jacking level is dangerous! 🧠","CBT Center is already shivering! You're making PHY 102 look like nursery rhymes. 📖","Eissshhh! You solved that like it was a WhatsApp message. Jacking level: Infinite! 🔥","A-Parallel loading... 99% complete. Don't stop now! 🚀","You just folded that question like a ₦500 note. Real Idan energy! 💸","Oshey, Idan! Scholar behaviour detected! ✅","You're built different! The electric field respects you. 🧠"],
+  wrong:["Omo, Electric field don shock you? Go wash your face and come back! ⚡🚿","This is how carryover starts o! Read the explanation before your village people win. 🧙","Item 7 chicken is distracting you. Focus! 5 Units is not a joke! 🍗","Omo, if you use this logic in the CBT center, the computer might shut down from shame. 💀","You're thinking about your situationship. Breakups are temporary, Carryover is a 1-year contract! 💔","Is it because there's no light in the hostel that your brain is also doing blackout? 💡","Your village people are typing 'Type Amen' on your GP. Don't let them win! 🕯️","Error 404: Correct answer not found in your head. Install more jacking! 🤡"],
+  negative:["Ouch! -2 points. Even your ancestors are disappointed. 📉","That wrong answer just served you a hot plate of breakfast. Drink the tea! ☕","Error 404: Brain not found. You just lost points. Back to JSS3! 🤡","Negative marking is not your friend. Stop guessing, start thinking! 🛑"],
+  rankup:{gemchamp:"🚨 NEW GEMCHAMP ALERT! You're no longer a Jambite in this game. 👑",sapienist:"🎶 STOP THE MUSIC! Sapienist rank achieved. The library wants its best student back! 🧠",champion:"BOW DOWN! 🙇 We have a new Champion Elite. The crown looks good on you! 🏆"},
+  cheat:["Idan, why are you leaving the room? The CBT invigilator is watching you! 🧐","Searching Google won't save you in the hall. Stay here and jack! 🚫","One more tab switch and we're calling your HOD. Stay focused! 📞"],
+  final:[{min:10,max:10,msg:"CBT Terrorist! 🎯 You have finished the work. Go and buy yourself a cold drink, you've earned it! 🍺"},{min:7,max:9,msg:"Solid work! 🔥 You're definitely in the First Class bracket. Keep the fire burning!"},{min:4,max:6,msg:"You are standing on the fence. 🌬️ If breeze blows, you're going to the Carryover side. Wake up!"},{min:0,max:3,msg:"My brother/sister, have you considered a career in comedy? Because this score is a huge joke! 🎭"}]
+};
+const vRand = arr => arr[Math.floor(Math.random()*arr.length)];
+
+const questions = [
+  {difficulty:"soft",points:5,text:"What is an Electric Field?",options:["A region where a test charge experiences a magnetic force","A region around a charged object where another charge experiences an electric force","The voltage difference between two plates","The current flowing through a conductor"],correct:1,explanation:"⚡ An electric field is the 'influence zone' of a charge. Imagine a boss (charge) in the middle of class — every area around them is uncomfortable (field). Place a test charge (the victim) inside and it feels a force. Simple!"},
+  {difficulty:"soft",points:5,text:"What is the SI unit of Electric Field Intensity (E)?",options:["Tesla (T)","Coulomb (C)","Newton per Coulomb (N/C)","Volt (V)"],correct:2,explanation:"🎯 E = F/q, so unit = Newton/Coulomb = N/C. You can also write it as V/m — they're equivalent. Unilorin loves asking this in CBT. Lock it in!"},
+  {difficulty:"soft",points:5,text:"Coulomb's Law: the electrostatic force between two charges is:",options:["Directly proportional to distance","Inversely proportional to the square of distance between them","Equal to the sum of the two charges","Only attractive, never repulsive"],correct:1,explanation:"📐 F = kq₁q₂/r². Force INCREASES when charges are bigger and DECREASES with r². Like WiFi signal — the farther from the router, the weaker it gets. Savage drop-off!"},
+  {difficulty:"medium",points:10,text:"Two charges +2μC and +3μC are separated by 0.1 m. What is the electrostatic force? (k = 9×10⁹ N·m²/C²)",options:["5.4 N","0.54 N","54 N","0.054 N"],correct:0,explanation:"🧮 F = kq₁q₂/r² = (9×10⁹ × 2×10⁻⁶ × 3×10⁻⁶) / (0.1)² = 0.054 / 0.01 = 5.4 N. Always convert μC → C (÷ 10⁶) first. The CBT computer doesn't accept excuses!"},
+  {difficulty:"medium",points:10,text:"A test charge of 4μC experiences a force of 0.02 N. What is the electric field intensity at that point?",options:["5000 N/C","50,000 N/C","500 N/C","0.00000008 N/C"],correct:0,explanation:"🔬 E = F/q = 0.02 ÷ (4×10⁻⁶) = 5000 N/C. E = F/q is your best friend in this topic. Simpler than a JAMB form — you have Force and Charge, just divide!"},
+  {difficulty:"medium",points:10,text:"Which statement about electric field lines is correct?",options:["They flow from negative to positive charges","They start on positive charges and end on negative charges","They are always parallel to each other","They represent magnetic field patterns"],correct:1,explanation:"➡️ Field lines go from POSITIVE ➕ to NEGATIVE ➖. 'Positive is boss — field lines leave the boss and arrive at the humble negative side.' Where lines are dense, the field is strong."},
+  {difficulty:"medium",points:10,text:"Gauss's Law states that the total electric flux through any closed surface equals:",options:["The total enclosed charge divided by ε₀","The surface area times the electric field","The magnetic field passing through the surface","The potential difference across the surface"],correct:0,explanation:"🔵 Φ_E = Q_enc/ε₀. Flux through any closed surface = total enclosed charge ÷ permittivity. 'Field lines escaping your imaginary bubble depend ONLY on the charge inside.' Supremely elegant."},
+  {difficulty:"hard",points:20,text:"A conducting sphere of radius 0.2 m carries +10μC. What is E at 0.5 m from the centre? (k = 9×10⁹ N·m²/C²)",options:["360,000 N/C","3,600 N/C","36,000 N/C","225,000 N/C"],correct:0,explanation:"🧠 0.5 m > 0.2 m (outside sphere) → E = kQ/r² = (9×10⁹ × 10×10⁻⁶) / (0.5)² = 90,000 / 0.25 = 360,000 N/C. Outside conductor → E = kQ/r². Inside conductor → E = 0."},
+  {difficulty:"hard",points:20,text:"What is the electric field INSIDE a solid conducting sphere in electrostatic equilibrium?",options:["E = kQ/r²","E = 0 (zero)","E = kQ/r","E = Q/(4πε₀r³)"],correct:1,explanation:"💡 Zero! Inside a conductor in equilibrium, E = 0. Free electrons redistribute until internal field cancels. Gaussian surface inside → Q_enc = 0 → E = 0. Most tested fact in PHY 102!"},
+  {difficulty:"hard",points:20,text:"Charges +Q and -Q are placed 2d apart. What is the electric field at the midpoint? (Each creates E = kQ/d² at midpoint)",options:["Zero — they cancel","kQ/d² pointing from +Q to -Q","2kQ/d² pointing from +Q to -Q","kQ/(2d)² in a random direction"],correct:2,explanation:"🎓 At midpoint: +Q pushes field toward -Q. -Q pulls field toward itself — also toward -Q. Both fields point the SAME direction and ADD: E_total = 2kQ/d². Many think they cancel — direction is key!"}
+];
+
+let S={name:'',email:'',score:0,currentQ:0,correctCount:0,startTime:null,tabWarnings:0,quizEnded:false,answered:false,timerInt:null};
+
+['uName','uEmail'].forEach(id=>document.getElementById(id).addEventListener('input',checkForm));
+document.getElementById('agreeTerms').addEventListener('change',checkForm);
+function checkForm(){document.getElementById('startBtn').disabled=!(document.getElementById('uName').value.trim()&&document.getElementById('uEmail').value.trim()&&document.getElementById('agreeTerms').checked);}
+
+function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');}
+
+function startQuiz(){
+  S.name=document.getElementById('uName').value.trim();S.email=document.getElementById('uEmail').value.trim();
+  S.score=0;S.currentQ=0;S.correctCount=0;S.quizEnded=false;S.answered=false;S.tabWarnings=0;S.startTime=Date.now();
+  document.getElementById('liveScore').classList.add('show');document.getElementById('liveScoreNum').textContent='0';
+  showScreen('quizScreen');startTimer();loadQuestion();setupCheatGuard();
+}
+
+const QUIZ_TIME_LIMIT = 8 * 60; // 8 minutes in seconds
+
+function startTimer() {
+  let remaining = QUIZ_TIME_LIMIT;
+
+  S.timerInt = setInterval(() => {
+    remaining--;
+
+    const m = String(Math.floor(remaining / 60)).padStart(2, '0');
+    const s = String(remaining % 60).padStart(2, '0');
+    const el = document.getElementById('timerDisplay');
+    el.textContent = `⏱ ${m}:${s}`;
+
+    // Turn red when under 2 minutes
+    el.classList.toggle('warn', remaining <= 120);
+
+    // Time is up — auto submit
+    if (remaining <= 0) {
+      clearInterval(S.timerInt);
+      showVibeMsg("⏰ Time's up! Your score has been submitted.", 'bad');
+      setTimeout(() => endQuiz(), 1500);
+    }
+  }, 1000);
+}
+
+function loadQuestion(){
+  S.answered=false;const q=questions[S.currentQ];
+  document.getElementById('qCounter').textContent=`Question ${S.currentQ+1} of ${questions.length}`;
+  document.getElementById('progressFill').style.width=`${((S.currentQ+1)/questions.length)*100}%`;
+  const pill=document.getElementById('diffPill');
+  pill.textContent=q.difficulty.charAt(0).toUpperCase()+q.difficulty.slice(1);pill.className='pill pill-'+q.difficulty;
+  document.getElementById('ptsPill').textContent=`+${q.points} PTS${isBossBattle&&q.difficulty==='hard'?' | -2 IF WRONG':''}`;
+  document.getElementById('qText').textContent=q.text;
+  const wrap=document.getElementById('optionsWrap');wrap.innerHTML='';
+  ['A','B','C','D'].forEach((ltr,i)=>{
+    const btn=document.createElement('button');btn.className='opt-btn';
+    btn.innerHTML=`<span class="opt-letter">${ltr}</span><span>${q.options[i]}</span>`;
+    btn.onclick=()=>handleAnswer(i,btn);wrap.appendChild(btn);
+  });
+  document.getElementById('explanation').className='explanation';document.getElementById('nextWrap').style.display='none';
+  const card=document.getElementById('qCard');card.classList.remove('fadeUp');void card.offsetWidth;card.classList.add('fadeUp');
+}
+
+function handleAnswer(chosen,btn){
+  if(S.answered)return;S.answered=true;
+  const q=questions[S.currentQ];const correct=chosen===q.correct;
+  document.querySelectorAll('.opt-btn').forEach(b=>b.disabled=true);
+  const prevRank=getRank(S.score).title;
+  if(correct){btn.classList.add('correct');S.score+=q.points;S.correctCount++;showVibe('correct');}
+  else{btn.classList.add('wrong');document.querySelectorAll('.opt-btn')[q.correct].classList.add('correct');
+    if(isBossBattle&&q.difficulty==='hard'){S.score=Math.max(0,S.score-2);showVibe('negative');}else showVibe('wrong');}
+  const newRank=getRank(S.score).title;if(newRank!==prevRank)triggerRankUp(newRank);
+  document.getElementById('liveScoreNum').textContent=S.score;
+  const expEl=document.getElementById('explanation');expEl.innerHTML=`<strong>💡 Master Explanation:</strong><br><br>${q.explanation}`;expEl.classList.add('show');
+  document.getElementById('nextWrap').style.display='block';
+  document.getElementById('nextBtn').textContent=S.currentQ<questions.length-1?'NEXT QUESTION →':'🏁 SEE MY RESULTS';
+}
+
+function nextQuestion(){S.currentQ++;if(S.currentQ>=questions.length)endQuiz();else loadQuestion();}
+// ── CONFIGURATION ─────────────────────────────────────────────
+const BACKEND_API_URL = 'https://script.google.com/macros/s/AKfycbzPBHFtejHA10UFrs9VhOJVFIsvkOAbrT6uSBGPUaNZ5cW57q69lPioWO2jPpJazSLT/exec';
+const LEADERBOARD_URL = 'https://sites.google.com/view/exammasterseries/leaderboard';
+
+async function endQuiz() {
+  S.quizEnded = true;
+  clearInterval(S.timerInt);
+  document.removeEventListener('visibilitychange', handleVisibility);
+  window.removeEventListener('blur', handleBlur);
+
+  const elapsed = Math.floor((Date.now() - S.startTime) / 1000);
+  const mins    = String(Math.floor(elapsed / 60)).padStart(2, '0');
+  const secs    = String(elapsed % 60).padStart(2, '0');
+  const maxScore = questions.reduce((a, q) => a + q.points, 0);
+
+  const { icon, title } = getRank(S.score);
+  renderResultScreen({ elapsed, maxScore, icon, title });
+
+  const payload = {
+    name:      S.name,
+    email:     S.email,
+    score:     S.score,
+    maxScore,
+    correct:   S.correctCount,
+    total:     questions.length,
+    category:  'PHY102',
+    timeTaken: `${mins}:${secs}`,
+    rank:      title,
+    timestamp: new Date().toISOString(),
+  };
+
+  try {
+    const res = await fetch(BACKEND_API_URL, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(payload),
+    });
+    if (res.ok) {
+      setTimeout(() => {
+        window.location.href = LEADERBOARD_URL
+          + `?name=${encodeURIComponent(S.name)}`
+          + `&score=${S.score}`
+          + `&subject=PHY102`;
+      }, 3000);
+    } else {
+      setTimeout(() => { window.location.href = LEADERBOARD_URL; }, 4000);
+    }
+  } catch (err) {
+    console.error('Score submission failed:', err);
+    setTimeout(() => { window.location.href = LEADERBOARD_URL; }, 4000);
+  }
+}
+
+// ── renderResultScreen() — pulled out of endQuiz for clarity ───
+function renderResultScreen({ elapsed, maxScore, icon, title }) {
+  const mins = String(Math.floor(elapsed / 60)).padStart(2, '0');
+  const secs = String(elapsed % 60).padStart(2, '0');
+  const { sub } = getRank(S.score);
+
+  document.getElementById('statsRow').innerHTML = `
+    <div class="stat-box"><div class="stat-num">${S.score}</div><div class="stat-lbl">Points</div></div>
+    <div class="stat-box"><div class="stat-num">${maxScore}</div><div class="stat-lbl">Max Score</div></div>
+    <div class="stat-box"><div class="stat-num">${S.correctCount}/${questions.length}</div><div class="stat-lbl">Correct</div></div>
+    <div class="stat-box"><div class="stat-num">${mins}:${secs}</div><div class="stat-lbl">Time</div></div>
+  `;
+
+  document.getElementById('rankIcon').textContent  = icon;
+  document.getElementById('rankTitle').textContent = title;
+  document.getElementById('rankSub').textContent   = sub;
+
+  const fc  = S.correctCount;
+  let   msg = V.final[3].msg;
+  for (const f of V.final) {
+    if (fc >= f.min && fc <= f.max) { msg = f.msg; break; }
+  }
+  document.getElementById('finalMsg').textContent = msg;
+
+  // Show submitting notice on the result screen
+  document.getElementById('finalMsg').insertAdjacentHTML('afterend',
+    `<p style="margin-top:10px;font-size:12px;color:#7070a0;font-family:'Oswald',sans-serif;letter-spacing:1px;">
+       Submitting your score... redirecting to the leaderboard shortly.
+     </p>`
+  );
+
+  document.getElementById('liveScore').classList.remove('show');
+  showScreen('resultScreen');
+}
+  
+
+function getRank(s){
+  if(s<=50)return{icon:'🌟',title:'Rising Star',sub:'Keep grinding — the Idans were once here too!'};
+  if(s<=150)return{icon:'👑',title:'GemChamp',sub:"You're heating up! The CBT Center respects you."};
+  if(s<=250)return{icon:'🧠',title:'Sapienist',sub:'Big brain energy. Electric Fields fear you!'};
+  return{icon:'🏆',title:'Champion Elite',sub:'You are the Oba Idan. The field bows to you.'};
+}
+
+let vibeTO;
+function showVibe(type){let msg='',cls='';if(type==='correct'){msg=vRand(V.correct);cls='';}if(type==='wrong'){msg=vRand(V.wrong);cls='bad';}if(type==='negative'){msg=vRand(V.negative);cls='bad';}showVibeMsg(msg,cls);}
+function showVibeMsg(msg,cls=''){const p=document.getElementById('vibePopup');p.textContent=msg;p.className=`vibe-popup ${cls}`;void p.offsetWidth;p.classList.add('show');clearTimeout(vibeTO);vibeTO=setTimeout(()=>p.classList.remove('show'),2800);}
+function triggerRankUp(rank){const k=rank==='GemChamp'?'gemchamp':rank==='Sapienist'?'sapienist':'champion';if(V.rankup[k])setTimeout(()=>showVibeMsg(V.rankup[k],'rankup'),1500);}
+
+function setupCheatGuard(){document.addEventListener('visibilitychange',handleVisibility);window.addEventListener('blur',handleBlur);}
+function handleVisibility(){if(document.hidden&&!S.quizEnded)triggerCheatWarn();}
+function handleBlur(){if(!S.quizEnded&&document.getElementById('quizScreen').classList.contains('active'))triggerCheatWarn();}
+function triggerCheatWarn(){
+  S.tabWarnings++;const ov=document.getElementById('warnOverlay');
+  if(S.tabWarnings>=3){document.getElementById('warnCount').textContent='🚨';document.getElementById('warnTitle').textContent='QUIZ TERMINATED!';document.getElementById('warnMsg').textContent='You switched tabs 3 times. ExamMaster has ended your session. Your score is recorded. The invigilator has spoken!';ov.classList.add('show');document.querySelector('#warnOverlay .btn-gold').onclick=()=>{ov.classList.remove('show');endQuiz();};}
+  else{const r=3-S.tabWarnings;document.getElementById('warnCount').textContent=`${S.tabWarnings}/3`;document.getElementById('warnTitle').textContent=`WARNING ${S.tabWarnings} OF 3`;document.getElementById('warnMsg').textContent=V.cheat[S.tabWarnings-1]+` You have ${r} warning${r===1?'':'s'} left before automatic termination.`;ov.classList.add('show');}
+}
+function dismissWarn(){if(S.tabWarnings<3)document.getElementById('warnOverlay').classList.remove('show');}
+
+function goToCard(){showScreen('cardScreen');generateCard();}
+function generateCard(){
+  const canvas=document.getElementById('idanCanvas');const ctx=canvas.getContext('2d');const W=canvas.width,H=canvas.height;
+  const{icon,title}=getRank(S.score);const maxScore=questions.reduce((a,q)=>a+q.points,0);
+  ctx.fillStyle='#06060a';ctx.fillRect(0,0,W,H);
+  ctx.strokeStyle='rgba(245,197,24,0.06)';ctx.lineWidth=1;
+  for(let x=0;x<W;x+=44){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
+  for(let y=0;y<H;y+=44){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+  const grd=ctx.createRadialGradient(W/2,H/2,10,W/2,H/2,230);grd.addColorStop(0,'rgba(245,197,24,0.1)');grd.addColorStop(1,'transparent');ctx.fillStyle=grd;ctx.fillRect(0,0,W,H);
+  const bgrad=ctx.createLinearGradient(0,0,W,H);bgrad.addColorStop(0,'#f5c518');bgrad.addColorStop(.5,'#e8a000');bgrad.addColorStop(1,'#f5c518');
+  ctx.strokeStyle=bgrad;ctx.lineWidth=10;ctx.strokeRect(6,6,W-12,H-12);
+  ctx.strokeStyle='rgba(245,197,24,0.2)';ctx.lineWidth=1;ctx.strokeRect(18,18,W-36,H-36);
+  ctx.textAlign='left';ctx.fillStyle='#f5c518';ctx.font='bold 15px Arial';ctx.fillText('EXAMMASTER',34,48);
+  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · PHY 102 · 2026',34,63);
+  ctx.textAlign='right';ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText(new Date().toLocaleDateString('en-NG',{day:'numeric',month:'short',year:'numeric'}),W-34,48);
+  ctx.textAlign='center';ctx.fillStyle='rgba(240,240,248,0.3)';ctx.font='bold 10px Arial';ctx.fillText('CERTIFICATE OF IDAN',W/2,95);
+  ctx.font='46px Arial';ctx.fillText(icon,W/2,160);
+  ctx.fillStyle='#f5c518';ctx.font='italic bold 40px Georgia,serif';const dn=(S.name||'Scholar').toUpperCase();ctx.fillText(dn.length>14?dn.slice(0,14)+'…':dn,W/2,214);
+  ctx.fillStyle='rgba(112,112,160,0.85)';ctx.font='12px Arial';ctx.fillText('HAS OFFICIALLY ACHIEVED THE RANK OF',W/2,244);
+  ctx.fillStyle=title==='Champion Elite'?'#f5c518':title==='Sapienist'?'#00ff88':'#f5c518';ctx.font='bold 34px Arial';ctx.fillText(title.toUpperCase(),W/2,286);
+  ctx.fillStyle='rgba(245,197,24,0.07)';roundRect(ctx,W/2-115,304,230,32,7);ctx.fill();
+  ctx.strokeStyle='rgba(245,197,24,0.22)';ctx.lineWidth=1;roundRect(ctx,W/2-115,304,230,32,7);ctx.stroke();
+  ctx.fillStyle='#f5c518';ctx.font='bold 14px Arial';ctx.fillText(`Score: ${S.score} / ${maxScore} pts  ·  ${S.correctCount}/${questions.length} Correct`,W/2,325);
+  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"PHY 102 tried, but I am the Father." — CBT Compliant',W/2,372);
+}
+function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();}
+function downloadCard(){const canvas=document.getElementById('idanCanvas');const link=document.createElement('a');link.download=`ExamMaster_${(S.name||'Idan').replace(/\s+/g,'_')}_RankCard.png`;link.href=canvas.toDataURL('image/png');link.click();}
+function restartQuiz(){clearInterval(S.timerInt);document.removeEventListener('visibilitychange',handleVisibility);window.removeEventListener('blur',handleBlur);document.getElementById('liveScore').classList.remove('show');showScreen('landingScreen');document.getElementById('agreeTerms').checked=false;document.getElementById('startBtn').disabled=true;}
+</script>
+</body>
+</html>
