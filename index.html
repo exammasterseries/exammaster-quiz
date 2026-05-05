@@ -351,9 +351,10 @@ async function endQuiz() {
   try {
     const res = await fetch(BACKEND_API_URL, {
       method:  'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'text/plain' },
       body:    JSON.stringify(payload),
     });
+    
     if (res.ok) {
       setTimeout(() => {
         window.location.href = LEADERBOARD_URL
