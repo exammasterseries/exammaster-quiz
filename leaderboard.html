@@ -499,7 +499,7 @@ function parseCSV(text){
       mth:parseInt(cols[4])||0,
       rank:cols[5]||'—'
     };
-  }).filter(p=>p.name&&p.name!=='Unknown');
+  }).filter(p=>p.name&&p.name!=='Unknown'&&p.name!=='Name');
 }
 function renderPodium(players){
   if(players.length<1){document.getElementById('podiumWrap').innerHTML='';return;}
@@ -522,7 +522,7 @@ function renderTable(players){
     const rowCls=i<3?'lb-row top3':'lb-row';
     const badge=getBadge(p.points);
     const medal=i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1;
-    return`<div class="${rowCls}"><div class="rank-num ${rc}">${medal}</div><div class="player-cell"><div class="p-avatar">${getInitials(p.name)}</div><div><div class="p-name">${p.name}</div><div class="p-dept">${p.dept}</div></div></div><div class="pts-cell"><div class="pts-num">${p.points}</div><div class="pts-label">PTS</div></div><div class="badge-cell"><span class="badge-pill ${badge.cls}">${badge.name}</span></div></div>`;
+    return`<div class="${rowCls}"><div class="rank-num ${rc}">${medal}</div><div class="player-cell"><div class="p-avatar">${getInitials(p.name)}</div><div><div class="p-name">${p.name}</div><div class="p-dept">${p.rank||''}</div></div></div><div class="pts-cell"><div class="pts-num">${p.points}</div><div class="pts-label">PTS</div></div><div class="badge-cell"><span class="badge-pill ${badge.cls}">${badge.name}</span></div></div>`;
   }).join('');
 }
 function updateStats(players){
