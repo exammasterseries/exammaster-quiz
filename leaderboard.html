@@ -415,7 +415,7 @@ footer{padding:30px 24px;border-top:1px solid var(--border);text-align:center;}
 
 <script>
 // ─── CONFIG ──────────────────────────────────────────────────────────────────
-var PAYSTACK_PUBLIC_KEY = 'YOUR_PAYSTACK_PUBLIC_KEY';
+var PAYSTACK_PUBLIC_KEY = 'pk_test_9e67fa5c0a660d63f1b4047a80c2772ca1c00f76';
 var AMOUNT_KOBO = 160000;
 const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRsdjjDBYFFq7N06Q8wTnsKfukCKhEqstdYNOfhJoTZEI3_rY8vICrqPuz2xIaXWmNiyaw29LXy7t47/pub?gid=0&single=true&output=csv';
 // ─────────────────────────────────────────────────────────────────────────────
@@ -450,10 +450,14 @@ function launchPaystack(){
     amount:AMOUNT_KOBO,
     currency:'NGN',
     ref:'EM-'+Date.now()+'-'+Math.floor(Math.random()*1000000),
-    metadata:{custom_fields:[{display_name:'Full Name',variable_name:'full_name',value:name},{display_name:'Product',variable_name:'product',value:'ExamMaster 102 Battle System'}]},
+    metadata:{custom_fields:[
+      {display_name:'Full Name',variable_name:'full_name',value:name},
+      {display_name:'Product',variable_name:'product',value:'ExamMaster 102 Battle System'}
+    ]},
     callback:function(response){
       closeModal('payModal');
-      window.location.href='success.html?ref='+response.reference+'&name='+encodeURIComponent(name);
+      // Payment successful — open Tally form with reference pre-filled
+      openTallyModal(response.reference, name, email);
     },
     onClose:function(){
       document.getElementById('payNowBtn').disabled=false;
@@ -600,6 +604,49 @@ fetchLeaderboard();
 updateCountdown();
 setInterval(updateCountdown,1000);
 setInterval(fetchLeaderboard,60000);
+
+function openTallyModal(reference, name, email) {
+  // Display reference code
+  document.getElementById('payRefDisplay').textContent = reference;
+
+  // Build Tally form URL with pre-filled fields
+  // Replace YOUR_TALLY_FORM_ID with your actual Tally form ID
+  const tallyBase = 'https://tally.so/r/xX0O0v';
+  const params = new URLSearchParams({
+    'Paystack Reference Code': reference,
+    'Official Email Address': email,
+  });
+
+  document.getElementById('tallyFrame').src = tallyBase + '?' + params.toString();
+  openModal('tallyModal');
+}
 </script>
+  <!-- TALLY REGISTRATION MODAL -->
+<div class="modal-overlay" id="tallyModal">
+  <div class="modal-box" style="max-width:560px;">
+    <div class="modal-title">Complete Your Registration 📋</div>
+    <div class="modal-sub">Payment confirmed · Fill your details below</div>
+    <div style="background:rgba(0,255,136,.08);border:1px solid rgba(0,255,136,.2);border-radius:10px;padding:12px 16px;margin-bottom:20px;display:flex;align-items:center;gap:10px;">
+      <span style="font-size:20px;">✅</span>
+      <div>
+        <div style="font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;color:#00ff88;letter-spacing:1px;">PAYMENT CONFIRMED</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px;">Reference: <span id="payRefDisplay" style="color:var(--gold);font-family:monospace;"></span></div>
+      </div>
+    </div>
+    <iframe id="tallyFrame"
+      src=""
+      width="100%"
+      height="500px"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      style="border-radius:10px;background:#fff;">
+      Loading registration form...
+    </iframe>
+    <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:12px;font-family:'Oswald',sans-serif;letter-spacing:1px;">
+      ⚠️ Your Paystack Reference Code is your proof of payment. Keep it safe.
+    </p>
+  </div>
+</div>
 </body>
 </html>
