@@ -296,17 +296,17 @@ footer{padding:30px 24px;border-top:1px solid var(--border);text-align:center;}
   <p>PHY102 · CHM102 · MTH102 — Points Updated After Every Battle</p>
   <div class="live-strip">
     <div class="live-dot"></div>
-    <span><strong>LIVE</strong> — Synced from Google Sheets · Auto-updates every day</span>
+    <span><strong>LIVE</strong> — Synced from Google Sheets · Auto-updates every 60s</span>
   </div>
 </div>
 
 <!-- BADGE LEGEND -->
 <div class="badge-legend">
-  <div class="bl-item"><span class="bl-badge badge-rising-star">RISING-STAR</span><span class="bl-pts">0–99 pts</span></div>
-  <div class="bl-item"><span class="bl-badge badge-scholar">SCHOLAR</span><span class="bl-pts">100–199 pts</span></div>
-  <div class="bl-item"><span class="bl-badge badge-warrior">WARRIOR</span><span class="bl-pts">200–349 pts</span></div>
-  <div class="bl-item"><span class="bl-badge badge-sapienist">SAPIENIST</span><span class="bl-pts">350–449 pts</span></div>
-  <div class="bl-item"><span class="bl-badge badge-gemchamp">GEM CHAMP 💎</span><span class="bl-pts">450–500 pts</span></div>
+  <div class="bl-item"><span class="bl-badge badge-rising-star">RISING-STAR</span><span class="bl-pts">0–499 pts</span></div>
+<div class="bl-item"><span class="bl-badge badge-scholar">SCHOLAR</span><span class="bl-pts">500–999 pts</span></div>
+<div class="bl-item"><span class="bl-badge badge-warrior">WARRIOR</span><span class="bl-pts">1000–1999 pts</span></div>
+<div class="bl-item"><span class="bl-badge badge-sapienist">SAPIENIST</span><span class="bl-pts">2000–3499 pts</span></div>
+<div class="bl-item"><span class="bl-badge badge-gemchamp">GEM CHAMP 💎</span><span class="bl-pts">3500+ pts</span></div>
 </div>
 
 <!-- TABS -->
@@ -358,18 +358,18 @@ footer{padding:30px 24px;border-top:1px solid var(--border);text-align:center;}
       <div class="side-title">Season Stats</div>
       <div class="mini-stats">
         <div class="mini-stat"><div class="mn" id="statStudents">—</div><div class="ml">Students</div></div>
-        <div class="mini-stat"><div class="mn">500</div><div class="ml">Max Pts</div></div>
+        <div class="mini-stat"><div class="mn">3500</div><div class="ml">Max Pts</div></div>
         <div class="mini-stat"><div class="mn" id="statTop">—</div><div class="ml">Top Score</div></div>
         <div class="mini-stat"><div class="mn" id="statAvg">—</div><div class="ml">Avg Score</div></div>
       </div>
     </div>
     <div class="side-card">
       <div class="side-title">Badge Tiers</div>
-      <div class="badge-tier"><div class="bt-pill badge-gemchamp">GEM CHAMP 💎</div><div class="bt-info"><div class="bt-range">450–500 pts</div><div class="bt-desc">Elite · Top of the board</div></div></div>
-      <div class="badge-tier"><div class="bt-pill badge-sapienist">SAPIENIST</div><div class="bt-info"><div class="bt-range">350–449 pts</div><div class="bt-desc">Advanced · Near the top</div></div></div>
-      <div class="badge-tier"><div class="bt-pill badge-warrior">WARRIOR</div><div class="bt-info"><div class="bt-range">200–349 pts</div><div class="bt-desc">Mid-tier · Climbing fast</div></div></div>
-      <div class="badge-tier"><div class="bt-pill badge-scholar">SCHOLAR</div><div class="bt-info"><div class="bt-range">100–199 pts</div><div class="bt-desc">Early · Getting started</div></div></div>
-      <div class="badge-tier"><div class="bt-pill badge-rising-star">RISING-STAR</div><div class="bt-info"><div class="bt-range">0–99 pts</div><div class="bt-desc">Newcomer · Just joined</div></div></div>
+      <div class="badge-tier"><div class="bt-pill badge-gemchamp">GEM CHAMP 💎</div><div class="bt-info"><div class="bt-range">3500+ pts</div><div class="bt-desc">Elite · Top of the board</div></div></div>
+<div class="badge-tier"><div class="bt-pill badge-sapienist">SAPIENIST</div><div class="bt-info"><div class="bt-range">2000–3499 pts</div><div class="bt-desc">Advanced · Near the top</div></div></div>
+<div class="badge-tier"><div class="bt-pill badge-warrior">WARRIOR</div><div class="bt-info"><div class="bt-range">1000–1999 pts</div><div class="bt-desc">Mid-tier · Climbing fast</div></div></div>
+<div class="badge-tier"><div class="bt-pill badge-scholar">SCHOLAR</div><div class="bt-info"><div class="bt-range">500–999 pts</div><div class="bt-desc">Early · Getting started</div></div></div>
+<div class="badge-tier"><div class="bt-pill badge-rising-star">RISING-STAR</div><div class="bt-info"><div class="bt-range">0–499 pts</div><div class="bt-desc">Newcomer · Just joined</div></div></div>
     </div>
     <div class="side-card">
       <div class="side-title">Top Score Breakdown</div>
@@ -469,10 +469,10 @@ document.querySelectorAll('.modal-overlay').forEach(function(overlay){
 
 function getBadge(pts){
   pts=parseInt(pts)||0;
-  if(pts>=450)return{name:'GEM CHAMP 💎',cls:'badge-gemchamp'};
-  if(pts>=350)return{name:'SAPIENIST',cls:'badge-sapienist'};
-  if(pts>=200)return{name:'WARRIOR',cls:'badge-warrior'};
-  if(pts>=100)return{name:'SCHOLAR',cls:'badge-scholar'};
+  if(pts>=3500)return{name:'GEM CHAMP 💎',cls:'badge-gemchamp'};
+  if(pts>=2000)return{name:'SAPIENIST',cls:'badge-sapienist'};
+  if(pts>=1000)return{name:'WARRIOR',cls:'badge-warrior'};
+  if(pts>=500)return{name:'SCHOLAR',cls:'badge-scholar'};
   return{name:'RISING STAR',cls:'badge-rising-star'};
 }
 function getInitials(name){
