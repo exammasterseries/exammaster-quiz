@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+  <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
+<meta name="theme-color" content="#f5c518">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ExamMaster — PHY 102 Battle</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -149,19 +152,24 @@ input:focus { border-color:var(--gold); }
     <h1><span class="w1">ELECTRIC</span><span class="w2">FIELD</span><span class="w3">BATTLE ⚡</span></h1>
     <p class="hero-sub">10 Questions · Coulomb's Law · Gauss's Law · Point Charges<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
     <div class="form-card fadeUp">
-      <div class="form-row">
-        <label class="form-label" for="uName">Your Full Name</label>
-        <input type="text" id="uName" placeholder="e.g. Tunde Adeleke" />
-      </div>
-      <div class="form-row">
-        <label class="form-label" for="uEmail">Your Email</label>
-        <input type="email" id="uEmail" placeholder="e.g. tunde@unilorin.edu.ng" />
-      </div>
-      <div class="terms-row">
-        <input type="checkbox" id="agreeTerms" />
-        <label for="agreeTerms">I agree to the <a href="#" onclick="return false">ExamMaster Terms</a>: No cheating, No multi-accounting, and I promise to study my PDFs alongside this quiz.</label>
-      </div>
-    </div>
+  <div class="form-row">
+    <label class="form-label" for="uName">Scholar's Full Name</label>
+    <input type="text" id="uName" placeholder="e.g. Tunde Adeleke" autocomplete="name"/>
+  </div>
+  <div class="form-row">
+    <label class="form-label" for="uPhone">WhatsApp Number</label>
+    <input type="text" id="uPhone" placeholder="e.g. 08012345678" autocomplete="tel"/>
+  </div>
+  <div class="form-row">
+    <label class="form-label" for="uCode">Access Code</label>
+    <input type="text" id="uCode" placeholder="e.g. EM-4829" style="text-transform:uppercase;letter-spacing:3px;"/>
+  </div>
+  <div class="terms-row">
+    <input type="checkbox" id="agreeTerms" />
+    <label for="agreeTerms">I agree to the <a href="#" onclick="return false">ExamMaster Terms</a>: No cheating, No multi-accounting, and I promise to study my PDFs alongside this quiz.</label>
+  </div>
+  <div id="validationMsg" style="display:none;margin-top:12px;padding:10px 14px;border-radius:8px;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:1px;"></div>
+</div>
     <button class="btn-gold" id="startBtn" onclick="startQuiz()" disabled style="margin-bottom:16px;">🏛️ ENTER THE CBT CENTER →</button>
     <div class="fomo-bar"><div class="fomo-dot"></div><span><strong>247 students</strong> already battling — secure your rank now!</span></div>
   </div>
@@ -247,15 +255,89 @@ let S={name:'',email:'',score:0,currentQ:0,correctCount:0,startTime:null,tabWarn
 
 ['uName','uEmail'].forEach(id=>document.getElementById(id).addEventListener('input',checkForm));
 document.getElementById('agreeTerms').addEventListener('change',checkForm);
-function checkForm(){document.getElementById('startBtn').disabled=!(document.getElementById('uName').value.trim()&&document.getElementById('uEmail').value.trim()&&document.getElementById('agreeTerms').checked);}
+function checkForm()['uName','uPhone','uCode'].forEach(id=>document.getElementById(id).addEventListener('input',checkForm));
+document.getElementById('agreeTerms').addEventListener('change',checkForm);
+
+function checkForm(){
+  document.getElementById('startBtn').disabled=!(
+    document.getElementById('uName').value.trim() &&
+    document.getElementById('uPhone').value.trim() &&
+    document.getElementById('uCode').value.trim() &&
+    document.getElementById('agreeTerms').checked
+  );
+}
 
 function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');}
 
-function startQuiz(){
-  S.name=document.getElementById('uName').value.trim();S.email=document.getElementById('uEmail').value.trim();
-  S.score=0;S.currentQ=0;S.correctCount=0;S.quizEnded=false;S.answered=false;S.tabWarnings=0;S.startTime=Date.now();
-  document.getElementById('liveScore').classList.add('show');document.getElementById('liveScoreNum').textContent='0';
-  showScreen('quizScreen');startTimer();loadQuestion();setupCheatGuard();
+async function startQuiz(){
+  const name  = document.getElementById('uName').value.trim();
+  const phone = document.getElementById('uPhone').value.trim();
+  const code  = document.getElementById('uCode').value.trim().toUpperCase();
+  const msgEl = document.getElementById('validationMsg');
+  const btn   = document.getElementById('startBtn');
+
+  // Show loading state
+  btn.disabled = true;
+  btn.textContent = '⏳ Verifying...';
+  msgEl.style.display = 'none';
+
+  const showError = (msg) => {
+    msgEl.style.display = 'block';
+    msgEl.style.background = 'rgba(232,33,58,.1)';
+    msgEl.style.border = '1px solid rgba(232,33,58,.3)';
+    msgEl.style.color = '#e8213a';
+    msgEl.textContent = msg;
+    btn.disabled = false;
+    btn.textContent = '🏛️ ENTER THE CBT CENTER →';
+  };
+
+  try {
+    // Step 1 — Check if student is registered
+    const regRes = await fetch(
+      BACKEND_API_URL + '?action=checkStudent'
+      + '&name=' + encodeURIComponent(name)
+      + '&phone=' + encodeURIComponent(phone)
+    );
+    const regData = await regRes.json();
+
+    if (!regData.valid) {
+      showError('⚠️ Name or WhatsApp number not found. Make sure you registered via the official link first.');
+      return;
+    }
+
+    // Step 2 — Check access code
+    const codeRes = await fetch(
+      BACKEND_API_URL + '?action=checkCode'
+      + '&code=' + encodeURIComponent(code)
+    );
+    const codeData = await codeRes.json();
+
+    if (!codeData.valid) {
+      if (codeData.reason === 'used') {
+        showError('🚫 This access code has already been used. Each code is for one attempt only.');
+      } else {
+        showError('❌ Invalid access code. Check your code and try again.');
+      }
+      return;
+    }
+
+    // All checks passed — start quiz
+    S.name  = name;
+    S.email = phone; // storing phone in email field for submission
+    S.score = 0; S.currentQ = 0; S.correctCount = 0;
+    S.quizEnded = false; S.answered = false;
+    S.tabWarnings = 0; S.startTime = Date.now();
+    document.getElementById('liveScore').classList.add('show');
+    document.getElementById('liveScoreNum').textContent = '0';
+    showScreen('quizScreen');
+    startTimer();
+    loadQuestion();
+    setupCheatGuard();
+
+  } catch (err) {
+    showError('⚠️ Network error. Check your internet connection and try again.');
+    console.error(err);
+  }
 }
 
 const QUIZ_TIME_LIMIT = 8 * 60; // 8 minutes in seconds
