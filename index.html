@@ -272,6 +272,17 @@ function checkForm(){
 function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');}
 
 async function startQuiz(){
+  const now = new Date();
+if (now < QUIZ_OPEN) {
+  const diff = Math.ceil((QUIZ_OPEN - now) / 60000);
+  alert(`⏳ Quiz hasn't started yet! Opens in ${diff} minute(s). Stay ready!`);
+  return;
+}
+if (now > QUIZ_CLOSE) {
+  alert('⏰ This quiz session has ended. Check the leaderboard for your results!');
+  window.location.href = 'leaderboard.html';
+  return;
+}
   const name  = document.getElementById('uName').value.trim();
   const phone = document.getElementById('uPhone').value.trim();
   const code  = document.getElementById('uCode').value.trim().toUpperCase();
