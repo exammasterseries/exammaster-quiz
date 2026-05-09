@@ -255,11 +255,8 @@ const questions = [
 
 let S={name:'',email:'',score:0,currentQ:0,correctCount:0,startTime:null,tabWarnings:0,quizEnded:false,answered:false,timerInt:null};
 
-['uName','uEmail'].forEach(id=>document.getElementById(id).addEventListener('input',checkForm));
+['uName','uPhone','uCode'].forEach(id=>document.getElementById(id).addEventListener('input',checkForm));
 document.getElementById('agreeTerms').addEventListener('change',checkForm);
-function checkForm()['uName','uPhone','uCode'].forEach(id=>document.getElementById(id).addEventListener('input',checkForm));
-document.getElementById('agreeTerms').addEventListener('change',checkForm);
-
 function checkForm(){
   document.getElementById('startBtn').disabled=!(
     document.getElementById('uName').value.trim() &&
