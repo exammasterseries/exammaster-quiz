@@ -369,6 +369,12 @@ function startTimer() {
     // Turn red when under 2 minutes
     el.classList.toggle('warn', remaining <= 120);
 
+    // Auto submit when quiz window closes
+if (new Date() >= QUIZ_CLOSE && !S.quizEnded) {
+  clearInterval(S.timerInt);
+  showVibeMsg('⏰ Quiz window closed! Submitting your score...', 'bad');
+  setTimeout(() => endQuiz(), 1500);
+}
     // Time is up — auto submit
     if (remaining <= 0) {
       clearInterval(S.timerInt);
