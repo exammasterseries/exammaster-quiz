@@ -496,7 +496,7 @@ function renderResultScreen({ elapsed, maxScore, icon, title }) {
   // Show submitting notice on the result screen
   document.getElementById('finalMsg').insertAdjacentHTML('afterend',
     `<p style="margin-top:10px;font-size:12px;color:#7070a0;font-family:'Oswald',sans-serif;letter-spacing:1px;">
-       Submitting your score... redirecting to the leaderboard shortly.
+       Submitting your score... redirecting to the leaderboard shortly. 👀 Your leaderboard rank updates within 15 minutes — insanely fast ⚡
      </p>`
   );
 
@@ -506,8 +506,8 @@ function renderResultScreen({ elapsed, maxScore, icon, title }) {
   
 
 function getRank(s){
-  if(s<=50)return{icon:'🌟',title:'Rising Star',sub:'Keep grinding — the Idans were once here too!'};
-  if(s<=150)return{icon:'👑',title:'GemChamp',sub:"You're heating up! The CBT Center respects you."};
+  if(s<=50)return{icon:'🏆🌟',title:'Rising Star',sub:'Keep grinding — the Idans were once here too! — The CBT Center respects you'};
+  if(s<=110)return{icon:'👀🏆',title:'Rising Star',sub:"You’re entering your scholar era. One more strong performance and the CBT Center will know your name."};
   if(s<=250)return{icon:'🧠',title:'Sapienist',sub:'Big brain energy. Electric Fields fear you!'};
   return{icon:'🏆',title:'Champion Elite',sub:'You are the Oba Idan. The field bows to you.'};
 }
