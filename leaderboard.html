@@ -558,7 +558,7 @@ async function fetchLeaderboard(){
     allPlayers=players.sort((a,b)=>b.points-a.points);
     renderPodium(allPlayers);renderTable(allPlayers);updateStats(allPlayers);
     const now=new Date();
-    document.getElementById('lastUpdated').textContent='Last updated: '+now.toLocaleTimeString()+' · Auto-refreshes every 60s';
+    document.getElementById('lastUpdated').textContent='Last updated: '+now.toLocaleTimeString()+' · Auto-refreshes every 60s  • Newly submitted scores appear within 15 minutes';
   }catch(err){
     document.getElementById('lbBody').innerHTML=`<div class="error-wrap"><div class="error-icon">⚠️</div><div class="error-text">Could not load Google Sheets data.<br>Check your CSV URL or internet connection.</div><button class="retry-btn" onclick="fetchLeaderboard()">↺ RETRY</button></div>`;
   }
