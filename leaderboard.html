@@ -281,11 +281,31 @@ footer{padding:30px 24px;border-top:1px solid var(--border);text-align:center;}
 <nav>
   <div class="nav-inner">
     <div class="nav-brand">
-      <img class="nav-logo" src="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg" alt="ExamMaster Logo" onerror="this.style.display='none'">
-      <div class="nav-brand-text"><span>Exam</span>Master ⚡</div>
+      <div class="nav-logo-wrap">
+        <img src="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg" alt="ExamMaster">
+      </div>
+      <div>
+        <div class="brand-name">Exam<span>Master</span> ⚡</div>
+        <div class="brand-sub">102 Battle System</div>
+      </div>
     </div>
-    <div class="nav-links"></div>
-    <button class="nav-cta" onclick="openPayModal()">⚡ Join — ₦1,600</button>
+    <div class="nav-links" id="navLinks">
+      <a href="home.html" class="active">🏠 Home</a>
+      <a href="leaderboard.html">🏆 Leaderboard</a>
+      <a href="quickfire.html">🚀 Lessons</a>
+      <a href="about.html">👤 About</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <button class="nav-hamburger" id="navHamburger" onclick="toggleNav()">☰</button>
+      <button class="nav-cta" onclick="openPayModal()">⚡ Join — ₦1,600</button>
+    </div>
+  </div>
+  <!-- Mobile dropdown -->
+  <div class="nav-mobile" id="navMobile">
+    <a href="home.html">🏠 Home</a>
+    <a href="leaderboard.html">🏆 Leaderboard</a>
+    <a href="quickfire.html">🚀 Lessons</a>
+    <a href="about.html">👤 About</a>
   </div>
 </nav>
 
