@@ -622,15 +622,17 @@ function loadDemoData(){
   renderPodium(allPlayers);renderTable(allPlayers);updateStats(allPlayers);
   document.getElementById('lastUpdated').textContent='⚠️ Demo data — paste your Google Sheets CSV URL in the code to go live';
 }
-function switchTab(el,type){
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+function switchTab(el, type) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
-  let filtered=[...allPlayers];
-  if(type==='phy')filtered=[...allPlayers].sort((a,b)=>b.phy-a.phy);
-  else if(type==='chm')filtered=[...allPlayers].sort((a,b)=>b.chm-a.chm);
-  else if(type==='mth')filtered=[...allPlayers].sort((a,b)=>b.mth-a.mth);
-  else if(type==='week')filtered=[...allPlayers].sort((a,b)=>b.points-a.points).slice(0,10);
-  renderPodium(filtered);renderTable(filtered);
+  let filtered = [...allPlayers];
+  
+  if(type === 'phy') filtered = [...allPlayers].sort((a,b) => b.phy - a.phy).map(p => ({...p, points: p.phy}));
+  else if(type === 'chm') filtered = [...allPlayers].sort((a,b) => b.chm - a.chm).map(p => ({...p, points: p.chm}));
+  else if(type === 'mth') filtered = [...allPlayers].sort((a,b) => b.mth - a.mth).map(p => ({...p, points: p.mth}));
+  else if(type === 'week') filtered = [...allPlayers].sort((a,b) => b.points - a.points).slice(0,10);
+  
+  renderPodium(filtered); renderTable(filtered);
 }
 function updateCountdown(){
   const now=new Date();const nm=new Date(now);
