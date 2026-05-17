@@ -233,13 +233,66 @@ input:focus { border-color:var(--gold); }
   const QUIZ_OPEN  = new Date('2026-05-09T23:40:00');
 const QUIZ_CLOSE = new Date('2026-05-18T23:48:00');
 const isBossBattle = false;
+
 const V = {
-  correct:["Oshey! Your brain is currently on 5G network. Keep it moving! 📶","Scholar behavior! Even the Vice-Chancellor is hearing about your progress. 👑","Haba! Are you the one that set this exam? This Jacking level is dangerous! 🧠","CBT Center is already shivering! You're making PHY 102 look like nursery rhymes. 📖","Eissshhh! You solved that like it was a WhatsApp message. Jacking level: Infinite! 🔥","A-Parallel loading... 99% complete. Don't stop now! 🚀","You just folded that question like a ₦500 note. Real Idan energy! 💸","Oshey, Idan! Scholar behaviour detected! ✅","You're built different! The electric field respects you. 🧠"],  // ← comma added
-  wrong:["Omo, Electric field don shock you? Go wash your face and come back! ⚡🚿","This is how carryover starts o! Read the explanation before your village people win. 🧙","Item 7 chicken is distracting you. Focus! 5 Units is not a joke! 🍗","Omo, if you use this logic in the CBT center, the computer might shut down from shame. 💀","You're thinking about your situationship. Breakups are temporary, Carryover is a 1-year contract! 💔","Is it because there's no light in the hostel that your brain is also doing blackout? 💡","Your village people are typing 'Type Amen' on your GP. Don't let them win! 🕯️","Error 404: Correct answer not found in your head. Install more jacking! 🤡"],
-  negative:["Ouch! -2 points. Even your ancestors are disappointed. 📉","That wrong answer just served you a hot plate of breakfast. Drink the tea! ☕","Error 404: Brain not found. You just lost points. Back to JSS3! 🤡","Negative marking is not your friend. Stop guessing, start thinking! 🛑"],
-  rankup:{IDAN:"🚨 NEW CHAMPION ALERT! You're no longer a BEGINNER in this game. 👑",CHAMPION:"🎶 STOP THE MUSIC! Champion rank achieved. The library wants its best student back! 🧠",CHAMPION_ELITE:"BOW DOWN! 🙇 We have a new Champion Elite. The crown looks good on you! 🏆"},  // ← champion → CHAMPION_ELITE
-  cheat:["Idan, why are you leaving the room? The CBT invigilator is watching you! 🧐","Searching Google won't save you in the hall. Stay here and jack! 🚫","One more tab switch and we're calling your HOD. Stay focused! 📞"],
-  final:[{min:10,max:10,msg:"CBT Terrorist! 🎯 You have finished the work. Go and buy yourself a cold drink, you've earned it! 🍺"},{min:7,max:9,msg:"Solid work! 🔥 You're definitely in the First Class bracket. Keep the fire burning!"},{min:4,max:6,msg:"You are standing on the fence. 🌬️ If breeze blows, you're going to the Carryover side. Wake up!"},{min:0,max:3,msg:"My brother/sister, have you considered a career in comedy? Because this score is a huge joke! 🎭"},{min:-Infinity,max:-1,msg:"Negative score?! Even the exam paper is crying for you. Go and re-read everything! 😭"}]  // ← negative range added
+  correct:[
+    "Oshey! Your brain is currently on 5G network. Keep it moving! 📶",
+    "Scholar behavior! Even the Vice-Chancellor don hear about your progress. 👑",
+    "Haba! Are you the one that set this exam? This Jacking level is dangerous! 🧠",
+    "CBT Center is already shivering! You're making this course look like nursery rhymes. 📖",
+    "Eissshhh! You solved that like it was a WhatsApp message. Jacking level: Infinite! 🔥",
+    "Loading genius... 99% complete. Don't stop now! 🚀",
+    "You just folded that question like a ₦500 note. Real Idan energy! 💸",
+    "Oshey, Idan! Scholar behaviour detected! ✅",
+    "You're built different! Even the question is intimidated by you. 🧠",
+    "See this one! You answered that faster than UNILORIN WiFi disconnects. ⚡",
+    "Your ancestors are proud. The whole village is jumping! 🎉",
+    "Correct! Your jacking is paying off. The library chair recognizes you. 📚",
+    "Kai! You just ended that question's career. No mercy! 🎯",
+    "Big brain behavior! CGPA is smiling at you from a distance. 😤"
+  ],
+  wrong:[
+    "Omo, that answer was a whole vibe — unfortunately the wrong one. Try again! 😅",
+    "This is how carryover starts o! Read the explanation before your village people win. 🧙",
+    "Item 7 chicken is distracting you. Focus! This unit is not a joke! 🍗",
+    "Omo, if you use this logic in the CBT center, the computer might shut down from shame. 💀",
+    "You're thinking about your situationship. Breakups are temporary, Carryover is a 1-year contract! 💔",
+    "Is it because there's no light in the hostel that your brain is also doing blackout? 💡",
+    "Your village people are typing 'Type Amen' on your GP. Don't let them win! 🕯️",
+    "Error 404: Correct answer not found in your head. Install more jacking! 🤡",
+    "Aunty/Uncle, where did you get that answer from? Your dream? Wake up! 😴",
+    "That answer went to Asa Dam and didn't come back. Try again! 🌊",
+    "Your roommate that didn't read is doing better than this. Embarrassing! 😬",
+    "The question didn't do anything to you. Why did you treat it like that? 😭",
+    "Na so carryover dey start — one wrong answer at a time. Read the hint! 📖"
+  ],
+  negative:[
+    "Ouch! Negative points. Even your ancestors are disappointed. 📉",
+    "That wrong answer just served you a hot plate of breakfast. Drink the tea! ☕",
+    "Error 404: Brain not found. You just lost points. Back to JSS3! 🤡",
+    "Negative marking is not your friend. Stop guessing, start thinking! 🛑",
+    "You just donated points to the void. Your GP is crying. 😢",
+    "Omo you gambled and lost! This is not Who Wants To Be A Millionaire. Think first! 🎰"
+  ],
+  rankup:{
+    IDAN:          "🚨 RANK UP! You're no longer a learner in this game. IDAN status unlocked! 👑",
+    CHAMPION:      "🎶 STOP THE MUSIC! Champion rank achieved. The library wants its best student back! 🧠",
+    CHAMPION_ELITE:"BOW DOWN! 🙇 Champion Elite has entered the building. The crown looks good on you! 🏆"
+  },
+  cheat:[
+    "Idan, why are you leaving the room? The CBT invigilator is watching you! 🧐",
+    "Searching Google won't save you in the exam hall. Stay here and jack! 🚫",
+    "One more tab switch and we're calling your HOD. Stay focused! 📞",
+    "You wan run go where? Sit down and face your destiny! 😤",
+    "Tab switching detected. Your village people sent you. Resist them! 🕯️"
+  ],
+  final:[
+    {min:10, max:10,  msg:"CBT Terrorist! 🎯 You finished the work. Go buy yourself a cold Pepsi — you've earned it! 🥤"},
+    {min:7,  max:9,   msg:"Solid work! 🔥 First Class bracket is calling your name. Keep the fire burning!"},
+    {min:4,  max:6,   msg:"You are standing on the fence. 🌬️ If breeze blows, you're going to the Carryover side. Wake up!"},
+    {min:0,  max:3,   msg:"My brother/sister, have you considered a career in comedy? Because this score is a huge joke! 🎭"},
+    {min:-Infinity, max:-1, msg:"Negative score?! Even the exam paper is feeling sorry for you. Close this and go and read! 😭"}
+  ]
 };
 const vRand = arr => arr[Math.floor(Math.random()*arr.length)];
 
