@@ -6,10 +6,11 @@
 <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
 <meta name="theme-color" content="#f5c518">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Favicon & Browser Tab -->
+ <!-- Favicon & Browser Tab -->
 <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
 <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
-<title>ExamMaster — PHY 102 Battle</title>
+
+<title>ExamMaster — CHM 102 Battle</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -144,16 +145,16 @@ input:focus { border-color:var(--gold); }
     <div class="nav-brand">Exam<span>Master</span> ⚡</div>
     <div class="nav-right">
       <div class="live-score" id="liveScore">⚡ <span id="liveScoreNum">0</span> PTS</div>
-      <div class="nav-badge">PHY 102 · Battle</div>
+      <div class="nav-badge">CHM 102 · Battle</div>
     </div>
   </div>
 </nav>
 
 <div class="screen active" id="landingScreen">
   <div class="hero">
-    <div class="hero-badge">🔥 Season 2026 — PHY 102 Edition</div>
-    <h1><span class="w1">ELECTRIC</span><span class="w2">FIELD</span><span class="w3">BATTLE ⚡</span></h1>
-    <p class="hero-sub">10 Questions · Coulomb's Law · Gauss's Law · Point Charges<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
+    <div class="hero-badge">🔥 Season 2026 — CHM 102 Edition</div>
+    <h1><span class="w1">TRANSITION</span><span class="w2">METAL-LORDS</span><span class="w3">BATTLE ⚡</span></h1>
+    <p class="hero-sub">15 Questions · Transition metals · Characteristics · Complexes<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
     <div class="form-card fadeUp">
   <div class="form-row">
     <label class="form-label" for="uName">Scholar's Full Name</label>
@@ -230,8 +231,8 @@ input:focus { border-color:var(--gold); }
 </div>
 
 <script>
-  const QUIZ_OPEN  = new Date('2026-05-22T21:00:00');
-const QUIZ_CLOSE = new Date('2026-05-22T21:09:00');
+  const QUIZ_OPEN  = new Date('2026-05-23T21:00:00');
+const QUIZ_CLOSE = new Date('2026-05-23T21:06:00');
 const isBossBattle = false;
 
 const V = {
@@ -287,7 +288,7 @@ const V = {
     "Tab switching detected. Your village people sent you. Resist them! 🕯️"
   ],
   final:[
-    {min:10, max:10,  msg:"CBT Terrorist! 🎯 You finished the work. Go buy yourself a cold Pepsi — you've earned it! 🥤"},
+    {min:10, max:15,  msg:"CBT Terrorist! 🎯 You finished the work. Go buy yourself a cold Pepsi — you've earned it! 🥤"},
     {min:7,  max:9,   msg:"Solid work! 🔥 First Class bracket is calling your name. Keep the fire burning!"},
     {min:4,  max:6,   msg:"You are standing on the fence. 🌬️ If breeze blows, you're going to the Carryover side. Wake up!"},
     {min:0,  max:3,   msg:"My brother/sister, have you considered a career in comedy? Because this score is a huge joke! 🎭"},
@@ -295,18 +296,143 @@ const V = {
   ]
 };
 const vRand = arr => arr[Math.floor(Math.random()*arr.length)];
-
+  
 const questions = [
-  {difficulty:"soft",points:5,text:"What is an Electric Field?",options:["A region where a test charge experiences a magnetic force","A region around a charged object where another charge experiences an electric force","The voltage difference between two plates","The current flowing through a conductor"],correct:1,explanation:"⚡ An electric field is the 'influence zone' of a charge. Imagine a boss (charge) in the middle of class — every area around them is uncomfortable (field). Place a test charge (the victim) inside and it feels a force. Simple!"},
-  {difficulty:"soft",points:5,text:"What is the SI unit of Electric Field Intensity (E)?",options:["Tesla (T)","Coulomb (C)","Newton per Coulomb (N/C)","Volt (V)"],correct:2,explanation:"🎯 E = F/q, so unit = Newton/Coulomb = N/C. You can also write it as V/m — they're equivalent. Unilorin loves asking this in CBT. Lock it in!"},
-  {difficulty:"soft",points:5,text:"Coulomb's Law: the electrostatic force between two charges is:",options:["Directly proportional to distance","Inversely proportional to the square of distance between them","Equal to the sum of the two charges","Only attractive, never repulsive"],correct:1,explanation:"📐 F = kq₁q₂/r². Force INCREASES when charges are bigger and DECREASES with r². Like WiFi signal — the farther from the router, the weaker it gets. Savage drop-off!"},
-  {difficulty:"medium",points:10,text:"Two charges +2μC and +3μC are separated by 0.1 m. What is the electrostatic force? (k = 9×10⁹ N·m²/C²)",options:["5.4 N","0.54 N","54 N","0.054 N"],correct:0,explanation:"🧮 F = kq₁q₂/r² = (9×10⁹ × 2×10⁻⁶ × 3×10⁻⁶) / (0.1)² = 0.054 / 0.01 = 5.4 N. Always convert μC → C (÷ 10⁶) first. The CBT computer doesn't accept excuses!"},
-  {difficulty:"medium",points:10,text:"A test charge of 4μC experiences a force of 0.02 N. What is the electric field intensity at that point?",options:["5000 N/C","50,000 N/C","500 N/C","0.00000008 N/C"],correct:0,explanation:"🔬 E = F/q = 0.02 ÷ (4×10⁻⁶) = 5000 N/C. E = F/q is your best friend in this topic. Simpler than a JAMB form — you have Force and Charge, just divide!"},
-  {difficulty:"medium",points:10,text:"Which statement about electric field lines is correct?",options:["They flow from negative to positive charges","They start on positive charges and end on negative charges","They are always parallel to each other","They represent magnetic field patterns"],correct:1,explanation:"➡️ Field lines go from POSITIVE ➕ to NEGATIVE ➖. 'Positive is boss — field lines leave the boss and arrive at the humble negative side.' Where lines are dense, the field is strong."},
-  {difficulty:"medium",points:10,text:"Gauss's Law states that the total electric flux through any closed surface equals:",options:["The total enclosed charge divided by ε₀","The surface area times the electric field","The magnetic field passing through the surface","The potential difference across the surface"],correct:0,explanation:"🔵 Φ_E = Q_enc/ε₀. Flux through any closed surface = total enclosed charge ÷ permittivity. 'Field lines escaping your imaginary bubble depend ONLY on the charge inside.' Supremely elegant."},
-  {difficulty:"hard",points:20,text:"A conducting sphere of radius 0.2 m carries +10μC. What is E at 0.5 m from the centre? (k = 9×10⁹ N·m²/C²)",options:["360,000 N/C","3,600 N/C","36,000 N/C","225,000 N/C"],correct:0,explanation:"🧠 0.5 m > 0.2 m (outside sphere) → E = kQ/r² = (9×10⁹ × 10×10⁻⁶) / (0.5)² = 90,000 / 0.25 = 360,000 N/C. Outside conductor → E = kQ/r². Inside conductor → E = 0."},
-  {difficulty:"hard",points:20,text:"What is the electric field INSIDE a solid conducting sphere in electrostatic equilibrium?",options:["E = kQ/r²","E = 0 (zero)","E = kQ/r","E = Q/(4πε₀r³)"],correct:1,explanation:"💡 Zero! Inside a conductor in equilibrium, E = 0. Free electrons redistribute until internal field cancels. Gaussian surface inside → Q_enc = 0 → E = 0. Most tested fact in PHY 102!"},
-  {difficulty:"hard",points:20,text:"Charges +Q and -Q are placed 2d apart. What is the electric field at the midpoint? (Each creates E = kQ/d² at midpoint)",options:["Zero — they cancel","kQ/d² pointing from +Q to -Q","2kQ/d² pointing from +Q to -Q","kQ/(2d)² in a random direction"],correct:2,explanation:"🎓 At midpoint: +Q pushes field toward -Q. -Q pulls field toward itself — also toward -Q. Both fields point the SAME direction and ADD: E_total = 2kQ/d². Many think they cancel — direction is key!"}
+  {
+    difficulty: "soft",
+    points: 5,
+    text: "Transition metals are elements found in which block of the periodic table?",
+    options: ["s-block", "p-block", "d-block", "f-block"],
+    correct: 2,
+    explanation: "📊 Transition metals are d-block elements — they fill the 3d, 4d, or 5d orbitals. Found in groups 3–12 of the periodic table. Examples: Fe, Cu, Zn, Cr, Mn. If Unilorin asks block → answer is d-block. Simple!"
+  },
+  {
+    difficulty: "soft",
+    points: 5,
+    text: "Which of the following is a characteristic property of transition metals?",
+    options: ["They form only one oxidation state", "They are all gases at room temperature", "They exhibit variable oxidation states", "They do not form complex ions"],
+    correct: 2,
+    explanation: "🎭 Variable oxidation states! Iron can be Fe²⁺ or Fe³⁺. Manganese ranges from +2 to +7! This is because d-electrons are close in energy and can be removed in different amounts. Classic transition metal property!"
+  },
+  {
+    difficulty: "soft",
+    points: 5,
+    text: "What gives transition metal compounds their characteristic colours?",
+    options: ["Their high density", "d-d electron transitions absorbing visible light", "Their large atomic radius", "The presence of s-electrons"],
+    correct: 1,
+    explanation: "🌈 Colour comes from d-d transitions! When visible light hits a transition metal ion, electrons jump between d-orbitals of different energies, absorbing certain wavelengths. The colour we see is the complementary colour. CuSO₄ is blue — copper absorbs red light!"
+  },
+  {
+    difficulty: "soft",
+    points: 5,
+    text: "Which of the following transition metals is liquid at room temperature?",
+    options: ["Iron (Fe)", "Mercury (Hg)", "Copper (Cu)", "Zinc (Zn)"],
+    correct: 1,
+    explanation: "🌡️ Mercury (Hg) is the only metal that is liquid at room temperature (melting point = -39°C). It's also a transition metal! Famous for thermometers and causing environmental pollution. Don't drink it — it's toxic!"
+  },
+  {
+    difficulty: "soft",
+    points: 5,
+    text: "The electron configuration of Fe (Iron, Z=26) is:",
+    options: ["[Ar] 3d⁶ 4s²", "[Ar] 3d⁸", "[Kr] 3d⁶ 4s²", "[Ar] 3d⁵ 4s¹"],
+    correct: 0,
+    explanation: "⚙️ Fe = [Ar] 3d⁶ 4s². Argon core = 18 electrons, then 3d⁶ (6 electrons in d) + 4s² (2 electrons in s) = 26 total. Remember: 4s fills BEFORE 3d but empties BEFORE 3d when forming ions. Unilorin loves electron config questions!"
+  },
+  {
+    difficulty: "medium",
+    points: 10,
+    text: "A complex ion [Cu(NH₃)₄]²⁺ has a coordination number of:",
+    options: ["2", "4", "6", "8"],
+    correct: 1,
+    explanation: "🔢 Coordination number = number of ligands bonded to the central metal ion. [Cu(NH₃)₄]²⁺ has 4 NH₃ ligands → coordination number = 4. The square brackets tell you it's a complex ion. Count the ligands — done!"
+  },
+  {
+    difficulty: "medium",
+    points: 10,
+    text: "In the complex ion [Fe(CN)₆]³⁻, what is the oxidation state of iron?",
+    options: ["+2", "+3", "+6", "-3"],
+    correct: 1,
+    explanation: "🧮 Each CN⁻ ligand has charge -1. Six CN⁻ = -6. Overall complex charge = -3. So: Fe + (-6) = -3 → Fe = +3. Fe is in +3 oxidation state. Always: metal ox. state + ligand charges = overall complex charge. Algebra saves lives!"
+  },
+  {
+    difficulty: "medium",
+    points: 10,
+    text: "Which of the following ligands is bidentate (donates two lone pairs to the metal)?",
+    options: ["NH₃ (ammonia)", "H₂O (water)", "Cl⁻ (chloride)", "en (ethylenediamine)"],
+    correct: 3,
+    explanation: "🦷 Bidentate = two donor atoms. Ethylenediamine (en = H₂NCH₂CH₂NH₂) has TWO nitrogen atoms, each donating a lone pair to the metal. NH₃, H₂O, and Cl⁻ are monodentate (one donor). 'Bi' = two — like bicycle has two wheels!"
+  },
+  {
+    difficulty: "medium",
+    points: 10,
+    text: "Transition metals are excellent catalysts because they:",
+    options: ["Are very cheap to produce", "Have variable oxidation states and can adsorb reactants on their surface", "Are all radioactive", "Have very low melting points"],
+    correct: 1,
+    explanation: "⚡ Two reasons: (1) Variable oxidation states allow electron transfer in reactions, and (2) their surfaces can adsorb reactants, bringing them close together. Iron catalyses the Haber process (making NH₃). Vanadium(V) oxide catalyses SO₃ production. Transition metals = chemistry's workhorses!"
+  },
+  {
+    difficulty: "medium",
+    points: 10,
+    text: "Which transition metal ion is responsible for the red colour of blood (haemoglobin)?",
+    options: ["Cu²⁺", "Fe²⁺", "Zn²⁺", "Mn²⁺"],
+    correct: 1,
+    explanation: "🩸 Iron (Fe²⁺) in haemoglobin gives blood its red colour! The Fe²⁺ ion sits in a porphyrin ring complex and binds O₂. When oxygenated → bright red. Deoxygenated → darker red. Fe²⁺ oxidised to Fe³⁺ → can't carry O₂ (carbon monoxide poisoning mechanism!)"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "According to Crystal Field Theory, the d-orbitals in an octahedral complex split into two sets. Which set has HIGHER energy?",
+    options: ["t₂g (dxy, dxz, dyz)", "eg (dx²-y², dz²)", "Both sets have equal energy", "It depends on the metal only"],
+    correct: 1,
+    explanation: "🏆 In octahedral CFT: ligands approach along axes → dx²-y² and dz² (eg set) point DIRECTLY at ligands → higher repulsion → HIGHER energy. t₂g (dxy, dxz, dyz) point BETWEEN ligands → lower repulsion → LOWER energy. Δ₀ = energy gap between them."
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "The magnetic properties of transition metal complexes depend on:",
+    options: ["The colour of the complex only", "The number of unpaired d-electrons (paramagnetic if unpaired, diamagnetic if all paired)", "The physical state of the metal", "The temperature of the solution"],
+    correct: 1,
+    explanation: "🧲 Unpaired electrons → PARAMAGNETIC (attracted to magnetic field). All electrons paired → DIAMAGNETIC (slightly repelled). Fe²⁺ has 4 unpaired d-electrons → strongly paramagnetic. Cu²⁺ has 1 unpaired → weakly paramagnetic. Count unpaired electrons to predict magnetism!"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "What is the IUPAC name of the complex [Co(NH₃)₅Cl]Cl₂?",
+    options: [
+      "Cobalt pentaamminechloride dichloride",
+      "Pentaamminechloridocobalt(III) chloride",
+      "Chloropentaamminecobalt(II) chloride",
+      "Pentachloroamminecobalt(III)"
+    ],
+    correct: 1,
+    explanation: "📝 IUPAC rules for complexes: (1) Name ligands alphabetically before metal, (2) metal oxidation state in Roman numerals, (3) name anion outside brackets last. Co is +3 (5 NH₃ + 1 Cl⁻ inside, 2 Cl⁻ outside: Co + (-1) = +2 charge... wait — overall: Co + (-1) + 2(-1) = 0, Co=+3). Answer: Pentaamminechloridocobalt(III) chloride!"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "The spectrochemical series ranks ligands by their ability to cause d-orbital splitting. Which arrangement is CORRECT (weak field → strong field)?",
+    options: [
+      "CN⁻ < NH₃ < H₂O < Cl⁻ < I⁻",
+      "I⁻ < Cl⁻ < H₂O < NH₃ < CN⁻",
+      "NH₃ < H₂O < Cl⁻ < I⁻ < CN⁻",
+      "H₂O < CN⁻ < NH₃ < Cl⁻ < I⁻"
+    ],
+    correct: 1,
+    explanation: "⚗️ Spectrochemical series (weak → strong field): I⁻ < Br⁻ < Cl⁻ < F⁻ < OH⁻ < H₂O < NH₃ < en < CN⁻ < CO. Strong field ligands cause LARGE splitting → low spin complexes. Weak field → small splitting → high spin. CN⁻ is the strongest common ligand — toxic but powerful!"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "Zinc (Zn, Z=30) is sometimes NOT classified as a true transition metal because:",
+    options: [
+      "It is a gas at room temperature",
+      "Its most stable ion (Zn²⁺) has a completely filled d-subshell (3d¹⁰), so it shows no d-d transitions or variable oxidation states",
+      "It does not conduct electricity",
+      "It has no metallic bonding"
+    ],
+    correct: 1,
+    explanation: "🔍 True transition metals have PARTIALLY filled d-orbitals in at least one oxidation state. Zn²⁺ = [Ar]3d¹⁰ — fully filled! No d-d transitions → no colour. Only one oxidation state (+2). No catalytic d-orbital behaviour. Zinc is a border case — important distinction for Unilorin!"
+  }
 ];
 
 let S={name:'',email:'',score:0,currentQ:0,correctCount:0,startTime:null,tabWarnings:0,quizEnded:false,answered:false,timerInt:null};
@@ -406,7 +532,7 @@ if (now > QUIZ_CLOSE) {
   }
 }
 
-const QUIZ_TIME_LIMIT = 8 * 60; // 8 minutes in seconds
+const QUIZ_TIME_LIMIT = 8 * 60; // 5 minutes in seconds
 
 function startTimer() {
   let remaining = QUIZ_TIME_LIMIT;
@@ -496,7 +622,7 @@ async function endQuiz() {
     maxScore,
     correct:   S.correctCount,
     total:     questions.length,
-    category:  'PHY102',
+    category:  'CHM102',
     timeTaken: `${mins}:${secs}`,
     rank:      title,
     timestamp: new Date().toISOString(),
@@ -514,7 +640,7 @@ async function endQuiz() {
         window.location.href = LEADERBOARD_URL
           + `?name=${encodeURIComponent(S.name)}`
           + `&score=${S.score}`
-          + `&subject=PHY102`;
+          + `&subject=CHM102`;
       }, 3000);
     } else {
       setTimeout(() => { window.location.href = LEADERBOARD_URL; }, 4000);
@@ -596,7 +722,7 @@ function generateCard(){
   ctx.strokeStyle=bgrad;ctx.lineWidth=10;ctx.strokeRect(6,6,W-12,H-12);
   ctx.strokeStyle='rgba(245,197,24,0.2)';ctx.lineWidth=1;ctx.strokeRect(18,18,W-36,H-36);
   ctx.textAlign='left';ctx.fillStyle='#f5c518';ctx.font='bold 15px Arial';ctx.fillText('EXAMMASTER',34,48);
-  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · PHY 102 · 2026',34,63);
+  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · CHM 102 · 2026',34,63);
   ctx.textAlign='right';ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText(new Date().toLocaleDateString('en-NG',{day:'numeric',month:'short',year:'numeric'}),W-34,48);
   ctx.textAlign='center';ctx.fillStyle='rgba(240,240,248,0.3)';ctx.font='bold 10px Arial';ctx.fillText('CERTIFICATE OF IDAN',W/2,95);
   ctx.font='46px Arial';ctx.fillText(icon,W/2,160);
@@ -606,7 +732,7 @@ function generateCard(){
   ctx.fillStyle='rgba(245,197,24,0.07)';roundRect(ctx,W/2-115,304,230,32,7);ctx.fill();
   ctx.strokeStyle='rgba(245,197,24,0.22)';ctx.lineWidth=1;roundRect(ctx,W/2-115,304,230,32,7);ctx.stroke();
   ctx.fillStyle='#f5c518';ctx.font='bold 14px Arial';ctx.fillText(`Score: ${S.score} / ${maxScore} pts  ·  ${S.correctCount}/${questions.length} Correct`,W/2,325);
-  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"PHY 102 tried, but I am the Father." — CBT Compliant',W/2,372);
+  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"CHM 102 tried, but I am the BOSS." — CBT Compliant',W/2,372);
 }
 function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();}
 function downloadCard(){const canvas=document.getElementById('idanCanvas');const link=document.createElement('a');link.download=`ExamMaster_${(S.name||'Idan').replace(/\s+/g,'_')}_RankCard.png`;link.href=canvas.toDataURL('image/png');link.click();}
