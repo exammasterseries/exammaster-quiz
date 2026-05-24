@@ -10,7 +10,7 @@
 <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
 <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
 
-<title>ExamMaster — CHM 102 Battle</title>
+<title>ExamMaster — MTH 102 Battle</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -145,16 +145,16 @@ input:focus { border-color:var(--gold); }
     <div class="nav-brand">Exam<span>Master</span> ⚡</div>
     <div class="nav-right">
       <div class="live-score" id="liveScore">⚡ <span id="liveScoreNum">0</span> PTS</div>
-      <div class="nav-badge">CHM 102 · Battle</div>
+      <div class="nav-badge">MTH 102 · Battle</div>
     </div>
   </div>
 </nav>
 
 <div class="screen active" id="landingScreen">
   <div class="hero">
-    <div class="hero-badge">🔥 Season 2026 — CHM 102 Edition</div>
-    <h1><span class="w1">TRANSITION</span><span class="w2">METAL-LORDS</span><span class="w3">BATTLE ⚡</span></h1>
-    <p class="hero-sub">15 Questions · Transition metals · Characteristics · Complexes<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
+    <div class="hero-badge">🔥 Season 2026 — MTH 102 Edition</div>
+    <h1><span class="w1">CHAIN-TO</span><span class="w2">PRODUCT</span><span class="w3">BATTLE ⚡</span></h1>
+    <p class="hero-sub">10 Questions · Product/Quotient/Chain Rules ·  Implicit & Parametric<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
     <div class="form-card fadeUp">
   <div class="form-row">
     <label class="form-label" for="uName">Scholar's Full Name</label>
@@ -231,8 +231,8 @@ input:focus { border-color:var(--gold); }
 </div>
 
 <script>
-  const QUIZ_OPEN  = new Date('2026-05-23T21:00:00');
-const QUIZ_CLOSE = new Date('2026-05-23T21:06:00');
+  const QUIZ_OPEN  = new Date('2026-05-24T21:00:00');
+const QUIZ_CLOSE = new Date('2026-05-24T21:09:00');
 const isBossBattle = false;
 
 const V = {
@@ -288,7 +288,7 @@ const V = {
     "Tab switching detected. Your village people sent you. Resist them! 🕯️"
   ],
   final:[
-    {min:10, max:15,  msg:"CBT Terrorist! 🎯 You finished the work. Go buy yourself a cold Pepsi — you've earned it! 🥤"},
+    {min:10, max:10,  msg:"CBT Terrorist! 🎯 You finished the work. Go buy yourself a cold Pepsi — you've earned it! 🥤"},
     {min:7,  max:9,   msg:"Solid work! 🔥 First Class bracket is calling your name. Keep the fire burning!"},
     {min:4,  max:6,   msg:"You are standing on the fence. 🌬️ If breeze blows, you're going to the Carryover side. Wake up!"},
     {min:0,  max:3,   msg:"My brother/sister, have you considered a career in comedy? Because this score is a huge joke! 🎭"},
@@ -297,144 +297,140 @@ const V = {
 };
 const vRand = arr => arr[Math.floor(Math.random()*arr.length)];
   
+
 const questions = [
   {
-    difficulty: "soft",
-    points: 5,
-    text: "Transition metals are elements found in which block of the periodic table?",
-    options: ["s-block", "p-block", "d-block", "f-block"],
-    correct: 2,
-    explanation: "📊 Transition metals are d-block elements — they fill the 3d, 4d, or 5d orbitals. Found in groups 3–12 of the periodic table. Examples: Fe, Cu, Zn, Cr, Mn. If Unilorin asks block → answer is d-block. Simple!"
-  },
-  {
-    difficulty: "soft",
-    points: 5,
-    text: "Which of the following is a characteristic property of transition metals?",
-    options: ["They form only one oxidation state", "They are all gases at room temperature", "They exhibit variable oxidation states", "They do not form complex ions"],
-    correct: 2,
-    explanation: "🎭 Variable oxidation states! Iron can be Fe²⁺ or Fe³⁺. Manganese ranges from +2 to +7! This is because d-electrons are close in energy and can be removed in different amounts. Classic transition metal property!"
-  },
-  {
-    difficulty: "soft",
-    points: 5,
-    text: "What gives transition metal compounds their characteristic colours?",
-    options: ["Their high density", "d-d electron transitions absorbing visible light", "Their large atomic radius", "The presence of s-electrons"],
-    correct: 1,
-    explanation: "🌈 Colour comes from d-d transitions! When visible light hits a transition metal ion, electrons jump between d-orbitals of different energies, absorbing certain wavelengths. The colour we see is the complementary colour. CuSO₄ is blue — copper absorbs red light!"
-  },
-  {
-    difficulty: "soft",
-    points: 5,
-    text: "Which of the following transition metals is liquid at room temperature?",
-    options: ["Iron (Fe)", "Mercury (Hg)", "Copper (Cu)", "Zinc (Zn)"],
-    correct: 1,
-    explanation: "🌡️ Mercury (Hg) is the only metal that is liquid at room temperature (melting point = -39°C). It's also a transition metal! Famous for thermometers and causing environmental pollution. Don't drink it — it's toxic!"
-  },
-  {
-    difficulty: "soft",
-    points: 5,
-    text: "The electron configuration of Fe (Iron, Z=26) is:",
-    options: ["[Ar] 3d⁶ 4s²", "[Ar] 3d⁸", "[Kr] 3d⁶ 4s²", "[Ar] 3d⁵ 4s¹"],
-    correct: 0,
-    explanation: "⚙️ Fe = [Ar] 3d⁶ 4s². Argon core = 18 electrons, then 3d⁶ (6 electrons in d) + 4s² (2 electrons in s) = 26 total. Remember: 4s fills BEFORE 3d but empties BEFORE 3d when forming ions. Unilorin loves electron config questions!"
-  },
-  {
-    difficulty: "medium",
-    points: 10,
-    text: "A complex ion [Cu(NH₃)₄]²⁺ has a coordination number of:",
-    options: ["2", "4", "6", "8"],
-    correct: 1,
-    explanation: "🔢 Coordination number = number of ligands bonded to the central metal ion. [Cu(NH₃)₄]²⁺ has 4 NH₃ ligands → coordination number = 4. The square brackets tell you it's a complex ion. Count the ligands — done!"
-  },
-  {
-    difficulty: "medium",
-    points: 10,
-    text: "In the complex ion [Fe(CN)₆]³⁻, what is the oxidation state of iron?",
-    options: ["+2", "+3", "+6", "-3"],
-    correct: 1,
-    explanation: "🧮 Each CN⁻ ligand has charge -1. Six CN⁻ = -6. Overall complex charge = -3. So: Fe + (-6) = -3 → Fe = +3. Fe is in +3 oxidation state. Always: metal ox. state + ligand charges = overall complex charge. Algebra saves lives!"
-  },
-  {
-    difficulty: "medium",
-    points: 10,
-    text: "Which of the following ligands is bidentate (donates two lone pairs to the metal)?",
-    options: ["NH₃ (ammonia)", "H₂O (water)", "Cl⁻ (chloride)", "en (ethylenediamine)"],
-    correct: 3,
-    explanation: "🦷 Bidentate = two donor atoms. Ethylenediamine (en = H₂NCH₂CH₂NH₂) has TWO nitrogen atoms, each donating a lone pair to the metal. NH₃, H₂O, and Cl⁻ are monodentate (one donor). 'Bi' = two — like bicycle has two wheels!"
-  },
-  {
-    difficulty: "medium",
-    points: 10,
-    text: "Transition metals are excellent catalysts because they:",
-    options: ["Are very cheap to produce", "Have variable oxidation states and can adsorb reactants on their surface", "Are all radioactive", "Have very low melting points"],
-    correct: 1,
-    explanation: "⚡ Two reasons: (1) Variable oxidation states allow electron transfer in reactions, and (2) their surfaces can adsorb reactants, bringing them close together. Iron catalyses the Haber process (making NH₃). Vanadium(V) oxide catalyses SO₃ production. Transition metals = chemistry's workhorses!"
-  },
-  {
-    difficulty: "medium",
-    points: 10,
-    text: "Which transition metal ion is responsible for the red colour of blood (haemoglobin)?",
-    options: ["Cu²⁺", "Fe²⁺", "Zn²⁺", "Mn²⁺"],
-    correct: 1,
-    explanation: "🩸 Iron (Fe²⁺) in haemoglobin gives blood its red colour! The Fe²⁺ ion sits in a porphyrin ring complex and binds O₂. When oxygenated → bright red. Deoxygenated → darker red. Fe²⁺ oxidised to Fe³⁺ → can't carry O₂ (carbon monoxide poisoning mechanism!)"
-  },
-  {
-    difficulty: "hard",
-    points: 20,
-    text: "According to Crystal Field Theory, the d-orbitals in an octahedral complex split into two sets. Which set has HIGHER energy?",
-    options: ["t₂g (dxy, dxz, dyz)", "eg (dx²-y², dz²)", "Both sets have equal energy", "It depends on the metal only"],
-    correct: 1,
-    explanation: "🏆 In octahedral CFT: ligands approach along axes → dx²-y² and dz² (eg set) point DIRECTLY at ligands → higher repulsion → HIGHER energy. t₂g (dxy, dxz, dyz) point BETWEEN ligands → lower repulsion → LOWER energy. Δ₀ = energy gap between them."
-  },
-  {
-    difficulty: "hard",
-    points: 20,
-    text: "The magnetic properties of transition metal complexes depend on:",
-    options: ["The colour of the complex only", "The number of unpaired d-electrons (paramagnetic if unpaired, diamagnetic if all paired)", "The physical state of the metal", "The temperature of the solution"],
-    correct: 1,
-    explanation: "🧲 Unpaired electrons → PARAMAGNETIC (attracted to magnetic field). All electrons paired → DIAMAGNETIC (slightly repelled). Fe²⁺ has 4 unpaired d-electrons → strongly paramagnetic. Cu²⁺ has 1 unpaired → weakly paramagnetic. Count unpaired electrons to predict magnetism!"
-  },
-  {
-    difficulty: "hard",
-    points: 20,
-    text: "What is the IUPAC name of the complex [Co(NH₃)₅Cl]Cl₂?",
-    options: [
-      "Cobalt pentaamminechloride dichloride",
-      "Pentaamminechloridocobalt(III) chloride",
-      "Chloropentaamminecobalt(II) chloride",
-      "Pentachloroamminecobalt(III)"
+    "difficulty": "soft",
+    "points": 5,
+    "text": "The product rule states that d/dx[f(x)·g(x)] equals:",
+    "options": [
+      "f'(x)·g'(x)",
+      "f'(x)·g(x) + f(x)·g'(x)",
+      "f'(x)·g(x) - f(x)·g'(x)",
+      "f(x)·g(x)/f'(x)"
     ],
-    correct: 1,
-    explanation: "📝 IUPAC rules for complexes: (1) Name ligands alphabetically before metal, (2) metal oxidation state in Roman numerals, (3) name anion outside brackets last. Co is +3 (5 NH₃ + 1 Cl⁻ inside, 2 Cl⁻ outside: Co + (-1) = +2 charge... wait — overall: Co + (-1) + 2(-1) = 0, Co=+3). Answer: Pentaamminechloridocobalt(III) chloride!"
+    "correct": 1,
+    "explanation": "📌 Product rule: (uv)' = u'v + uv'. Think 'differentiate first × keep second, PLUS keep first × differentiate second'. Two terms always. Unilorin will give you a product of two functions — this is your weapon!"
   },
   {
-    difficulty: "hard",
-    points: 20,
-    text: "The spectrochemical series ranks ligands by their ability to cause d-orbital splitting. Which arrangement is CORRECT (weak field → strong field)?",
-    options: [
-      "CN⁻ < NH₃ < H₂O < Cl⁻ < I⁻",
-      "I⁻ < Cl⁻ < H₂O < NH₃ < CN⁻",
-      "NH₃ < H₂O < Cl⁻ < I⁻ < CN⁻",
-      "H₂O < CN⁻ < NH₃ < Cl⁻ < I⁻"
+    "difficulty": "soft",
+    "points": 5,
+    "text": "The quotient rule for d/dx[f(x)/g(x)] is:",
+    "options": [
+      "[f'g - fg']/g",
+      "[f'g + fg']/g²",
+      "[f'g - fg']/g²",
+      "f'(x)/g'(x)"
     ],
-    correct: 1,
-    explanation: "⚗️ Spectrochemical series (weak → strong field): I⁻ < Br⁻ < Cl⁻ < F⁻ < OH⁻ < H₂O < NH₃ < en < CN⁻ < CO. Strong field ligands cause LARGE splitting → low spin complexes. Weak field → small splitting → high spin. CN⁻ is the strongest common ligand — toxic but powerful!"
+    "correct": 2,
+    "explanation": "🎯 Quotient rule: (u/v)' = (u'v - vu')/v². Mnemonic: 'Low d-High minus High d-Low, all over Low squared.' The MINUS sign and the v² denominator are the two things students always miss. Never forget them!"
   },
   {
-    difficulty: "hard",
-    points: 20,
-    text: "Zinc (Zn, Z=30) is sometimes NOT classified as a true transition metal because:",
-    options: [
-      "It is a gas at room temperature",
-      "Its most stable ion (Zn²⁺) has a completely filled d-subshell (3d¹⁰), so it shows no d-d transitions or variable oxidation states",
-      "It does not conduct electricity",
-      "It has no metallic bonding"
+    "difficulty": "soft",
+    "points": 5,
+    "text": "The chain rule for d/dx[f(g(x))] is:",
+    "options": [
+      "f'(g(x))",
+      "f'(g(x))·g'(x)",
+      "f(g'(x))",
+      "f'(x)·g'(x)"
     ],
-    correct: 1,
-    explanation: "🔍 True transition metals have PARTIALLY filled d-orbitals in at least one oxidation state. Zn²⁺ = [Ar]3d¹⁰ — fully filled! No d-d transitions → no colour. Only one oxidation state (+2). No catalytic d-orbital behaviour. Zinc is a border case — important distinction for Unilorin!"
+    "correct": 1,
+    "explanation": "⛓️ Chain rule: differentiate the OUTER function (leaving inner alone) then MULTIPLY by derivative of the inner. d/dx[(3x+1)⁵] = 5(3x+1)⁴ · 3 = 15(3x+1)⁴. Outer × inner derivative. Always!"
+  },
+  {
+    "difficulty": "soft",
+    "points": 5,
+    "text": "To differentiate implicitly, if y is a function of x, d/dx(y²) equals:",
+    "options": [
+      "2y",
+      "2y·(dy/dx)",
+      "y²",
+      "2x"
+    ],
+    "correct": 1,
+    "explanation": "📐 Implicit: treat y as a function of x and use chain rule. d/dx(y²) = 2y·(dy/dx). Every time you differentiate a y-term, multiply by dy/dx. This is the core mechanic of implicit differentiation!"
+  },
+  {
+    "difficulty": "medium",
+    "points": 10,
+    "text": "Differentiate f(x) = x²·sin(x).",
+    "options": [
+      "2x·cos(x)",
+      "x²cos(x) + 2x·sin(x)",
+      "2x·sin(x) + x²cos(x)",
+      "x²·cos(x) - 2x·sin(x)"
+    ],
+    "correct": 2,
+    "explanation": "🧮 Product rule: u=x², u'=2x; v=sin(x), v'=cos(x). Result: u'v + uv' = 2x·sin(x) + x²·cos(x). Note options B and C look identical — they ARE the same by commutativity. Unilorin might order terms differently, always simplify and match!"
+  },
+  {
+    "difficulty": "medium",
+    "points": 10,
+    "text": "Find dy/dx for y = (3x + 1)⁶.",
+    "options": [
+      "6(3x+1)⁵",
+      "18(3x+1)⁵",
+      "(3x+1)⁵",
+      "6x(3x+1)⁵"
+    ],
+    "correct": 1,
+    "explanation": "⛓️ Chain rule: outer derivative = 6(3x+1)⁵, inner derivative = 3. Multiply: 6·3·(3x+1)⁵ = 18(3x+1)⁵. Students always forget to multiply by the inner derivative (the 3). That multiplication separates A students from the rest!"
+  },
+  {
+    "difficulty": "medium",
+    "points": 10,
+    "text": "Find dy/dx if y = (x² + 1)/(2x - 3).",
+    "options": [
+      "(2x²-6x-2)/(2x-3)²",
+      "(2x)/(2)",
+      "(2x(2x-3)-2(x²+1))/(2x-3)²",
+      "2x/(2x-3)"
+    ],
+    "correct": 2,
+    "explanation": "🔬 Quotient rule: u=x²+1, u'=2x; v=2x-3, v'=2. (u'v-uv')/v² = [2x(2x-3) - 2(x²+1)]/(2x-3)². Numerator: 4x²-6x-2x²-2 = 2x²-6x-2. Full answer: (2x²-6x-2)/(2x-3)². Expand carefully — sign errors are the top Unilorin mistake!"
+  },
+  {
+    "difficulty": "medium",
+    "points": 10,
+    "text": "Given x = t², y = t³, find dy/dx in terms of t.",
+    "options": [
+      "3t/2",
+      "2t/3",
+      "3t²/2t",
+      "t"
+    ],
+    "correct": 0,
+    "explanation": "📐 Parametric: dy/dx = (dy/dt)/(dx/dt). dy/dt = 3t², dx/dt = 2t. So dy/dx = 3t²/2t = 3t/2. Always divide dy/dt by dx/dt for parametric. Never differentiate x and y with respect to x directly when parametric!"
+  },
+  {
+    "difficulty": "hard",
+    "points": 20,
+    "text": "Find dy/dx by implicit differentiation: x² + y² = 25.",
+    "options": [
+      "dy/dx = -x/y",
+      "dy/dx = x/y",
+      "dy/dx = -y/x",
+      "dy/dx = 2x/2y"
+    ],
+    "correct": 0,
+    "explanation": "🧠 Differentiate both sides: 2x + 2y(dy/dx) = 0. Solve: 2y(dy/dx) = -2x → dy/dx = -x/y. This is the slope of a circle of radius 5. At (3,4): dy/dx = -3/4. Implicit differentiation is heavily tested in Unilorin — practice till it's automatic!"
+  },
+  {
+    "difficulty": "hard",
+    "points": 20,
+    "text": "Differentiate y = sin(x²)·eˣ using product and chain rules.",
+    "options": [
+      "cos(x²)·eˣ",
+      "2x·cos(x²)·eˣ + sin(x²)·eˣ",
+      "sin(x²)·eˣ + cos(x²)",
+      "2x·cos(x²) + eˣ"
+    ],
+    "correct": 1,
+    "explanation": "🎓 Product rule: u=sin(x²), v=eˣ. u' = cos(x²)·2x (chain rule!), v' = eˣ. Result: u'v+uv' = 2x·cos(x²)·eˣ + sin(x²)·eˣ. Two rules in one question — this is peak Unilorin hard territory. Chain rule inside product rule: stay calm, go step by step!"
   }
 ];
-
+ 
 let S={name:'',email:'',score:0,currentQ:0,correctCount:0,startTime:null,tabWarnings:0,quizEnded:false,answered:false,timerInt:null};
 
 ['uName','uPhone','uCode'].forEach(id=>document.getElementById(id).addEventListener('input',checkForm));
@@ -532,7 +528,7 @@ if (now > QUIZ_CLOSE) {
   }
 }
 
-const QUIZ_TIME_LIMIT = 8 * 60; // 5 minutes in seconds
+const QUIZ_TIME_LIMIT = 8 * 60; // 8 minutes in seconds
 
 function startTimer() {
   let remaining = QUIZ_TIME_LIMIT;
@@ -622,7 +618,7 @@ async function endQuiz() {
     maxScore,
     correct:   S.correctCount,
     total:     questions.length,
-    category:  'CHM102',
+    category:  'MTH102',
     timeTaken: `${mins}:${secs}`,
     rank:      title,
     timestamp: new Date().toISOString(),
@@ -640,7 +636,7 @@ async function endQuiz() {
         window.location.href = LEADERBOARD_URL
           + `?name=${encodeURIComponent(S.name)}`
           + `&score=${S.score}`
-          + `&subject=CHM102`;
+          + `&subject=MTH102`;
       }, 3000);
     } else {
       setTimeout(() => { window.location.href = LEADERBOARD_URL; }, 4000);
@@ -722,7 +718,7 @@ function generateCard(){
   ctx.strokeStyle=bgrad;ctx.lineWidth=10;ctx.strokeRect(6,6,W-12,H-12);
   ctx.strokeStyle='rgba(245,197,24,0.2)';ctx.lineWidth=1;ctx.strokeRect(18,18,W-36,H-36);
   ctx.textAlign='left';ctx.fillStyle='#f5c518';ctx.font='bold 15px Arial';ctx.fillText('EXAMMASTER',34,48);
-  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · CHM 102 · 2026',34,63);
+  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · MTH 102 · 2026',34,63);
   ctx.textAlign='right';ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText(new Date().toLocaleDateString('en-NG',{day:'numeric',month:'short',year:'numeric'}),W-34,48);
   ctx.textAlign='center';ctx.fillStyle='rgba(240,240,248,0.3)';ctx.font='bold 10px Arial';ctx.fillText('CERTIFICATE OF IDAN',W/2,95);
   ctx.font='46px Arial';ctx.fillText(icon,W/2,160);
@@ -732,7 +728,7 @@ function generateCard(){
   ctx.fillStyle='rgba(245,197,24,0.07)';roundRect(ctx,W/2-115,304,230,32,7);ctx.fill();
   ctx.strokeStyle='rgba(245,197,24,0.22)';ctx.lineWidth=1;roundRect(ctx,W/2-115,304,230,32,7);ctx.stroke();
   ctx.fillStyle='#f5c518';ctx.font='bold 14px Arial';ctx.fillText(`Score: ${S.score} / ${maxScore} pts  ·  ${S.correctCount}/${questions.length} Correct`,W/2,325);
-  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"CHM 102 tried, but I am the BOSS." — CBT Compliant',W/2,372);
+  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"MTH 102 tried, but I am the BOSS." — CBT Compliant',W/2,372);
 }
 function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();}
 function downloadCard(){const canvas=document.getElementById('idanCanvas');const link=document.createElement('a');link.download=`ExamMaster_${(S.name||'Idan').replace(/\s+/g,'_')}_RankCard.png`;link.href=canvas.toDataURL('image/png');link.click();}
