@@ -10,7 +10,7 @@
 <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
 <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
 
-<title>ExamMaster — MTH 102 Battle</title>
+<title>ExamMaster — CHM 102 Battle</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -145,16 +145,16 @@ input:focus { border-color:var(--gold); }
     <div class="nav-brand">Exam<span>Master</span> ⚡</div>
     <div class="nav-right">
       <div class="live-score" id="liveScore">⚡ <span id="liveScoreNum">0</span> PTS</div>
-      <div class="nav-badge">MTH 102 · Battle</div>
+      <div class="nav-badge">CHM 102 · Battle</div>
     </div>
   </div>
 </nav>
 
 <div class="screen active" id="landingScreen">
   <div class="hero">
-    <div class="hero-badge">🔥 Season 2026 — MTH 102 Edition</div>
-    <h1><span class="w1">CHAIN-TO</span><span class="w2">PRODUCT</span><span class="w3">BATTLE ⚡</span></h1>
-    <p class="hero-sub">10 Questions · Product/Quotient/Chain Rules ·  Implicit & Parametric<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
+    <div class="hero-badge">🔥 Season 2026 — CHM 102 Edition</div>
+    <h1><span class="w1">NAME-OR</span><span class="w2">BE-NAMED</span><span class="w3">BATTLE ⚡</span></h1>
+    <p class="hero-sub">15 Questions · iupac nomenclature · functional group · homologous series<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
     <div class="form-card fadeUp">
   <div class="form-row">
     <label class="form-label" for="uName">Scholar's Full Name</label>
@@ -231,8 +231,8 @@ input:focus { border-color:var(--gold); }
 </div>
 
 <script>
-  const QUIZ_OPEN  = new Date('2026-05-24T21:00:00');
-const QUIZ_CLOSE = new Date('2026-05-24T21:09:00');
+  const QUIZ_OPEN  = new Date('2026-06-02T21:00:00');
+const QUIZ_CLOSE = new Date('2026-06-02T21:07:00');
 const isBossBattle = false;
 
 const V = {
@@ -288,7 +288,7 @@ const V = {
     "Tab switching detected. Your village people sent you. Resist them! 🕯️"
   ],
   final:[
-    {min:10, max:10,  msg:"CBT Terrorist! 🎯 You finished the work. Go buy yourself a cold Pepsi — you've earned it! 🥤"},
+    {min:10, max:15,  msg:"CBT Terrorist! 🎯 You finished the work. Go buy yourself a cold Pepsi — you've earned it! 🥤"},
     {min:7,  max:9,   msg:"Solid work! 🔥 First Class bracket is calling your name. Keep the fire burning!"},
     {min:4,  max:6,   msg:"You are standing on the fence. 🌬️ If breeze blows, you're going to the Carryover side. Wake up!"},
     {min:0,  max:3,   msg:"My brother/sister, have you considered a career in comedy? Because this score is a huge joke! 🎭"},
@@ -297,140 +297,154 @@ const V = {
 };
 const vRand = arr => arr[Math.floor(Math.random()*arr.length)];
   
-
 const questions = [
   {
-    "difficulty": "soft",
-    "points": 5,
-    "text": "The product rule states that d/dx[f(x)·g(x)] equals:",
-    "options": [
-      "f'(x)·g'(x)",
-      "f'(x)·g(x) + f(x)·g'(x)",
-      "f'(x)·g(x) - f(x)·g'(x)",
-      "f(x)·g(x)/f'(x)"
-    ],
-    "correct": 1,
-    "explanation": "📌 Product rule: (uv)' = u'v + uv'. Think 'differentiate first × keep second, PLUS keep first × differentiate second'. Two terms always. Unilorin will give you a product of two functions — this is your weapon!"
+    difficulty: "soft",
+    points: 5,
+    text: "What is the IUPAC name of CH₃CH₂CH₂CH₃?",
+    options: ["Propane", "Butane", "Pentane", "Ethane"],
+    correct: 1,
+    explanation: "🔢 Count the carbons: CH₃-CH₂-CH₂-CH₃ = 4 carbons → BUTANE. IUPAC naming: 1C=meth, 2C=eth, 3C=prop, 4C=but, 5C=pent, 6C=hex. Memorise these prefixes — they appear in EVERY organic chemistry question in Unilorin CBT!"
   },
   {
-    "difficulty": "soft",
-    "points": 5,
-    "text": "The quotient rule for d/dx[f(x)/g(x)] is:",
-    "options": [
-      "[f'g - fg']/g",
-      "[f'g + fg']/g²",
-      "[f'g - fg']/g²",
-      "f'(x)/g'(x)"
-    ],
-    "correct": 2,
-    "explanation": "🎯 Quotient rule: (u/v)' = (u'v - vu')/v². Mnemonic: 'Low d-High minus High d-Low, all over Low squared.' The MINUS sign and the v² denominator are the two things students always miss. Never forget them!"
+    difficulty: "soft",
+    points: 5,
+    text: "Which functional group is present in alcohols?",
+    options: ["–COOH", "–OH", "–CHO", "–NH₂"],
+    correct: 1,
+    explanation: "🍺 Alcohols contain the hydroxyl group (–OH) attached to a carbon atom. Examples: methanol (CH₃OH), ethanol (C₂H₅OH). –COOH = carboxylic acid, –CHO = aldehyde, –NH₂ = amine. Know your functional groups — they define compound behaviour!"
   },
   {
-    "difficulty": "soft",
-    "points": 5,
-    "text": "The chain rule for d/dx[f(g(x))] is:",
-    "options": [
-      "f'(g(x))",
-      "f'(g(x))·g'(x)",
-      "f(g'(x))",
-      "f'(x)·g'(x)"
-    ],
-    "correct": 1,
-    "explanation": "⛓️ Chain rule: differentiate the OUTER function (leaving inner alone) then MULTIPLY by derivative of the inner. d/dx[(3x+1)⁵] = 5(3x+1)⁴ · 3 = 15(3x+1)⁴. Outer × inner derivative. Always!"
+    difficulty: "soft",
+    points: 5,
+    text: "What suffix is used in IUPAC nomenclature for alkanes?",
+    options: ["-ol", "-ane", "-ene", "-yne"],
+    correct: 1,
+    explanation: "📝 Alkanes end in '-ane': methane, ethane, propane, butane. '-ene' = alkenes (C=C double bond). '-yne' = alkynes (C≡C triple bond). '-ol' = alcohols. The suffix tells you the compound class immediately — master the suffixes, master organic naming!"
   },
   {
-    "difficulty": "soft",
-    "points": 5,
-    "text": "To differentiate implicitly, if y is a function of x, d/dx(y²) equals:",
-    "options": [
-      "2y",
-      "2y·(dy/dx)",
-      "y²",
-      "2x"
-    ],
-    "correct": 1,
-    "explanation": "📐 Implicit: treat y as a function of x and use chain rule. d/dx(y²) = 2y·(dy/dx). Every time you differentiate a y-term, multiply by dy/dx. This is the core mechanic of implicit differentiation!"
+    difficulty: "soft",
+    points: 5,
+    text: "The functional group –CHO is characteristic of which class of organic compounds?",
+    options: ["Ketones", "Aldehydes", "Carboxylic acids", "Esters"],
+    correct: 1,
+    explanation: "🔬 –CHO (aldehyde group) is the carbonyl (C=O) with a hydrogen attached, always at the END of a carbon chain. Ketones have C=O in the MIDDLE of the chain. Aldehyde = 'al' suffix e.g. methanal, ethanal. Unilorin loves functional group identification!"
   },
   {
-    "difficulty": "medium",
-    "points": 10,
-    "text": "Differentiate f(x) = x²·sin(x).",
-    "options": [
-      "2x·cos(x)",
-      "x²cos(x) + 2x·sin(x)",
-      "2x·sin(x) + x²cos(x)",
-      "x²·cos(x) - 2x·sin(x)"
-    ],
-    "correct": 2,
-    "explanation": "🧮 Product rule: u=x², u'=2x; v=sin(x), v'=cos(x). Result: u'v + uv' = 2x·sin(x) + x²·cos(x). Note options B and C look identical — they ARE the same by commutativity. Unilorin might order terms differently, always simplify and match!"
+    difficulty: "soft",
+    points: 5,
+    text: "What is the IUPAC name of CH₃OH?",
+    options: ["Ethanol", "Propanol", "Methanol", "Butanol"],
+    correct: 2,
+    explanation: "🧪 CH₃OH has 1 carbon (meth-) + OH group (-ol) = METHANOL. Also called wood alcohol — toxic if consumed! Ethanol (C₂H₅OH) is in drinks. Don't confuse them — methanol blinds you, ethanol gets you a party. Chemistry saves lives!"
   },
   {
-    "difficulty": "medium",
-    "points": 10,
-    "text": "Find dy/dx for y = (3x + 1)⁶.",
-    "options": [
-      "6(3x+1)⁵",
-      "18(3x+1)⁵",
-      "(3x+1)⁵",
-      "6x(3x+1)⁵"
-    ],
-    "correct": 1,
-    "explanation": "⛓️ Chain rule: outer derivative = 6(3x+1)⁵, inner derivative = 3. Multiply: 6·3·(3x+1)⁵ = 18(3x+1)⁵. Students always forget to multiply by the inner derivative (the 3). That multiplication separates A students from the rest!"
+    difficulty: "medium",
+    points: 10,
+    text: "What is the correct IUPAC name of CH₃CH(CH₃)CH₂CH₃?",
+    options: ["2-methylbutane", "3-methylbutane", "2-methylpropane", "Isopentane"],
+    correct: 0,
+    explanation: "🧮 Longest chain: CH₃-CH-CH₂-CH₃ = 4 carbons (butane). Methyl branch on C2 → 2-methylbutane. IUPAC rule: number from the end CLOSEST to the branch. Never use 'isopentane' in IUPAC — that's a common name. Always go systematic!"
   },
   {
-    "difficulty": "medium",
-    "points": 10,
-    "text": "Find dy/dx if y = (x² + 1)/(2x - 3).",
-    "options": [
-      "(2x²-6x-2)/(2x-3)²",
-      "(2x)/(2)",
-      "(2x(2x-3)-2(x²+1))/(2x-3)²",
-      "2x/(2x-3)"
-    ],
-    "correct": 2,
-    "explanation": "🔬 Quotient rule: u=x²+1, u'=2x; v=2x-3, v'=2. (u'v-uv')/v² = [2x(2x-3) - 2(x²+1)]/(2x-3)². Numerator: 4x²-6x-2x²-2 = 2x²-6x-2. Full answer: (2x²-6x-2)/(2x-3)². Expand carefully — sign errors are the top Unilorin mistake!"
+    difficulty: "medium",
+    points: 10,
+    text: "Which of the following represents a secondary alcohol?",
+    options: ["CH₃OH", "CH₃CH₂OH", "CH₃CH(OH)CH₃", "(CH₃)₃COH"],
+    correct: 2,
+    explanation: "🎯 Primary alcohol: –OH on C attached to ONE carbon. Secondary: –OH on C attached to TWO carbons. Tertiary: –OH on C attached to THREE carbons. CH₃CH(OH)CH₃ — the OH carbon is bonded to 2 other carbons → SECONDARY. Classification affects reactivity!"
   },
   {
-    "difficulty": "medium",
-    "points": 10,
-    "text": "Given x = t², y = t³, find dy/dx in terms of t.",
-    "options": [
-      "3t/2",
-      "2t/3",
-      "3t²/2t",
-      "t"
-    ],
-    "correct": 0,
-    "explanation": "📐 Parametric: dy/dx = (dy/dt)/(dx/dt). dy/dt = 3t², dx/dt = 2t. So dy/dx = 3t²/2t = 3t/2. Always divide dy/dt by dx/dt for parametric. Never differentiate x and y with respect to x directly when parametric!"
+    difficulty: "medium",
+    points: 10,
+    text: "The IUPAC name of CH₃COCH₃ is:",
+    options: ["Propanone", "Propanal", "Propanoic acid", "Methyl ethanoate"],
+    correct: 0,
+    explanation: "⚗️ CH₃-CO-CH₃: C=O in MIDDLE of chain (ketone!). 3 carbons total → propan-. Ketone suffix = '-one' → PROPANONE. Also called acetone — the nail polish remover! Unilorin CBT tip: if C=O is in the middle → ketone → '-one' suffix!"
   },
   {
-    "difficulty": "hard",
-    "points": 20,
-    "text": "Find dy/dx by implicit differentiation: x² + y² = 25.",
-    "options": [
-      "dy/dx = -x/y",
-      "dy/dx = x/y",
-      "dy/dx = -y/x",
-      "dy/dx = 2x/2y"
-    ],
-    "correct": 0,
-    "explanation": "🧠 Differentiate both sides: 2x + 2y(dy/dx) = 0. Solve: 2y(dy/dx) = -2x → dy/dx = -x/y. This is the slope of a circle of radius 5. At (3,4): dy/dx = -3/4. Implicit differentiation is heavily tested in Unilorin — practice till it's automatic!"
+    difficulty: "medium",
+    points: 10,
+    text: "Which class of organic compounds has the general formula CₙH₂ₙ₊₂?",
+    options: ["Alkenes", "Alkynes", "Alkanes", "Cycloalkanes"],
+    correct: 2,
+    explanation: "📐 Alkanes: CₙH₂ₙ₊₂ (saturated, no double/triple bonds). Alkenes: CₙH₂ₙ (one double bond). Alkynes: CₙH₂ₙ₋₂ (one triple bond). Cycloalkanes: CₙH₂ₙ. Methane (CH₄): n=1, 2(1)+2=4 ✓. These formulas are Unilorin exam staples!"
   },
   {
-    "difficulty": "hard",
-    "points": 20,
-    "text": "Differentiate y = sin(x²)·eˣ using product and chain rules.",
-    "options": [
-      "cos(x²)·eˣ",
-      "2x·cos(x²)·eˣ + sin(x²)·eˣ",
-      "sin(x²)·eˣ + cos(x²)",
-      "2x·cos(x²) + eˣ"
+    difficulty: "medium",
+    points: 10,
+    text: "What is the functional group in carboxylic acids?",
+    options: ["–OH only", "–CO only", "–COOH (carboxyl group)", "–COO–"],
+    correct: 2,
+    explanation: "🍋 Carboxylic acids contain –COOH (carboxyl group) = carbonyl (C=O) + hydroxyl (OH) on the SAME carbon. Responsible for acidity. Examples: ethanoic acid (vinegar!), methanoic acid (ant sting). –COO– is the ester linkage — different compound class!"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "What is the IUPAC name of CH₃CH₂CH(Cl)CH(CH₃)CH₂CH₃?",
+    options: [
+      "3-chloro-4-methylhexane",
+      "4-chloro-3-methylhexane",
+      "3-chloro-4-methylheptane",
+      "2-methyl-3-chlorohexane"
     ],
-    "correct": 1,
-    "explanation": "🎓 Product rule: u=sin(x²), v=eˣ. u' = cos(x²)·2x (chain rule!), v' = eˣ. Result: u'v+uv' = 2x·cos(x²)·eˣ + sin(x²)·eˣ. Two rules in one question — this is peak Unilorin hard territory. Chain rule inside product rule: stay calm, go step by step!"
+    correct: 0,
+    explanation: "🧠 Longest chain: 6 carbons = hexane. Number from end giving lowest locants: Cl on C3, methyl on C4 → 3-chloro-4-methylhexane. IUPAC rule: alphabetical order for substituents (chloro before methyl), lowest locant set. Always find the longest chain FIRST!"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "Which of the following pairs are functional group isomers?",
+    options: [
+      "Ethanol and dimethyl ether",
+      "Propane and butane",
+      "Methanol and ethanol",
+      "Ethanoic acid and ethanol"
+    ],
+    correct: 0,
+    explanation: "🔄 Functional group isomers have the SAME molecular formula but DIFFERENT functional groups. Ethanol (C₂H₅OH) and dimethyl ether (CH₃OCH₃) both have formula C₂H₆O but different functional groups (–OH vs –O–). Propane/butane are NOT isomers — different formulas!"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "A compound with molecular formula C₄H₈O gives a positive Tollens' test (silver mirror). What is its most likely structure?",
+    options: [
+      "A ketone: CH₃COCH₂CH₃",
+      "An aldehyde: CH₃CH₂CH₂CHO",
+      "An alcohol: CH₃CH₂CH(OH)CH₃",
+      "An ether: CH₃CH₂OCH=CH₂"
+    ],
+    correct: 1,
+    explanation: "🪞 Tollens' test (ammoniacal AgNO₃) gives silver mirror ONLY with ALDEHYDES (–CHO). Ketones do NOT react. C₄H₈O with positive Tollens' = aldehyde. CH₃CH₂CH₂CHO (butanal) fits. This test distinguishes aldehydes from ketones — classic Unilorin exam question!"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "In IUPAC nomenclature, the compound (CH₃)₂CHCH₂CH(CH₃)₂ is named:",
+    options: [
+      "2,4-dimethylpentane",
+      "2,4-dimethylbutane",
+      "1,3-dimethylpentane",
+      "2,2,4-trimethylbutane"
+    ],
+    correct: 0,
+    explanation: "📏 Draw it out: CH₃-CH(CH₃)-CH₂-CH(CH₃)-CH₃. Longest chain = 5C (pentane). Methyl groups on C2 and C4 (numbering to give lowest locants). → 2,4-dimethylpentane. Always draw the structure before naming! Visualisation prevents errors in CBT."
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "Which statement correctly describes the difference between homologous series members?",
+    options: [
+      "Each member differs by CH₂ (14 mass units) and shows gradually changing physical properties",
+      "Each member has a completely different functional group",
+      "Members have identical boiling points",
+      "Members differ by a CO₂ unit"
+    ],
+    correct: 0,
+    explanation: "🎓 Homologous series: each successive member differs by –CH₂– (methylene unit, 14 mass units). Physical properties change gradually (boiling points increase, solubility decreases). Chemical properties are SIMILAR (same functional group). Alkanes: methane → ethane → propane — each +CH₂. Foundation of organic chemistry!"
   }
 ];
- 
+
 let S={name:'',email:'',score:0,currentQ:0,correctCount:0,startTime:null,tabWarnings:0,quizEnded:false,answered:false,timerInt:null};
 
 ['uName','uPhone','uCode'].forEach(id=>document.getElementById(id).addEventListener('input',checkForm));
@@ -528,7 +542,7 @@ if (now > QUIZ_CLOSE) {
   }
 }
 
-const QUIZ_TIME_LIMIT = 7 * 60; // 7 minutes in seconds
+const QUIZ_TIME_LIMIT = 6 * 60; // 6 minutes in seconds
 
 function startTimer() {
   let remaining = QUIZ_TIME_LIMIT;
@@ -618,7 +632,7 @@ async function endQuiz() {
     maxScore,
     correct:   S.correctCount,
     total:     questions.length,
-    category:  'MTH102',
+    category:  'CHM102',
     timeTaken: `${mins}:${secs}`,
     rank:      title,
     timestamp: new Date().toISOString(),
@@ -636,7 +650,7 @@ async function endQuiz() {
         window.location.href = LEADERBOARD_URL
           + `?name=${encodeURIComponent(S.name)}`
           + `&score=${S.score}`
-          + `&subject=MTH102`;
+          + `&subject=CHM102`;
       }, 3000);
     } else {
       setTimeout(() => { window.location.href = LEADERBOARD_URL; }, 4000);
@@ -718,7 +732,7 @@ function generateCard(){
   ctx.strokeStyle=bgrad;ctx.lineWidth=10;ctx.strokeRect(6,6,W-12,H-12);
   ctx.strokeStyle='rgba(245,197,24,0.2)';ctx.lineWidth=1;ctx.strokeRect(18,18,W-36,H-36);
   ctx.textAlign='left';ctx.fillStyle='#f5c518';ctx.font='bold 15px Arial';ctx.fillText('EXAMMASTER',34,48);
-  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · MTH 102 · 2026',34,63);
+  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · CHM 102 · 2026',34,63);
   ctx.textAlign='right';ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText(new Date().toLocaleDateString('en-NG',{day:'numeric',month:'short',year:'numeric'}),W-34,48);
   ctx.textAlign='center';ctx.fillStyle='rgba(240,240,248,0.3)';ctx.font='bold 10px Arial';ctx.fillText('CERTIFICATE OF IDAN',W/2,95);
   ctx.font='46px Arial';ctx.fillText(icon,W/2,160);
@@ -728,7 +742,7 @@ function generateCard(){
   ctx.fillStyle='rgba(245,197,24,0.07)';roundRect(ctx,W/2-115,304,230,32,7);ctx.fill();
   ctx.strokeStyle='rgba(245,197,24,0.22)';ctx.lineWidth=1;roundRect(ctx,W/2-115,304,230,32,7);ctx.stroke();
   ctx.fillStyle='#f5c518';ctx.font='bold 14px Arial';ctx.fillText(`Score: ${S.score} / ${maxScore} pts  ·  ${S.correctCount}/${questions.length} Correct`,W/2,325);
-  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"MTH 102 tried, but I am the BOSS." — CBT Compliant',W/2,372);
+  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"CHM 102 tried, but I am the SCHOLAR." — CBT Compliant',W/2,372);
 }
 function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();}
 function downloadCard(){const canvas=document.getElementById('idanCanvas');const link=document.createElement('a');link.download=`ExamMaster_${(S.name||'Idan').replace(/\s+/g,'_')}_RankCard.png`;link.href=canvas.toDataURL('image/png');link.click();}
