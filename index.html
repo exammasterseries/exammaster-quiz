@@ -477,6 +477,17 @@ if (now > QUIZ_CLOSE) {
     btn.disabled = false;
     btn.textContent = '🏛️ ENTER THE CBT CENTER →';
   };
+  // ── SERVER-SIDE ATTEMPT CHECK ──
+const attemptRes = await fetch(
+  BACKEND_API_URL + '?action=checkAttempt'
+  + '&name=' + encodeURIComponent(name)
+  + '&category=MTH102'
+);
+const attemptData = await attemptRes.json();
+if (attemptData.attempted) {
+  showError('🚫 You already completed this quiz. Each battle is one attempt only. Check the leaderboard!');
+  return;
+}
 
   try {
     // Step 1 — Check if student is registered
