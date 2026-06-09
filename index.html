@@ -231,8 +231,8 @@ input:focus { border-color:var(--gold); }
 </div>
 
 <script>
-  const QUIZ_OPEN  = new Date('2026-06-09T21:00:00');
-const QUIZ_CLOSE = new Date('2026-06-09T21:40:00');
+  const QUIZ_OPEN  = new Date('2026-06-10T21:00:00');
+const QUIZ_CLOSE = new Date('2026-06-10T21:15:00');
 const isBossBattle = false;
 
 const V = {
@@ -483,17 +483,6 @@ if (now > QUIZ_CLOSE) {
     btn.disabled = false;
     btn.textContent = '🏛️ ENTER THE CBT CENTER →';
   };
-// ── SERVER-SIDE ATTEMPT CHECK ──
-const attemptRes = await fetch(
-  BACKEND_API_URL + '?action=checkAttempt'
-  + '&name=' + encodeURIComponent(name)
-  + '&category=CHM102'
-);
-const attemptData = await attemptRes.json();
-if (attemptData.attempted) {
-  showError('🚫 You already completed this quiz. Each battle is one attempt only. Check the leaderboard!');
-  return;
-}
 
   try {
     // Step 1 — Check if student is registered
