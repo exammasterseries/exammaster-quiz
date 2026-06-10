@@ -10,7 +10,7 @@
 <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
 <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
 
-<title>ExamMaster — CHM 102 Battle</title>
+<title>ExamMaster — MTH 102 Battle</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -145,16 +145,16 @@ input:focus { border-color:var(--gold); }
     <div class="nav-brand">Exam<span>Master</span> ⚡</div>
     <div class="nav-right">
       <div class="live-score" id="liveScore">⚡ <span id="liveScoreNum">0</span> PTS</div>
-      <div class="nav-badge">CHM 102 · Battle</div>
+      <div class="nav-badge">MTH 102 · Battle</div>
     </div>
   </div>
 </nav>
 
 <div class="screen active" id="landingScreen">
   <div class="hero">
-    <div class="hero-badge">🔥 Season 2026 — CHM 102 Edition</div>
-    <h1><span class="w1">FULLERENES</span><span class="w2">NANO-WAR</span><span class="w3">BATTLE ⚡</span></h1>
-    <p class="hero-sub">15 Questions · fullerenes · carbon allotropes · nanochemistry<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
+    <div class="hero-badge">🔥 Season 2026 — MTH 102 Edition</div>
+    <h1><span class="w1">THE-LIMIT</span><span class="w2">BREAKER</span><span class="w3">BATTLE ⚡</span></h1>
+    <p class="hero-sub">10 Questions · Limits & Continuity· <br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
     <div class="form-card fadeUp">
   <div class="form-row">
     <label class="form-label" for="uName">Scholar's Full Name</label>
@@ -231,8 +231,8 @@ input:focus { border-color:var(--gold); }
 </div>
 
 <script>
-  const QUIZ_OPEN  = new Date('2026-06-10T21:00:00');
-const QUIZ_CLOSE = new Date('2026-06-10T21:15:00');
+  const QUIZ_OPEN  = new Date('2026-06-11T21:00:00');
+const QUIZ_CLOSE = new Date('2026-06-11T21:15:00');
 const isBossBattle = false;
 
 const V = {
@@ -288,7 +288,7 @@ const V = {
     "Tab switching detected. Your village people sent you. Resist them! 🕯️"
   ],
   final:[
-    {min:10, max:15,  msg:"CBT Terrorist! 🎯 You finished the work. Go buy yourself a cold Pepsi — you've earned it! 🥤"},
+    {min:10, max:10,  msg:"CBT Terrorist! 🎯 You finished the work. Go buy yourself a cold Pepsi — you've earned it! 🥤"},
     {min:7,  max:9,   msg:"Solid work! 🔥 First Class bracket is calling your name. Keep the fire burning!"},
     {min:4,  max:6,   msg:"You are standing on the fence. 🌬️ If breeze blows, you're going to the Carryover side. Wake up!"},
     {min:0,  max:3,   msg:"My brother/sister, have you considered a career in comedy? Because this score is a huge joke! 🎭"},
@@ -299,139 +299,134 @@ const vRand = arr => arr[Math.floor(Math.random()*arr.length)];
   
 const questions = [
   {
-    difficulty: "soft",
-    points: 5,
-    text: "Which of the following is considered the fourth allotrope of carbon?",
-    options: ["Diamond", "Graphite", "Fullerene", "Charcoal"],
-    correct: 2,
-    explanation: "⚽ Fullerene (C₆₀) is the fourth allotrope of carbon, discovered in 1985. The other three are diamond, graphite, and amorphous carbon. Buckminsterfullerene looks like a football — and Unilorin LOVES this question!"
-  },
-  {
-    difficulty: "soft",
-    points: 5,
-    text: "What is the molecular formula of Buckminsterfullerene?",
-    options: ["C₃₀", "C₆₀", "C₇₀", "C₁₂₀"],
-    correct: 1,
-    explanation: "⚽ C₆₀ is the most famous fullerene — 60 carbon atoms arranged in 20 hexagons and 12 pentagons, just like a football. Named after architect Buckminster Fuller. Lock this in!"
-  },
-  {
-    difficulty: "soft",
-    points: 5,
-    text: "Fullerenes were discovered in which year?",
-    options: ["1972", "1985", "1991", "2000"],
-    correct: 1,
-    explanation: "📅 Fullerenes were discovered in 1985 by Kroto, Curl, and Smalley — who later won the Nobel Prize in Chemistry (1996). If they ask year in Unilorin CBT, the answer is 1985!"
-  },
-  {
-    difficulty: "soft",
-    points: 5,
-    text: "Nanotubes are essentially:",
-    options: ["Rolled-up sheets of graphene", "Chains of diamond atoms", "Fullerene molecules stacked in a line", "Layers of graphite compressed together"],
-    correct: 0,
-    explanation: "🧬 Carbon nanotubes = rolled-up graphene sheets (single or multiple layers). Think of it like rolling a newspaper into a tube — except the newspaper is one atom thick. Revolutionary material!"
-  },
-  {
-    difficulty: "soft",
-    points: 5,
-    text: "What is nanochemistry primarily concerned with?",
-    options: ["Chemistry at the scale of millimetres", "Chemical processes and structures at the nanometre scale (1–100 nm)", "Study of nano insects", "High-pressure reactions"],
-    correct: 1,
-    explanation: "🔬 Nanochemistry deals with structures at 1–100 nanometres. 1 nm = 10⁻⁹ m. At this scale, materials behave differently — gold nanoparticles appear red, not gold! Mind-blowing stuff."
-  },
-  {
-    difficulty: "medium",
-    points: 10,
-    text: "How many pentagons and hexagons are in the C₆₀ fullerene structure?",
-    options: ["10 pentagons, 20 hexagons", "12 pentagons, 20 hexagons", "20 pentagons, 12 hexagons", "12 pentagons, 12 hexagons"],
-    correct: 1,
-    explanation: "🔢 C₆₀ = 12 pentagons + 20 hexagons. The pentagons introduce curvature (like a football seam), while hexagons make up the flat surfaces. This is a classic Unilorin structural question!"
-  },
-  {
-    difficulty: "medium",
-    points: 10,
-    text: "Which property makes carbon nanotubes highly valuable in engineering?",
-    options: ["They dissolve easily in water", "They are extremely strong yet lightweight", "They are radioactive", "They are cheaper than steel to produce"],
-    correct: 1,
-    explanation: "💪 Carbon nanotubes are ~100× stronger than steel but 6× lighter. This makes them goldmine materials for aerospace, electronics, and medicine. Strength + light weight = engineering dream!"
-  },
-  {
-    difficulty: "medium",
-    points: 10,
-    text: "A single-walled carbon nanotube (SWCNT) differs from a multi-walled carbon nanotube (MWCNT) in that:",
-    options: ["SWCNT has one graphene layer rolled into a tube; MWCNT has multiple concentric layers", "SWCNT is made of diamond; MWCNT is made of graphite", "SWCNT is larger in diameter", "There is no difference — they are the same"],
-    correct: 0,
-    explanation: "🎯 SWCNT = ONE rolled graphene sheet. MWCNT = multiple concentric tubes (like tubes inside tubes). MWCNT is stronger; SWCNT has better electrical properties. Both are nanostructures!"
-  },
-  {
-    difficulty: "medium",
-    points: 10,
-    text: "Which of the following is a correct application of nanochemistry/nanotechnology?",
-    options: ["Making bigger telescopes", "Drug delivery systems targeting cancer cells", "Increasing the size of atoms", "Making traditional plastics"],
-    correct: 1,
-    explanation: "💊 Nanoparticles can carry drugs directly to cancer cells without harming healthy tissue — like a GPS-guided missile vs a bomb! This is one of the most exciting applications of nanochemistry today."
-  },
-  {
-    difficulty: "medium",
-    points: 10,
-    text: "The term 'nanostructure' refers to structures with at least one dimension in the range of:",
-    options: ["1–100 micrometres", "1–100 nanometres", "1–100 millimetres", "1–100 picometres"],
-    correct: 1,
-    explanation: "📏 Nanostructures have dimensions of 1–100 nm (nanometres). 1 nm = 10⁻⁹ m. A human hair is ~80,000 nm wide. Nanostructures are TINY — but mighty! Classic definition question in Unilorin."
-  },
-  {
-    difficulty: "hard",
-    points: 20,
-    text: "Which statement CORRECTLY distinguishes fullerenes from graphite and diamond?",
-    options: [
-      "Fullerenes are ionic; graphite and diamond are covalent",
-      "Fullerenes exist as discrete closed-cage molecules; graphite and diamond are infinite covalent networks",
-      "Fullerenes conduct electricity better than graphite",
-      "Fullerenes are the hardest allotrope of carbon"
+    "difficulty": "soft",
+    "points": 5,
+    "text": "What does lim(x→a) f(x) = L mean?",
+    "options": [
+      "f(a) = L exactly",
+      "f(x) gets arbitrarily close to L as x approaches a",
+      "f(x) equals L only when x = a",
+      "The function is undefined at x = a"
     ],
-    correct: 1,
-    explanation: "🧠 Key distinction: Fullerenes are FINITE, closed-cage molecules (C₆₀, C₇₀ etc). Graphite and diamond are infinite 3D/2D covalent lattices. This structural uniqueness is what makes fullerenes a separate allotrope!"
+    "correct": 1,
+    "explanation": "📌 A limit describes the BEHAVIOUR of f(x) near x = a, not necessarily at x = a. The function doesn't even need to be defined at a! This is the foundation of calculus — Unilorin will test this definition every session."
   },
   {
-    difficulty: "hard",
-    points: 20,
-    text: "In terms of hybridization, the carbon atoms in C₆₀ fullerene are:",
-    options: ["sp hybridized", "sp² hybridized", "sp³ hybridized", "sp²d hybridized"],
-    correct: 1,
-    explanation: "🔬 Carbon in C₆₀ is sp² hybridized — like graphite — with delocalized π electrons. But the curvature of the cage introduces some sp³ character. For exam purposes: sp² is the accepted answer. Don't overthink!"
-  },
-  {
-    difficulty: "hard",
-    points: 20,
-    text: "What is the significance of the 'isolated pentagon rule' (IPR) in fullerene chemistry?",
-    options: [
-      "All pentagons must be isolated (surrounded by hexagons) for the fullerene to be stable",
-      "Fullerenes must have exactly 5 pentagons to be stable",
-      "Pentagons must be adjacent to each other for stability",
-      "The rule states fullerenes cannot contain pentagons"
+    "difficulty": "soft",
+    "points": 5,
+    "text": "What is lim(x→3) (x² - 9)/(x - 3)?",
+    "options": [
+      "0",
+      "Undefined",
+      "6",
+      "3"
     ],
-    correct: 0,
-    explanation: "🏆 IPR: For a fullerene to be stable, NO two pentagons should be adjacent — each pentagon must be surrounded by hexagons. Adjacent pentagons create strain and instability. C₆₀ satisfies IPR perfectly — that's why it's so stable!"
+    "correct": 2,
+    "explanation": "🎯 Factorise: (x²-9)/(x-3) = (x+3)(x-3)/(x-3) = x+3. Cancel (x≠3), then substitute: 3+3 = 6. This is the classic 0/0 indeterminate form — always try factorising first. Unilorin LOVES this type!"
   },
   {
-    difficulty: "hard",
-    points: 20,
-    text: "Which scientist is credited with first proposing the concept of nanotechnology in 1959?",
-    options: ["Richard Feynman", "Albert Einstein", "Harold Kroto", "Niels Bohr"],
-    correct: 0,
-    explanation: "🎓 Richard Feynman gave his legendary 1959 lecture 'There's Plenty of Room at the Bottom' — first proposing manipulation of matter at atomic scale. Kroto discovered fullerenes (1985). Feynman = father of nanotechnology concept!"
-  },
-  {
-    difficulty: "hard",
-    points: 20,
-    text: "Endohedral fullerenes are best described as:",
-    options: [
-      "Fullerenes with atoms or molecules trapped INSIDE the carbon cage",
-      "Fullerenes bonded to external metal atoms",
-      "Fullerenes that have been chemically destroyed",
-      "Fullerenes with more than 100 carbon atoms"
+    "difficulty": "soft",
+    "points": 5,
+    "text": "A function f(x) is continuous at x = a if:",
+    "options": [
+      "f(a) is defined only",
+      "lim(x→a) f(x) exists only",
+      "f(a) is defined, the limit exists, and lim(x→a)f(x) = f(a)",
+      "The graph has no x-intercept"
     ],
-    correct: 0,
-    explanation: "💡 Endohedral = 'within the cage.' Atoms like noble gases or metals can be trapped INSIDE the C₆₀ cage. Written as X@C₆₀ (e.g. He@C₆₀). These have promising drug delivery applications. 'Endo' = inside — use your vocab!"
+    "correct": 2,
+    "explanation": "✅ THREE conditions for continuity: (1) f(a) defined, (2) limit exists, (3) limit equals f(a). All three must hold. Miss one and it's discontinuous. Memorise this like your matric number!"
+  },
+  {
+    "difficulty": "soft",
+    "points": 5,
+    "text": "What is lim(x→∞) 1/x?",
+    "options": [
+      "1",
+      "∞",
+      "0",
+      "-1"
+    ],
+    "correct": 2,
+    "explanation": "📐 As x grows infinitely large, 1/x shrinks towards 0. Think: 1/1000 = 0.001, 1/1000000 = 0.000001... approaching zero. Limits at infinity of 1/xⁿ (n>0) always → 0. Classic one-liner!"
+  },
+  {
+    "difficulty": "medium",
+    "points": 10,
+    "text": "Evaluate lim(x→0) sin(x)/x.",
+    "options": [
+      "0",
+      "∞",
+      "Undefined",
+      "1"
+    ],
+    "correct": 3,
+    "explanation": "🧮 This is the most famous limit in calculus! lim(x→0) sin(x)/x = 1. You cannot substitute directly (gives 0/0). This result is proved using the squeeze theorem. Unilorin expects you to know this by heart — no derivation needed in MCQ!"
+  },
+  {
+    "difficulty": "medium",
+    "points": 10,
+    "text": "Find lim(x→2) (x³ - 8)/(x - 2).",
+    "options": [
+      "4",
+      "12",
+      "0",
+      "6"
+    ],
+    "correct": 1,
+    "explanation": "🔬 x³ - 8 = (x-2)(x²+2x+4). Cancel (x-2): limit = x²+2x+4 at x=2 = 4+4+4 = 12. Difference of cubes: a³-b³ = (a-b)(a²+ab+b²). Master this factorisation — Unilorin uses it often!"
+  },
+  {
+    "difficulty": "medium",
+    "points": 10,
+    "text": "Is f(x) = (x²-4)/(x-2) continuous at x = 2?",
+    "options": [
+      "Yes, f(2) = 4",
+      "No, f(2) is undefined",
+      "Yes, the limit exists",
+      "No, the limit does not exist"
+    ],
+    "correct": 1,
+    "explanation": "🔵 f(2) = (4-4)/(2-2) = 0/0 — undefined! Even though the limit exists (= 4), f(2) is not defined. So continuity fails at x=2. The function has a REMOVABLE discontinuity there. Unilorin tests this distinction heavily."
+  },
+  {
+    "difficulty": "medium",
+    "points": 10,
+    "text": "Find lim(x→∞) (3x² + 2x)/(x² - 5).",
+    "options": [
+      "0",
+      "3",
+      "∞",
+      "2"
+    ],
+    "correct": 1,
+    "explanation": "📐 Divide numerator and denominator by x² (highest power): (3 + 2/x)/(1 - 5/x²). As x→∞, 2/x→0 and 5/x²→0. Result = 3/1 = 3. Rule: when degrees are equal, limit = ratio of leading coefficients!"
+  },
+  {
+    "difficulty": "hard",
+    "points": 20,
+    "text": "Evaluate lim(x→0) (1 - cos x)/x².",
+    "options": [
+      "0",
+      "1",
+      "1/2",
+      "∞"
+    ],
+    "correct": 2,
+    "explanation": "🧠 Use L'Hôpital's rule (0/0 form): differentiate top and bottom. First: sin(x)/(2x) — still 0/0. Again: cos(x)/2. At x=0: cos(0)/2 = 1/2. OR use the identity: 1-cosx ≈ x²/2 for small x → (x²/2)/x² = 1/2. Both methods give 1/2!"
+  },
+  {
+    "difficulty": "hard",
+    "points": 20,
+    "text": "f(x) = {x² + 1, x < 2 and 3x - 1, x ≥ 2}. Is f continuous at x = 2?",
+    "options": [
+      "Yes, both one-sided limits equal f(2) = 5",
+      "No, left limit ≠ right limit",
+      "Yes, f(2) is defined",
+      "No, f(2) is undefined"
+    ],
+    "correct": 0,
+    "explanation": "🎓 Left limit: lim(x→2⁻) x²+1 = 4+1 = 5. Right limit: lim(x→2⁺) 3x-1 = 6-1 = 5. f(2) = 3(2)-1 = 5. All three equal 5 ✓ — continuous! Piecewise continuity questions are Unilorin exam staples. Always check BOTH sides!"
   }
 ];
   
@@ -533,7 +528,7 @@ if (now > QUIZ_CLOSE) {
   }
 }
 
-const QUIZ_TIME_LIMIT = 5 * 60; // 5 minutes in seconds
+const QUIZ_TIME_LIMIT = 6 * 60; // 8 minutes in seconds
 
 function startTimer() {
   let remaining = QUIZ_TIME_LIMIT;
@@ -623,7 +618,7 @@ async function endQuiz() {
     maxScore,
     correct:   S.correctCount,
     total:     questions.length,
-    category:  'CHM102',
+    category:  'MTH102',
     timeTaken: `${mins}:${secs}`,
     rank:      title,
     timestamp: new Date().toISOString(),
@@ -641,7 +636,7 @@ async function endQuiz() {
         window.location.href = LEADERBOARD_URL
           + `?name=${encodeURIComponent(S.name)}`
           + `&score=${S.score}`
-          + `&subject=CHM102`;
+          + `&subject=MTH102`;
       }, 3000);
     } else {
       setTimeout(() => { window.location.href = LEADERBOARD_URL; }, 4000);
@@ -723,7 +718,7 @@ function generateCard(){
   ctx.strokeStyle=bgrad;ctx.lineWidth=10;ctx.strokeRect(6,6,W-12,H-12);
   ctx.strokeStyle='rgba(245,197,24,0.2)';ctx.lineWidth=1;ctx.strokeRect(18,18,W-36,H-36);
   ctx.textAlign='left';ctx.fillStyle='#f5c518';ctx.font='bold 15px Arial';ctx.fillText('EXAMMASTER',34,48);
-  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · CHM 102 · 2026',34,63);
+  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · MTH 102 · 2026',34,63);
   ctx.textAlign='right';ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText(new Date().toLocaleDateString('en-NG',{day:'numeric',month:'short',year:'numeric'}),W-34,48);
   ctx.textAlign='center';ctx.fillStyle='rgba(240,240,248,0.3)';ctx.font='bold 10px Arial';ctx.fillText('CERTIFICATE OF IDAN',W/2,95);
   ctx.font='46px Arial';ctx.fillText(icon,W/2,160);
@@ -733,7 +728,7 @@ function generateCard(){
   ctx.fillStyle='rgba(245,197,24,0.07)';roundRect(ctx,W/2-115,304,230,32,7);ctx.fill();
   ctx.strokeStyle='rgba(245,197,24,0.22)';ctx.lineWidth=1;roundRect(ctx,W/2-115,304,230,32,7);ctx.stroke();
   ctx.fillStyle='#f5c518';ctx.font='bold 14px Arial';ctx.fillText(`Score: ${S.score} / ${maxScore} pts  ·  ${S.correctCount}/${questions.length} Correct`,W/2,325);
-  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"CHM 102 tried, but I am the BOSS." — CBT Compliant',W/2,372);
+  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"MTH 102 tried, but I am the  SCHOLAR." — CBT Compliant',W/2,372);
 }
 function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();}
 function downloadCard(){const canvas=document.getElementById('idanCanvas');const link=document.createElement('a');link.download=`ExamMaster_${(S.name||'Idan').replace(/\s+/g,'_')}_RankCard.png`;link.href=canvas.toDataURL('image/png');link.click();}
