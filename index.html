@@ -10,7 +10,7 @@
 <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
 <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
 
-<title>ExamMaster — MTH 102 Battle</title>
+<title>ExamMaster — PHY 102 Battle</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -145,16 +145,16 @@ input:focus { border-color:var(--gold); }
     <div class="nav-brand">Exam<span>Master</span> ⚡</div>
     <div class="nav-right">
       <div class="live-score" id="liveScore">⚡ <span id="liveScoreNum">0</span> PTS</div>
-      <div class="nav-badge">MTH 102 · Battle</div>
+      <div class="nav-badge">PHY 102 · Battle</div>
     </div>
   </div>
 </nav>
 
 <div class="screen active" id="landingScreen">
   <div class="hero">
-    <div class="hero-badge">🔥 Season 2026 — MTH 102 Edition</div>
-    <h1><span class="w1">THE-LIMIT</span><span class="w2">BREAKER</span><span class="w3">BATTLE ⚡</span></h1>
-    <p class="hero-sub">10 Questions · Limits & Continuity· <br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
+    <div class="hero-badge">🔥 Season 2026 — PHY 102 Edition</div>
+    <h1><span class="w1">MAGNETIC</span><span class="w2">FIELD</span><span class="w3">BATTLE ⚡</span></h1>
+    <p class="hero-sub">10 Questions ·  Ampere's Law ·Magnetic Dipoles ·  Dielectrics & Energy in Magnetic Fields<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
     <div class="form-card fadeUp">
   <div class="form-row">
     <label class="form-label" for="uName">Scholar's Full Name</label>
@@ -231,10 +231,8 @@ input:focus { border-color:var(--gold); }
 </div>
 
 <script>
-  const BACKEND_API_URL = 'https://script.google.com/macros/s/AKfycbzPBHFtejHA10UFrs9VhOJVFIsvkOAbrT6uSBGPUaNZ5cW57q69lPioWO2jPpJazSLT/exec';
-const LEADERBOARD_URL = 'https://exammasterseries.github.io/ExamMaster/leaderboard.html';
-  const QUIZ_OPEN  = new Date('2026-06-11T21:00:00');
-const QUIZ_CLOSE = new Date('2026-06-11T21:40:00');
+  const QUIZ_OPEN  = new Date('2026-06-12T21:00:00');
+const QUIZ_CLOSE = new Date('2026-06-12T21:12:00');
 const isBossBattle = false;
 
 const V = {
@@ -303,136 +301,135 @@ const questions = [
   {
     "difficulty": "soft",
     "points": 5,
-    "text": "What does lim(x→a) f(x) = L mean?",
+    "text": "Ampere's Law states that the line integral of B around a closed loop equals:",
     "options": [
-      "f(a) = L exactly",
-      "f(x) gets arbitrarily close to L as x approaches a",
-      "f(x) equals L only when x = a",
-      "The function is undefined at x = a"
-    ],
-    "correct": 1,
-    "explanation": "📌 A limit describes the BEHAVIOUR of f(x) near x = a, not necessarily at x = a. The function doesn't even need to be defined at a! This is the foundation of calculus — Unilorin will test this definition every session."
-  },
-  {
-    "difficulty": "soft",
-    "points": 5,
-    "text": "What is lim(x→3) (x² - 9)/(x - 3)?",
-    "options": [
-      "0",
-      "Undefined",
-      "6",
-      "3"
-    ],
-    "correct": 2,
-    "explanation": "🎯 Factorise: (x²-9)/(x-3) = (x+3)(x-3)/(x-3) = x+3. Cancel (x≠3), then substitute: 3+3 = 6. This is the classic 0/0 indeterminate form — always try factorising first. Unilorin LOVES this type!"
-  },
-  {
-    "difficulty": "soft",
-    "points": 5,
-    "text": "A function f(x) is continuous at x = a if:",
-    "options": [
-      "f(a) is defined only",
-      "lim(x→a) f(x) exists only",
-      "f(a) is defined, the limit exists, and lim(x→a)f(x) = f(a)",
-      "The graph has no x-intercept"
-    ],
-    "correct": 2,
-    "explanation": "✅ THREE conditions for continuity: (1) f(a) defined, (2) limit exists, (3) limit equals f(a). All three must hold. Miss one and it's discontinuous. Memorise this like your matric number!"
-  },
-  {
-    "difficulty": "soft",
-    "points": 5,
-    "text": "What is lim(x→∞) 1/x?",
-    "options": [
-      "1",
-      "∞",
-      "0",
-      "-1"
-    ],
-    "correct": 2,
-    "explanation": "📐 As x grows infinitely large, 1/x shrinks towards 0. Think: 1/1000 = 0.001, 1/1000000 = 0.000001... approaching zero. Limits at infinity of 1/xⁿ (n>0) always → 0. Classic one-liner!"
-  },
-  {
-    "difficulty": "medium",
-    "points": 10,
-    "text": "Evaluate lim(x→0) sin(x)/x.",
-    "options": [
-      "0",
-      "∞",
-      "Undefined",
-      "1"
-    ],
-    "correct": 3,
-    "explanation": "🧮 This is the most famous limit in calculus! lim(x→0) sin(x)/x = 1. You cannot substitute directly (gives 0/0). This result is proved using the squeeze theorem. Unilorin expects you to know this by heart — no derivation needed in MCQ!"
-  },
-  {
-    "difficulty": "medium",
-    "points": 10,
-    "text": "Find lim(x→2) (x³ - 8)/(x - 2).",
-    "options": [
-      "4",
-      "12",
-      "0",
-      "6"
-    ],
-    "correct": 1,
-    "explanation": "🔬 x³ - 8 = (x-2)(x²+2x+4). Cancel (x-2): limit = x²+2x+4 at x=2 = 4+4+4 = 12. Difference of cubes: a³-b³ = (a-b)(a²+ab+b²). Master this factorisation — Unilorin uses it often!"
-  },
-  {
-    "difficulty": "medium",
-    "points": 10,
-    "text": "Is f(x) = (x²-4)/(x-2) continuous at x = 2?",
-    "options": [
-      "Yes, f(2) = 4",
-      "No, f(2) is undefined",
-      "Yes, the limit exists",
-      "No, the limit does not exist"
-    ],
-    "correct": 1,
-    "explanation": "🔵 f(2) = (4-4)/(2-2) = 0/0 — undefined! Even though the limit exists (= 4), f(2) is not defined. So continuity fails at x=2. The function has a REMOVABLE discontinuity there. Unilorin tests this distinction heavily."
-  },
-  {
-    "difficulty": "medium",
-    "points": 10,
-    "text": "Find lim(x→∞) (3x² + 2x)/(x² - 5).",
-    "options": [
-      "0",
-      "3",
-      "∞",
-      "2"
-    ],
-    "correct": 1,
-    "explanation": "📐 Divide numerator and denominator by x² (highest power): (3 + 2/x)/(1 - 5/x²). As x→∞, 2/x→0 and 5/x²→0. Result = 3/1 = 3. Rule: when degrees are equal, limit = ratio of leading coefficients!"
-  },
-  {
-    "difficulty": "hard",
-    "points": 20,
-    "text": "Evaluate lim(x→0) (1 - cos x)/x².",
-    "options": [
-      "0",
-      "1",
-      "1/2",
-      "∞"
-    ],
-    "correct": 2,
-    "explanation": "🧠 Use L'Hôpital's rule (0/0 form): differentiate top and bottom. First: sin(x)/(2x) — still 0/0. Again: cos(x)/2. At x=0: cos(0)/2 = 1/2. OR use the identity: 1-cosx ≈ x²/2 for small x → (x²/2)/x² = 1/2. Both methods give 1/2!"
-  },
-  {
-    "difficulty": "hard",
-    "points": 20,
-    "text": "f(x) = {x² + 1, x < 2 and 3x - 1, x ≥ 2}. Is f continuous at x = 2?",
-    "options": [
-      "Yes, both one-sided limits equal f(2) = 5",
-      "No, left limit ≠ right limit",
-      "Yes, f(2) is defined",
-      "No, f(2) is undefined"
+      "μ₀ times the enclosed current",
+      "The total magnetic flux through the loop",
+      "The sum of all magnetic fields",
+      "ε₀ times the enclosed charge"
     ],
     "correct": 0,
-    "explanation": "🎓 Left limit: lim(x→2⁻) x²+1 = 4+1 = 5. Right limit: lim(x→2⁺) 3x-1 = 6-1 = 5. f(2) = 3(2)-1 = 5. All three equal 5 ✓ — continuous! Piecewise continuity questions are Unilorin exam staples. Always check BOTH sides!"
+    "explanation": "📌 ∮B·dl = μ₀I_enc. The line integral of B around any closed Amperian loop equals μ₀ times the total current passing through the loop. Magnetic equivalent of Gauss's Law! Used to find B for highly symmetric current distributions — straight wires, solenoids, toroids. Unilorin tests both the statement and application!"
+  },
+  {
+    "difficulty": "soft",
+    "points": 5,
+    "text": "A magnetic dipole moment m is defined for a current loop as:",
+    "options": [
+      "m = I/A",
+      "m = IA",
+      "m = I²A",
+      "m = I/A²"
+    ],
+    "correct": 1,
+    "explanation": "⚡ Magnetic dipole moment m = IA where I is current and A is the area of the loop. Unit = A·m². Direction: right-hand rule — curl fingers in direction of current, thumb points in direction of m. A bar magnet is a magnetic dipole. Unilorin loves the formula AND unit — A·m² is the answer they want!"
+  },
+  {
+    "difficulty": "soft",
+    "points": 5,
+    "text": "The energy stored in a magnetic field of a solenoid with inductance L carrying current I is:",
+    "options": [
+      "U = LI",
+      "U = ½LI²",
+      "U = LI²",
+      "U = 2LI²"
+    ],
+    "correct": 1,
+    "explanation": "🎯 U = ½LI². Compare with electric field energy: U = ½CV². Both have the ½ factor! L = inductance (Henry), I = current. Energy is stored in the magnetic field itself — just like electric energy is stored in E field of a capacitor. The ½ is always there — don't write LI² without the half!"
+  },
+  {
+    "difficulty": "soft",
+    "points": 5,
+    "text": "A dielectric material placed between capacitor plates:",
+    "options": [
+      "Decreases capacitance",
+      "Increases capacitance",
+      "Has no effect on capacitance",
+      "Reduces the electric field to zero"
+    ],
+    "correct": 1,
+    "explanation": "📐 Dielectric increases capacitance: C = κε₀A/d where κ (kappa) is the dielectric constant (κ≥1). The dielectric partially cancels the electric field, allowing more charge to be stored at the same voltage. For vacuum/air: κ=1. Water: κ≈80. Unilorin tests: 'what does inserting a dielectric do?' — always increases C!"
+  },
+  {
+    "difficulty": "medium",
+    "points": 10,
+    "text": "Using Ampere's Law, find the magnetic field at distance r from an infinite straight wire carrying current I.",
+    "options": [
+      "B = μ₀I/4πr",
+      "B = μ₀I/2πr",
+      "B = μ₀I/2r",
+      "B = μ₀Ir/2π"
+    ],
+    "correct": 1,
+    "explanation": "🧮 Amperian loop: circle of radius r centred on wire. ∮B·dl = B(2πr) = μ₀I. So B = μ₀I/2πr. Field lines are concentric circles around the wire. Doubling distance halves B (1/r dependence — not 1/r² like point charges!). B = μ₀I/2πr is the most important magnetic field formula in Unilorin PHY 102. Memorise it!"
+  },
+  {
+    "difficulty": "medium",
+    "points": 10,
+    "text": "A solenoid has 500 turns, length 0.25m and carries current 2A. Find the magnetic field inside. (μ₀=4π×10⁻⁷ T·m/A)",
+    "options": [
+      "5.03×10⁻³ T",
+      "5.03×10⁻⁴ T",
+      "2.51×10⁻³ T",
+      "1.26×10⁻² T"
+    ],
+    "correct": 0,
+    "explanation": "🔬 n = N/L = 500/0.25 = 2000 turns/m. B = μ₀nI = 4π×10⁻⁷ × 2000 × 2 = 4π×10⁻⁷ × 4000 = 16π×10⁻⁴ ≈ 5.03×10⁻³ T. Inside solenoid B is UNIFORM — one of its key properties. Outside solenoid B≈0 (ideal). Unilorin: always find n=N/L first, then B=μ₀nI. Two-step process!"
+  },
+  {
+    "difficulty": "medium",
+    "points": 10,
+    "text": "A capacitor with C=2μF has a dielectric of κ=5 inserted. What is the new capacitance?",
+    "options": [
+      "0.4 μF",
+      "10 μF",
+      "7 μF",
+      "2.5 μF"
+    ],
+    "correct": 1,
+    "explanation": "📐 C_new = κ × C_old = 5 × 2μF = 10μF. Inserting dielectric multiplies capacitance by κ. Simple and clean — κ is just a multiplier. Unilorin gives this as a straightforward medium question. If they give you the new C and ask for κ: κ = C_new/C_old. Works both ways!"
+  },
+  {
+    "difficulty": "medium",
+    "points": 10,
+    "text": "The energy density (energy per unit volume) in a magnetic field B is:",
+    "options": [
+      "u = B²/μ₀",
+      "u = B²/2μ₀",
+      "u = μ₀B²",
+      "u = 2B²/μ₀"
+    ],
+    "correct": 1,
+    "explanation": "🧮 u = B²/2μ₀. Compare electric energy density: u = ε₀E²/2. Both have the ½ factor and involve the field squared divided by the medium's constant. Unit: J/m³. For a solenoid: u = B²/2μ₀ = μ₀n²I²/2. Unilorin tests this alongside ½LI² — they're related but different forms. Know both!"
+  },
+  {
+    "difficulty": "hard",
+    "points": 20,
+    "text": "A toroid has N=300 turns, mean radius R=0.1m and carries I=4A. Find B inside the toroid. (μ₀=4π×10⁻⁷ T·m/A)",
+    "options": [
+      "2.4×10⁻³ T",
+      "1.2×10⁻³ T",
+      "4.8×10⁻³ T",
+      "6×10⁻⁴ T"
+    ],
+    "correct": 0,
+    "explanation": "🧠 Ampere's Law for toroid: B(2πR) = μ₀NI → B = μ₀NI/2πR = (4π×10⁻⁷ × 300 × 4)/(2π × 0.1) = (4π×10⁻⁷ × 1200)/(0.2π) = (4800π×10⁻⁷)/(0.2π) = 24000×10⁻⁷ = 2.4×10⁻³ T. Toroid formula: B = μ₀NI/2πR. Inside toroid: uniform B. Outside toroid: B=0. Distinguished from solenoid by its doughnut shape — Unilorin hard!"
+  },
+  {
+    "difficulty": "hard",
+    "points": 20,
+    "text": "A rectangular current loop (0.3m × 0.2m) carrying I=2A is placed in a uniform B=0.5T field. The plane of the loop is parallel to B. Find the torque on the loop.",
+    "options": [
+      "0.06 N·m",
+      "0.12 N·m",
+      "0.03 N·m",
+      "0.24 N·m"
+    ],
+    "correct": 0,
+    "explanation": "🎓 Torque τ = NIAB sinθ. N=1 (single loop). A = 0.3×0.2 = 0.06m². Plane parallel to B means the magnetic moment m is PERPENDICULAR to B, so θ=90°, sinθ=1. τ = 1 × 2 × 0.06 × 0.5 × 1 = 0.06 N·m. Key trap: 'plane parallel to B' means the NORMAL to the plane is perpendicular to B → maximum torque. This is the principle of a galvanometer and electric motor. Unilorin hard — always find area and identify the angle carefully!"
   }
 ];
   
-
 let S={name:'',email:'',score:0,currentQ:0,correctCount:0,startTime:null,tabWarnings:0,quizEnded:false,answered:false,timerInt:null};
 
 ['uName','uPhone','uCode'].forEach(id=>document.getElementById(id).addEventListener('input',checkForm));
@@ -480,7 +477,6 @@ if (now > QUIZ_CLOSE) {
     btn.disabled = false;
     btn.textContent = '🏛️ ENTER THE CBT CENTER →';
   };
-
   try {
     // Step 1 — Check if student is registered
     const regRes = await fetch(
@@ -530,7 +526,7 @@ if (now > QUIZ_CLOSE) {
   }
 }
 
-const QUIZ_TIME_LIMIT = 6 * 60; // 8 minutes in seconds
+const QUIZ_TIME_LIMIT = 5 * 60; // 5 minutes in seconds
 
 function startTimer() {
   let remaining = QUIZ_TIME_LIMIT;
@@ -595,7 +591,10 @@ function handleAnswer(chosen,btn){
 }
 
 function nextQuestion(){S.currentQ++;if(S.currentQ>=questions.length)endQuiz();else loadQuestion();}
-  
+// ── CONFIGURATION ─────────────────────────────────────────────
+const BACKEND_API_URL = 'https://script.google.com/macros/s/AKfycbzPBHFtejHA10UFrs9VhOJVFIsvkOAbrT6uSBGPUaNZ5cW57q69lPioWO2jPpJazSLT/exec';
+const LEADERBOARD_URL = 'https://exammasterseries.github.io/ExamMaster/leaderboard.html';
+
 async function endQuiz() {
   S.quizEnded = true;
   clearInterval(S.timerInt);
@@ -617,7 +616,7 @@ async function endQuiz() {
     maxScore,
     correct:   S.correctCount,
     total:     questions.length,
-    category:  'MTH102',
+    category:  'PHY102',
     timeTaken: `${mins}:${secs}`,
     rank:      title,
     timestamp: new Date().toISOString(),
@@ -635,7 +634,7 @@ async function endQuiz() {
         window.location.href = LEADERBOARD_URL
           + `?name=${encodeURIComponent(S.name)}`
           + `&score=${S.score}`
-          + `&subject=MTH102`;
+          + `&subject=PHY102`;
       }, 3000);
     } else {
       setTimeout(() => { window.location.href = LEADERBOARD_URL; }, 4000);
@@ -717,7 +716,7 @@ function generateCard(){
   ctx.strokeStyle=bgrad;ctx.lineWidth=10;ctx.strokeRect(6,6,W-12,H-12);
   ctx.strokeStyle='rgba(245,197,24,0.2)';ctx.lineWidth=1;ctx.strokeRect(18,18,W-36,H-36);
   ctx.textAlign='left';ctx.fillStyle='#f5c518';ctx.font='bold 15px Arial';ctx.fillText('EXAMMASTER',34,48);
-  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · MTH 102 · 2026',34,63);
+  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · PHY 102 · 2026',34,63);
   ctx.textAlign='right';ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText(new Date().toLocaleDateString('en-NG',{day:'numeric',month:'short',year:'numeric'}),W-34,48);
   ctx.textAlign='center';ctx.fillStyle='rgba(240,240,248,0.3)';ctx.font='bold 10px Arial';ctx.fillText('CERTIFICATE OF IDAN',W/2,95);
   ctx.font='46px Arial';ctx.fillText(icon,W/2,160);
@@ -727,7 +726,7 @@ function generateCard(){
   ctx.fillStyle='rgba(245,197,24,0.07)';roundRect(ctx,W/2-115,304,230,32,7);ctx.fill();
   ctx.strokeStyle='rgba(245,197,24,0.22)';ctx.lineWidth=1;roundRect(ctx,W/2-115,304,230,32,7);ctx.stroke();
   ctx.fillStyle='#f5c518';ctx.font='bold 14px Arial';ctx.fillText(`Score: ${S.score} / ${maxScore} pts  ·  ${S.correctCount}/${questions.length} Correct`,W/2,325);
-  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"MTH 102 tried, but I am the  SCHOLAR." — CBT Compliant',W/2,372);
+  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"PHY 102 tried, but I am the  SCHOLAR." — CBT Compliant',W/2,372);
 }
 function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();}
 function downloadCard(){const canvas=document.getElementById('idanCanvas');const link=document.createElement('a');link.download=`ExamMaster_${(S.name||'Idan').replace(/\s+/g,'_')}_RankCard.png`;link.href=canvas.toDataURL('image/png');link.click();}
