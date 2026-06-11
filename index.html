@@ -231,7 +231,7 @@ input:focus { border-color:var(--gold); }
 </div>
 
 <script>
-  const QUIZ_OPEN  = new Date('2026-06-12T21:00:00');
+  const QUIZ_OPEN  = new Date('2026-06-11T21:00:00');
 const QUIZ_CLOSE = new Date('2026-06-12T21:12:00');
 const isBossBattle = false;
 
@@ -635,13 +635,13 @@ async function endQuiz() {
           + `?name=${encodeURIComponent(S.name)}`
           + `&score=${S.score}`
           + `&subject=PHY102`;
-      }, 3000);
+      }, 6000);
     } else {
-      setTimeout(() => { window.location.href = LEADERBOARD_URL; }, 4000);
+      setTimeout(() => { window.location.href = LEADERBOARD_URL; }, 6000);
     }
   } catch (err) {
     console.error('Score submission failed:', err);
-    setTimeout(() => { window.location.href = LEADERBOARD_URL; }, 4000);
+    setTimeout(() => { window.location.href = LEADERBOARD_URL; }, 6000);
   }
 }
 
