@@ -231,8 +231,10 @@ input:focus { border-color:var(--gold); }
 </div>
 
 <script>
+  const BACKEND_API_URL = 'https://script.google.com/macros/s/AKfycbzPBHFtejHA10UFrs9VhOJVFIsvkOAbrT6uSBGPUaNZ5cW57q69lPioWO2jPpJazSLT/exec';
+const LEADERBOARD_URL = 'https://exammasterseries.github.io/ExamMaster/leaderboard.html';
   const QUIZ_OPEN  = new Date('2026-06-11T21:00:00');
-const QUIZ_CLOSE = new Date('2026-06-11T21:15:00');
+const QUIZ_CLOSE = new Date('2026-06-11T21:40:00');
 const isBossBattle = false;
 
 const V = {
@@ -593,10 +595,7 @@ function handleAnswer(chosen,btn){
 }
 
 function nextQuestion(){S.currentQ++;if(S.currentQ>=questions.length)endQuiz();else loadQuestion();}
-// ── CONFIGURATION ─────────────────────────────────────────────
-const BACKEND_API_URL = 'https://script.google.com/macros/s/AKfycbzPBHFtejHA10UFrs9VhOJVFIsvkOAbrT6uSBGPUaNZ5cW57q69lPioWO2jPpJazSLT/exec';
-const LEADERBOARD_URL = 'https://exammasterseries.github.io/ExamMaster/leaderboard.html';
-
+  
 async function endQuiz() {
   S.quizEnded = true;
   clearInterval(S.timerInt);
