@@ -10,7 +10,7 @@
 <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
 <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
 
-<title>ExamMaster — PHY 102 Battle</title>
+<title>ExamMaster — CHM 102 Battle</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -145,16 +145,16 @@ input:focus { border-color:var(--gold); }
     <div class="nav-brand">Exam<span>Master</span> ⚡</div>
     <div class="nav-right">
       <div class="live-score" id="liveScore">⚡ <span id="liveScoreNum">0</span> PTS</div>
-      <div class="nav-badge">PHY 102 · Battle</div>
+      <div class="nav-badge">CHM 102 · Battle</div>
     </div>
   </div>
 </nav>
 
 <div class="screen active" id="landingScreen">
   <div class="hero">
-    <div class="hero-badge">🔥 Season 2026 — PHY 102 Edition</div>
-    <h1><span class="w1">MAGNETIC</span><span class="w2">FIELD</span><span class="w3">BATTLE ⚡</span></h1>
-    <p class="hero-sub">10 Questions ·  Ampere's Law ·Magnetic Dipoles ·  Dielectrics & Energy in Magnetic Fields<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
+    <div class="hero-badge">🔥 Season 2026 — CHM 102 Edition</div>
+    <h1><span class="w1">ISOLATION</span><span class="w2">PURIFICATION</span><span class="w3">BATTLE ⚡</span></h1>
+    <p class="hero-sub">15 Questions · Spectroscopy · Seperation techniques <br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
     <div class="form-card fadeUp">
   <div class="form-row">
     <label class="form-label" for="uName">Scholar's Full Name</label>
@@ -231,8 +231,8 @@ input:focus { border-color:var(--gold); }
 </div>
 
 <script>
-  const QUIZ_OPEN  = new Date('2026-06-12T21:00:00');
-const QUIZ_CLOSE = new Date('2026-06-12T21:12:00');
+  const QUIZ_OPEN  = new Date('2026-06-13T21:00:00');
+const QUIZ_CLOSE = new Date('2026-06-13T21:12:00');
 const isBossBattle = false;
 
 const V = {
@@ -288,7 +288,7 @@ const V = {
     "Tab switching detected. Your village people sent you. Resist them! 🕯️"
   ],
   final:[
-    {min:10, max:10,  msg:"CBT Terrorist! 🎯 You finished the work. Go buy yourself a cold Pepsi — you've earned it! 🥤"},
+    {min:10, max:15,  msg:"CBT Terrorist! 🎯 You finished the work. Go buy yourself a cold Pepsi — you've earned it! 🥤"},
     {min:7,  max:9,   msg:"Solid work! 🔥 First Class bracket is calling your name. Keep the fire burning!"},
     {min:4,  max:6,   msg:"You are standing on the fence. 🌬️ If breeze blows, you're going to the Carryover side. Wake up!"},
     {min:0,  max:3,   msg:"My brother/sister, have you considered a career in comedy? Because this score is a huge joke! 🎭"},
@@ -297,139 +297,131 @@ const V = {
 };
 const vRand = arr => arr[Math.floor(Math.random()*arr.length)];
   
+
 const questions = [
   {
-    "difficulty": "soft",
-    "points": 5,
-    "text": "Ampere's Law states that the line integral of B around a closed loop equals:",
-    "options": [
-      "μ₀ times the enclosed current",
-      "The total magnetic flux through the loop",
-      "The sum of all magnetic fields",
-      "ε₀ times the enclosed charge"
-    ],
-    "correct": 0,
-    "explanation": "📌 ∮B·dl = μ₀I_enc. The line integral of B around any closed Amperian loop equals μ₀ times the total current passing through the loop. Magnetic equivalent of Gauss's Law! Used to find B for highly symmetric current distributions — straight wires, solenoids, toroids. Unilorin tests both the statement and application!"
+    difficulty: "soft",
+    points: 5,
+    text: "Which technique is used to separate a mixture of two liquids with different boiling points?",
+    options: ["Filtration", "Distillation", "Sublimation", "Crystallisation"],
+    correct: 1,
+    explanation: "🔥 Distillation separates liquids by boiling point differences. Heat the mixture — the lower boiling point liquid evaporates first, condenses, and is collected separately. Classic Unilorin opener question!"
   },
   {
-    "difficulty": "soft",
-    "points": 5,
-    "text": "A magnetic dipole moment m is defined for a current loop as:",
-    "options": [
-      "m = I/A",
-      "m = IA",
-      "m = I²A",
-      "m = I/A²"
-    ],
-    "correct": 1,
-    "explanation": "⚡ Magnetic dipole moment m = IA where I is current and A is the area of the loop. Unit = A·m². Direction: right-hand rule — curl fingers in direction of current, thumb points in direction of m. A bar magnet is a magnetic dipole. Unilorin loves the formula AND unit — A·m² is the answer they want!"
+    difficulty: "soft",
+    points: 5,
+    text: "What is the purpose of recrystallisation in purification of organic compounds?",
+    options: ["To increase the melting point artificially", "To remove insoluble impurities by filtration only", "To dissolve the compound in hot solvent and allow pure crystals to form on cooling", "To convert a liquid compound into a solid"],
+    correct: 2,
+    explanation: "❄️ Recrystallisation: dissolve compound in minimum hot solvent → cool slowly → pure crystals form (impurities stay in solution). It's like letting the compound 'choose its friends' — only pure molecules join the crystal!"
   },
   {
-    "difficulty": "soft",
-    "points": 5,
-    "text": "The energy stored in a magnetic field of a solenoid with inductance L carrying current I is:",
-    "options": [
-      "U = LI",
-      "U = ½LI²",
-      "U = LI²",
-      "U = 2LI²"
-    ],
-    "correct": 1,
-    "explanation": "🎯 U = ½LI². Compare with electric field energy: U = ½CV². Both have the ½ factor! L = inductance (Henry), I = current. Energy is stored in the magnetic field itself — just like electric energy is stored in E field of a capacitor. The ½ is always there — don't write LI² without the half!"
+    difficulty: "soft",
+    points: 5,
+    text: "Which separation technique is best for separating an insoluble solid from a liquid?",
+    options: ["Distillation", "Chromatography", "Filtration", "Sublimation"],
+    correct: 2,
+    explanation: "🧪 Filtration! Pour the mixture through filter paper — solid stays on paper (residue), liquid passes through (filtrate). Simple and straightforward. If Unilorin gives you sand + water — FILTER IT!"
   },
   {
-    "difficulty": "soft",
-    "points": 5,
-    "text": "A dielectric material placed between capacitor plates:",
-    "options": [
-      "Decreases capacitance",
-      "Increases capacitance",
-      "Has no effect on capacitance",
-      "Reduces the electric field to zero"
-    ],
-    "correct": 1,
-    "explanation": "📐 Dielectric increases capacitance: C = κε₀A/d where κ (kappa) is the dielectric constant (κ≥1). The dielectric partially cancels the electric field, allowing more charge to be stored at the same voltage. For vacuum/air: κ=1. Water: κ≈80. Unilorin tests: 'what does inserting a dielectric do?' — always increases C!"
+    difficulty: "soft",
+    points: 5,
+    text: "Sublimation is used to purify substances that:",
+    options: ["Have high boiling points", "Convert directly from solid to gas without passing through liquid phase", "Are soluble in all solvents", "React violently with water"],
+    correct: 1,
+    explanation: "💨 Sublimation = solid → gas directly (no liquid stage). Used for compounds like iodine, naphthalene, and camphor. Heat the solid, vapour rises and condenses on a cold surface as pure crystals. Elegant!"
   },
   {
-    "difficulty": "medium",
-    "points": 10,
-    "text": "Using Ampere's Law, find the magnetic field at distance r from an infinite straight wire carrying current I.",
-    "options": [
-      "B = μ₀I/4πr",
-      "B = μ₀I/2πr",
-      "B = μ₀I/2r",
-      "B = μ₀Ir/2π"
-    ],
-    "correct": 1,
-    "explanation": "🧮 Amperian loop: circle of radius r centred on wire. ∮B·dl = B(2πr) = μ₀I. So B = μ₀I/2πr. Field lines are concentric circles around the wire. Doubling distance halves B (1/r dependence — not 1/r² like point charges!). B = μ₀I/2πr is the most important magnetic field formula in Unilorin PHY 102. Memorise it!"
+    difficulty: "soft",
+    points: 5,
+    text: "What physical constant is most commonly used to check the purity of a solid organic compound?",
+    options: ["Boiling point", "Melting point", "Density", "Solubility"],
+    correct: 1,
+    explanation: "🌡️ Melting point! A pure compound has a SHARP, defined melting point. Impurities LOWER and BROADEN the melting point range. If your sample melts over a wide range — it's impure. Quick purity test!"
   },
   {
-    "difficulty": "medium",
-    "points": 10,
-    "text": "A solenoid has 500 turns, length 0.25m and carries current 2A. Find the magnetic field inside. (μ₀=4π×10⁻⁷ T·m/A)",
-    "options": [
-      "5.03×10⁻³ T",
-      "5.03×10⁻⁴ T",
-      "2.51×10⁻³ T",
-      "1.26×10⁻² T"
-    ],
-    "correct": 0,
-    "explanation": "🔬 n = N/L = 500/0.25 = 2000 turns/m. B = μ₀nI = 4π×10⁻⁷ × 2000 × 2 = 4π×10⁻⁷ × 4000 = 16π×10⁻⁴ ≈ 5.03×10⁻³ T. Inside solenoid B is UNIFORM — one of its key properties. Outside solenoid B≈0 (ideal). Unilorin: always find n=N/L first, then B=μ₀nI. Two-step process!"
+    difficulty: "medium",
+    points: 10,
+    text: "In paper chromatography, the Rf value is calculated as:",
+    options: ["Distance moved by solvent ÷ distance moved by solute", "Distance moved by solute ÷ distance moved by solvent", "Mass of solute ÷ mass of solvent", "Speed of solute × time taken"],
+    correct: 1,
+    explanation: "📐 Rf = distance moved by substance ÷ distance moved by solvent front. Rf is always between 0 and 1. Each compound has a unique Rf in a given solvent — it's like a fingerprint for identification in Unilorin CBT!"
   },
   {
-    "difficulty": "medium",
-    "points": 10,
-    "text": "A capacitor with C=2μF has a dielectric of κ=5 inserted. What is the new capacitance?",
-    "options": [
-      "0.4 μF",
-      "10 μF",
-      "7 μF",
-      "2.5 μF"
-    ],
-    "correct": 1,
-    "explanation": "📐 C_new = κ × C_old = 5 × 2μF = 10μF. Inserting dielectric multiplies capacitance by κ. Simple and clean — κ is just a multiplier. Unilorin gives this as a straightforward medium question. If they give you the new C and ask for κ: κ = C_new/C_old. Works both ways!"
+    difficulty: "medium",
+    points: 10,
+    text: "Fractional distillation differs from simple distillation because it:",
+    options: ["Uses a fractionating column to separate liquids with close boiling points", "Only works for solids", "Requires no heat", "Uses chromatography paper"],
+    correct: 0,
+    explanation: "🏭 Fractional distillation uses a fractionating column — gives multiple vaporisation-condensation cycles, separating liquids with CLOSE boiling points (difference < 25°C). Think crude oil refinery — that's fractional distillation on a massive scale!"
   },
   {
-    "difficulty": "medium",
-    "points": 10,
-    "text": "The energy density (energy per unit volume) in a magnetic field B is:",
-    "options": [
-      "u = B²/μ₀",
-      "u = B²/2μ₀",
-      "u = μ₀B²",
-      "u = 2B²/μ₀"
-    ],
-    "correct": 1,
-    "explanation": "🧮 u = B²/2μ₀. Compare electric energy density: u = ε₀E²/2. Both have the ½ factor and involve the field squared divided by the medium's constant. Unit: J/m³. For a solenoid: u = B²/2μ₀ = μ₀n²I²/2. Unilorin tests this alongside ½LI² — they're related but different forms. Know both!"
+    difficulty: "medium",
+    points: 10,
+    text: "Which spectroscopic technique gives information about the functional groups present in an organic compound using infrared radiation?",
+    options: ["Mass Spectrometry", "UV-Visible Spectroscopy", "Infrared (IR) Spectroscopy", "NMR Spectroscopy"],
+    correct: 2,
+    explanation: "🌡️ IR Spectroscopy! Different functional groups absorb IR radiation at characteristic frequencies. O-H stretch ~3300 cm⁻¹, C=O ~1700 cm⁻¹. It's like each functional group has its own ringtone — IR identifies who's calling!"
   },
   {
-    "difficulty": "hard",
-    "points": 20,
-    "text": "A toroid has N=300 turns, mean radius R=0.1m and carries I=4A. Find B inside the toroid. (μ₀=4π×10⁻⁷ T·m/A)",
-    "options": [
-      "2.4×10⁻³ T",
-      "1.2×10⁻³ T",
-      "4.8×10⁻³ T",
-      "6×10⁻⁴ T"
-    ],
-    "correct": 0,
-    "explanation": "🧠 Ampere's Law for toroid: B(2πR) = μ₀NI → B = μ₀NI/2πR = (4π×10⁻⁷ × 300 × 4)/(2π × 0.1) = (4π×10⁻⁷ × 1200)/(0.2π) = (4800π×10⁻⁷)/(0.2π) = 24000×10⁻⁷ = 2.4×10⁻³ T. Toroid formula: B = μ₀NI/2πR. Inside toroid: uniform B. Outside toroid: B=0. Distinguished from solenoid by its doughnut shape — Unilorin hard!"
+    difficulty: "medium",
+    points: 10,
+    text: "In solvent extraction, a compound is separated based on its:",
+    options: ["Melting point differences between two layers", "Different solubility in two immiscible solvents", "Ability to sublime", "Colour differences under UV light"],
+    correct: 1,
+    explanation: "🧴 Solvent extraction uses a separating funnel with two immiscible solvents (e.g. water + ether). The compound preferentially dissolves in one layer based on polarity ('like dissolves like'). Shake, separate, done!"
   },
   {
-    "difficulty": "hard",
-    "points": 20,
-    "text": "A rectangular current loop (0.3m × 0.2m) carrying I=2A is placed in a uniform B=0.5T field. The plane of the loop is parallel to B. Find the torque on the loop.",
-    "options": [
-      "0.06 N·m",
-      "0.12 N·m",
-      "0.03 N·m",
-      "0.24 N·m"
-    ],
-    "correct": 0,
-    "explanation": "🎓 Torque τ = NIAB sinθ. N=1 (single loop). A = 0.3×0.2 = 0.06m². Plane parallel to B means the magnetic moment m is PERPENDICULAR to B, so θ=90°, sinθ=1. τ = 1 × 2 × 0.06 × 0.5 × 1 = 0.06 N·m. Key trap: 'plane parallel to B' means the NORMAL to the plane is perpendicular to B → maximum torque. This is the principle of a galvanometer and electric motor. Unilorin hard — always find area and identify the angle carefully!"
+    difficulty: "medium",
+    points: 10,
+    text: "Mass spectrometry is primarily used in structure determination to find:",
+    options: ["The colour of the compound", "The molecular mass and fragmentation pattern of a compound", "The boiling point of a compound", "The solubility of a compound in water"],
+    correct: 1,
+    explanation: "⚖️ Mass Spec gives the MOLECULAR MASS (from molecular ion peak M⁺) and breaks the molecule into fragments — each fragment reveals part of the structure. It's like smashing a phone and identifying it from the pieces!"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "A compound shows a broad absorption around 3300 cm⁻¹ and a sharp peak at 1715 cm⁻¹ in its IR spectrum. What functional groups are likely present?",
+    options: ["Alkene and aldehyde", "O-H (alcohol/acid) and C=O (carbonyl)", "C-H and C≡N", "N-H and C=C"],
+    correct: 1,
+    explanation: "🎯 3300 cm⁻¹ broad = O-H stretch (alcohol or carboxylic acid). 1715 cm⁻¹ = C=O carbonyl stretch. Together → likely a CARBOXYLIC ACID. IR interpretation is high-value in Unilorin exams — know your key wavenumbers!"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "In NMR spectroscopy, the number of signals in a ¹H NMR spectrum tells you:",
+    options: ["The molecular mass of the compound", "The number of chemically non-equivalent sets of hydrogen atoms", "The number of carbon atoms present", "The boiling point of the compound"],
+    correct: 1,
+    explanation: "📡 Each unique (non-equivalent) H environment gives ONE NMR signal. Ethanol (CH₃CH₂OH) gives 3 signals: CH₃, CH₂, and OH. NMR is the most powerful tool for determining organic structure — used in hospitals for MRI too!"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "A mixture of two organic compounds A and B is treated with NaHCO₃ solution. Only compound A dissolves. Which is compound A most likely?",
+    options: ["An alcohol", "A carboxylic acid", "An alkane", "An ether"],
+    correct: 1,
+    explanation: "🧠 NaHCO₃ (a mild base) dissolves CARBOXYLIC ACIDS (releasing CO₂ gas) but NOT alcohols, ethers, or alkanes. So A = carboxylic acid! This chemical test is a classic isolation/purification question. RCOOH + NaHCO₃ → RCOONa + H₂O + CO₂"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "Which chromatography technique is best suited for separating amino acids and is used in biochemistry labs?",
+    options: ["Gas chromatography", "Paper chromatography", "Column chromatography", "High Performance Liquid Chromatography (HPLC)"],
+    correct: 1,
+    explanation: "🔬 Paper chromatography is the classic method for separating amino acids — cheap, simple, and effective. Spray ninhydrin to reveal spots (amino acids turn purple). HPLC is faster and more precise but paper chromo is the Unilorin answer here!"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "The molecular ion peak (M⁺) in mass spectrometry of a compound appears at m/z = 46. The compound also gives a flame test and reacts with sodium to release hydrogen gas. The compound is most likely:",
+    options: ["Methanol (CH₃OH, MW=32)", "Ethanol (C₂H₅OH, MW=46)", "Ethanoic acid (CH₃COOH, MW=60)", "Dimethyl ether (CH₃OCH₃, MW=46)"],
+    correct: 1,
+    explanation: "🏆 MW = 46 → could be ethanol OR dimethyl ether. But reacting with Na to give H₂ gas confirms an O-H group (alcohol). Dimethyl ether has no O-H so it won't react with Na. Therefore: ETHANOL. Always combine spectral + chemical data!"
   }
 ];
-  
+
+
 let S={name:'',email:'',score:0,currentQ:0,correctCount:0,startTime:null,tabWarnings:0,quizEnded:false,answered:false,timerInt:null};
 
 ['uName','uPhone','uCode'].forEach(id=>document.getElementById(id).addEventListener('input',checkForm));
@@ -477,6 +469,8 @@ if (now > QUIZ_CLOSE) {
     btn.disabled = false;
     btn.textContent = '🏛️ ENTER THE CBT CENTER →';
   };
+
+
   try {
     // Step 1 — Check if student is registered
     const regRes = await fetch(
@@ -526,7 +520,7 @@ if (now > QUIZ_CLOSE) {
   }
 }
 
-const QUIZ_TIME_LIMIT = 5 * 60; // 5 minutes in seconds
+const QUIZ_TIME_LIMIT = 8 * 60; // 8 minutes in seconds
 
 function startTimer() {
   let remaining = QUIZ_TIME_LIMIT;
@@ -616,7 +610,7 @@ async function endQuiz() {
     maxScore,
     correct:   S.correctCount,
     total:     questions.length,
-    category:  'PHY102',
+    category:  'CHM102',
     timeTaken: `${mins}:${secs}`,
     rank:      title,
     timestamp: new Date().toISOString(),
@@ -634,7 +628,7 @@ async function endQuiz() {
         window.location.href = LEADERBOARD_URL
           + `?name=${encodeURIComponent(S.name)}`
           + `&score=${S.score}`
-          + `&subject=PHY102`;
+          + `&subject=CHM102`;
       }, 6000);
     } else {
       setTimeout(() => { window.location.href = LEADERBOARD_URL; }, 6000);
@@ -716,7 +710,7 @@ function generateCard(){
   ctx.strokeStyle=bgrad;ctx.lineWidth=10;ctx.strokeRect(6,6,W-12,H-12);
   ctx.strokeStyle='rgba(245,197,24,0.2)';ctx.lineWidth=1;ctx.strokeRect(18,18,W-36,H-36);
   ctx.textAlign='left';ctx.fillStyle='#f5c518';ctx.font='bold 15px Arial';ctx.fillText('EXAMMASTER',34,48);
-  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · PHY 102 · 2026',34,63);
+  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · CHM 102 · 2026',34,63);
   ctx.textAlign='right';ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText(new Date().toLocaleDateString('en-NG',{day:'numeric',month:'short',year:'numeric'}),W-34,48);
   ctx.textAlign='center';ctx.fillStyle='rgba(240,240,248,0.3)';ctx.font='bold 10px Arial';ctx.fillText('CERTIFICATE OF IDAN',W/2,95);
   ctx.font='46px Arial';ctx.fillText(icon,W/2,160);
@@ -726,7 +720,7 @@ function generateCard(){
   ctx.fillStyle='rgba(245,197,24,0.07)';roundRect(ctx,W/2-115,304,230,32,7);ctx.fill();
   ctx.strokeStyle='rgba(245,197,24,0.22)';ctx.lineWidth=1;roundRect(ctx,W/2-115,304,230,32,7);ctx.stroke();
   ctx.fillStyle='#f5c518';ctx.font='bold 14px Arial';ctx.fillText(`Score: ${S.score} / ${maxScore} pts  ·  ${S.correctCount}/${questions.length} Correct`,W/2,325);
-  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"PHY 102 tried, but I am the  SCHOLAR." — CBT Compliant',W/2,372);
+  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"CHM 102 tried, but I am the BOSS." — CBT Compliant',W/2,372);
 }
 function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();}
 function downloadCard(){const canvas=document.getElementById('idanCanvas');const link=document.createElement('a');link.download=`ExamMaster_${(S.name||'Idan').replace(/\s+/g,'_')}_RankCard.png`;link.href=canvas.toDataURL('image/png');link.click();}
