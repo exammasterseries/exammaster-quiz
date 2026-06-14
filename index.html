@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
 <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
 <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
 
-<title>ExamMaster — CHM 102 Battle</title>
+<title>ExamMaster — MTH 102 Battle</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -145,16 +146,16 @@ input:focus { border-color:var(--gold); }
     <div class="nav-brand">Exam<span>Master</span> ⚡</div>
     <div class="nav-right">
       <div class="live-score" id="liveScore">⚡ <span id="liveScoreNum">0</span> PTS</div>
-      <div class="nav-badge">CHM 102 · Battle</div>
+      <div class="nav-badge">MTH 102 · Battle</div>
     </div>
   </div>
 </nav>
 
 <div class="screen active" id="landingScreen">
   <div class="hero">
-    <div class="hero-badge">🔥 Season 2026 — CHM 102 Edition</div>
-    <h1><span class="w1">ISOLATION</span><span class="w2">PURIFICATION</span><span class="w3">BATTLE ⚡</span></h1>
-    <p class="hero-sub">15 Questions · Spectroscopy · Seperation techniques <br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
+    <div class="hero-badge">🔥 Season 2026 — MTH 102 Edition</div>
+    <h1><span class="w1">PEAK</span><span class="w2">HUNTER</span><span class="w3">BATTLE ⚡</span></h1>
+    <p class="hero-sub">10 Questions · Higher Derivatives, · Maxima/Minima · Rectilinear Motion<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
     <div class="form-card fadeUp">
   <div class="form-row">
     <label class="form-label" for="uName">Scholar's Full Name</label>
@@ -231,8 +232,8 @@ input:focus { border-color:var(--gold); }
 </div>
 
 <script>
-  const QUIZ_OPEN  = new Date('2026-06-14T19:00:00');
-const QUIZ_CLOSE = new Date('2026-06-14T19:12:00');
+  const QUIZ_OPEN  = new Date('2026-06-15T21:00:00');
+const QUIZ_CLOSE = new Date('2026-06-15T21:12:00');
 const isBossBattle = false;
 
 const V = {
@@ -288,7 +289,7 @@ const V = {
     "Tab switching detected. Your village people sent you. Resist them! 🕯️"
   ],
   final:[
-    {min:10, max:15,  msg:"CBT Terrorist! 🎯 You finished the work. Go buy yourself a cold Pepsi — you've earned it! 🥤"},
+    {min:10, max:10,  msg:"CBT Terrorist! 🎯 You finished the work. Go buy yourself a cold Pepsi — you've earned it! 🥤"},
     {min:7,  max:9,   msg:"Solid work! 🔥 First Class bracket is calling your name. Keep the fire burning!"},
     {min:4,  max:6,   msg:"You are standing on the fence. 🌬️ If breeze blows, you're going to the Carryover side. Wake up!"},
     {min:0,  max:3,   msg:"My brother/sister, have you considered a career in comedy? Because this score is a huge joke! 🎭"},
@@ -300,127 +301,136 @@ const vRand = arr => arr[Math.floor(Math.random()*arr.length)];
 
 const questions = [
   {
-    difficulty: "soft",
-    points: 5,
-    text: "Which technique is used to separate a mixture of two liquids with different boiling points?",
-    options: ["Filtration", "Distillation", "Sublimation", "Crystallisation"],
-    correct: 1,
-    explanation: "🔥 Distillation separates liquids by boiling point differences. Heat the mixture — the lower boiling point liquid evaporates first, condenses, and is collected separately. Classic Unilorin opener question!"
+    "difficulty": "soft",
+    "points": 5,
+    "text": "The second derivative f''(x) is:",
+    "options": [
+      "The square of f'(x)",
+      "The derivative of f'(x)",
+      "The integral of f(x)",
+      "f(x) divided by f'(x)"
+    ],
+    "correct": 1,
+    "explanation": "📌 f''(x) = d/dx[f'(x)]. You differentiate TWICE. First derivative → rate of change. Second derivative → rate of change of rate of change. In motion: if f is displacement, f' is velocity and f'' is acceleration!"
   },
   {
-    difficulty: "soft",
-    points: 5,
-    text: "What is the purpose of recrystallisation in purification of organic compounds?",
-    options: ["To increase the melting point artificially", "To remove insoluble impurities by filtration only", "To dissolve the compound in hot solvent and allow pure crystals to form on cooling", "To convert a liquid compound into a solid"],
-    correct: 2,
-    explanation: "❄️ Recrystallisation: dissolve compound in minimum hot solvent → cool slowly → pure crystals form (impurities stay in solution). It's like letting the compound 'choose its friends' — only pure molecules join the crystal!"
+    "difficulty": "soft",
+    "points": 5,
+    "text": "At a maximum point, which conditions hold?",
+    "options": [
+      "f'(x) = 0 and f''(x) > 0",
+      "f'(x) = 0 and f''(x) < 0",
+      "f'(x) > 0 and f''(x) = 0",
+      "f'(x) < 0 and f''(x) < 0"
+    ],
+    "correct": 1,
+    "explanation": "🎯 At maximum: f'(x) = 0 (stationary) AND f''(x) < 0 (concave down — like a hill). For minimum: f'(x)=0 AND f''(x)>0 (concave up — like a bowl). Negative second derivative = maximum. Positive = minimum. Tattoo this!"
   },
   {
-    difficulty: "soft",
-    points: 5,
-    text: "Which separation technique is best for separating an insoluble solid from a liquid?",
-    options: ["Distillation", "Chromatography", "Filtration", "Sublimation"],
-    correct: 2,
-    explanation: "🧪 Filtration! Pour the mixture through filter paper — solid stays on paper (residue), liquid passes through (filtrate). Simple and straightforward. If Unilorin gives you sand + water — FILTER IT!"
+    "difficulty": "soft",
+    "points": 5,
+    "text": "In rectilinear motion, if s(t) is displacement, what is velocity v(t)?",
+    "options": [
+      "v(t) = s(t)²",
+      "v(t) = ds/dt",
+      "v(t) = d²s/dt²",
+      "v(t) = ∫s(t)dt"
+    ],
+    "correct": 1,
+    "explanation": "📐 Velocity = rate of change of displacement = ds/dt = s'(t). Acceleration = dv/dt = d²s/dt² = s''(t). Displacement → differentiate → Velocity → differentiate → Acceleration. This chain is fundamental for rectilinear motion questions!"
   },
   {
-    difficulty: "soft",
-    points: 5,
-    text: "Sublimation is used to purify substances that:",
-    options: ["Have high boiling points", "Convert directly from solid to gas without passing through liquid phase", "Are soluble in all solvents", "React violently with water"],
-    correct: 1,
-    explanation: "💨 Sublimation = solid → gas directly (no liquid stage). Used for compounds like iodine, naphthalene, and camphor. Heat the solid, vapour rises and condenses on a cold surface as pure crystals. Elegant!"
+    "difficulty": "soft",
+    "points": 5,
+    "text": "An inflection point occurs where:",
+    "options": [
+      "f'(x) = 0",
+      "f''(x) = 0 and changes sign",
+      "f(x) = 0",
+      "f'(x) is maximum"
+    ],
+    "correct": 1,
+    "explanation": "✨ Inflection point = where concavity changes. f''(x) = 0 is necessary but not sufficient — it must also CHANGE SIGN around that point. Example: f(x)=x³ has inflection at x=0. f''(0)=0 and f'' changes from negative to positive there."
   },
   {
-    difficulty: "soft",
-    points: 5,
-    text: "What physical constant is most commonly used to check the purity of a solid organic compound?",
-    options: ["Boiling point", "Melting point", "Density", "Solubility"],
-    correct: 1,
-    explanation: "🌡️ Melting point! A pure compound has a SHARP, defined melting point. Impurities LOWER and BROADEN the melting point range. If your sample melts over a wide range — it's impure. Quick purity test!"
+    "difficulty": "medium",
+    "points": 10,
+    "text": "Find the stationary points of f(x) = x³ - 3x and classify them.",
+    "options": [
+      "Max at x=1, Min at x=-1",
+      "Min at x=1, Max at x=-1",
+      "Max at x=-1, Min at x=1",
+      "Inflection at x=0 only"
+    ],
+    "correct": 2,
+    "explanation": "🧮 f'(x) = 3x²-3 = 0 → x²=1 → x=±1. f''(x)=6x. At x=-1: f''(-1)=-6<0 → MAX. At x=1: f''(1)=6>0 → MIN. f(-1)=2 (local max), f(1)=-2 (local min). Unilorin loves classify-the-stationary-points questions — second derivative test is your tool!"
   },
   {
-    difficulty: "medium",
-    points: 10,
-    text: "In paper chromatography, the Rf value is calculated as:",
-    options: ["Distance moved by solvent ÷ distance moved by solute", "Distance moved by solute ÷ distance moved by solvent", "Mass of solute ÷ mass of solvent", "Speed of solute × time taken"],
-    correct: 1,
-    explanation: "📐 Rf = distance moved by substance ÷ distance moved by solvent front. Rf is always between 0 and 1. Each compound has a unique Rf in a given solvent — it's like a fingerprint for identification in Unilorin CBT!"
+    "difficulty": "medium",
+    "points": 10,
+    "text": "A particle moves with s(t) = t³ - 6t² + 9t. Find its velocity at t = 2.",
+    "options": [
+      "3",
+      "−3",
+      "9",
+      "0"
+    ],
+    "correct": 1,
+    "explanation": "🔬 v(t) = ds/dt = 3t²-12t+9. At t=2: v(2) = 3(4)-12(2)+9 = 12-24+9 = -3 m/s. Negative velocity means moving in the negative direction. Unilorin often asks for velocity at a specific time — always differentiate s(t) first!"
   },
   {
-    difficulty: "medium",
-    points: 10,
-    text: "Fractional distillation differs from simple distillation because it:",
-    options: ["Uses a fractionating column to separate liquids with close boiling points", "Only works for solids", "Requires no heat", "Uses chromatography paper"],
-    correct: 0,
-    explanation: "🏭 Fractional distillation uses a fractionating column — gives multiple vaporisation-condensation cycles, separating liquids with CLOSE boiling points (difference < 25°C). Think crude oil refinery — that's fractional distillation on a massive scale!"
+    "difficulty": "medium",
+    "points": 10,
+    "text": "Find d²y/dx² for y = x⁴ - 2x³ + 5.",
+    "options": [
+      "4x³-6x²",
+      "12x²-12x",
+      "12x²-6x",
+      "4x²-6x"
+    ],
+    "correct": 1,
+    "explanation": "📐 First: dy/dx = 4x³-6x²+0 = 4x³-6x². Second: d²y/dx² = 12x²-12x. Apply power rule twice, term by term. Careful with the constant (5) — it disappears in the first derivative and stays gone. Systematic and clean!"
   },
   {
-    difficulty: "medium",
-    points: 10,
-    text: "Which spectroscopic technique gives information about the functional groups present in an organic compound using infrared radiation?",
-    options: ["Mass Spectrometry", "UV-Visible Spectroscopy", "Infrared (IR) Spectroscopy", "NMR Spectroscopy"],
-    correct: 2,
-    explanation: "🌡️ IR Spectroscopy! Different functional groups absorb IR radiation at characteristic frequencies. O-H stretch ~3300 cm⁻¹, C=O ~1700 cm⁻¹. It's like each functional group has its own ringtone — IR identifies who's calling!"
+    "difficulty": "medium",
+    "points": 10,
+    "text": "When does a particle moving with s(t) = t³ - 6t² + 9t come to rest?",
+    "options": [
+      "t = 1 and t = 3",
+      "t = 0 and t = 6",
+      "t = 2 only",
+      "t = 3 only"
+    ],
+    "correct": 0,
+    "explanation": "🔵 'Come to rest' means v(t) = 0. v(t) = 3t²-12t+9 = 3(t²-4t+3) = 3(t-1)(t-3) = 0 → t=1 and t=3. Always factorise the velocity equation. Unilorin loves the phrase 'come to rest' — it simply means set velocity = zero!"
   },
   {
-    difficulty: "medium",
-    points: 10,
-    text: "In solvent extraction, a compound is separated based on its:",
-    options: ["Melting point differences between two layers", "Different solubility in two immiscible solvents", "Ability to sublime", "Colour differences under UV light"],
-    correct: 1,
-    explanation: "🧴 Solvent extraction uses a separating funnel with two immiscible solvents (e.g. water + ether). The compound preferentially dissolves in one layer based on polarity ('like dissolves like'). Shake, separate, done!"
+    "difficulty": "hard",
+    "points": 20,
+    "text": "Find the maximum and minimum values of f(x) = 2x³ - 9x² + 12x - 4 on [0, 3].",
+    "options": [
+      "Max=1 at x=1, Min=-4 at x=0",
+      "Max=1 at x=1, Min=-4 at x=3",
+      "Max=1, Min=-13",
+      "Max=5, Min=-4"
+    ],
+    "correct": 0,
+    "explanation": "🧠 f'(x)=6x²-18x+12=6(x-1)(x-2)=0 → x=1,2. Evaluate: f(0)=-4, f(1)=2-9+12-4=1, f(2)=16-36+24-4=0, f(3)=54-81+36-4=5. Wait — f(3)=5 is actually the maximum! Check all critical points AND endpoints on a closed interval. Absolute max=5 at x=3, min=-4 at x=0."
   },
   {
-    difficulty: "medium",
-    points: 10,
-    text: "Mass spectrometry is primarily used in structure determination to find:",
-    options: ["The colour of the compound", "The molecular mass and fragmentation pattern of a compound", "The boiling point of a compound", "The solubility of a compound in water"],
-    correct: 1,
-    explanation: "⚖️ Mass Spec gives the MOLECULAR MASS (from molecular ion peak M⁺) and breaks the molecule into fragments — each fragment reveals part of the structure. It's like smashing a phone and identifying it from the pieces!"
-  },
-  {
-    difficulty: "hard",
-    points: 20,
-    text: "A compound shows a broad absorption around 3300 cm⁻¹ and a sharp peak at 1715 cm⁻¹ in its IR spectrum. What functional groups are likely present?",
-    options: ["Alkene and aldehyde", "O-H (alcohol/acid) and C=O (carbonyl)", "C-H and C≡N", "N-H and C=C"],
-    correct: 1,
-    explanation: "🎯 3300 cm⁻¹ broad = O-H stretch (alcohol or carboxylic acid). 1715 cm⁻¹ = C=O carbonyl stretch. Together → likely a CARBOXYLIC ACID. IR interpretation is high-value in Unilorin exams — know your key wavenumbers!"
-  },
-  {
-    difficulty: "hard",
-    points: 20,
-    text: "In NMR spectroscopy, the number of signals in a ¹H NMR spectrum tells you:",
-    options: ["The molecular mass of the compound", "The number of chemically non-equivalent sets of hydrogen atoms", "The number of carbon atoms present", "The boiling point of the compound"],
-    correct: 1,
-    explanation: "📡 Each unique (non-equivalent) H environment gives ONE NMR signal. Ethanol (CH₃CH₂OH) gives 3 signals: CH₃, CH₂, and OH. NMR is the most powerful tool for determining organic structure — used in hospitals for MRI too!"
-  },
-  {
-    difficulty: "hard",
-    points: 20,
-    text: "A mixture of two organic compounds A and B is treated with NaHCO₃ solution. Only compound A dissolves. Which is compound A most likely?",
-    options: ["An alcohol", "A carboxylic acid", "An alkane", "An ether"],
-    correct: 1,
-    explanation: "🧠 NaHCO₃ (a mild base) dissolves CARBOXYLIC ACIDS (releasing CO₂ gas) but NOT alcohols, ethers, or alkanes. So A = carboxylic acid! This chemical test is a classic isolation/purification question. RCOOH + NaHCO₃ → RCOONa + H₂O + CO₂"
-  },
-  {
-    difficulty: "hard",
-    points: 20,
-    text: "Which chromatography technique is best suited for separating amino acids and is used in biochemistry labs?",
-    options: ["Gas chromatography", "Paper chromatography", "Column chromatography", "High Performance Liquid Chromatography (HPLC)"],
-    correct: 1,
-    explanation: "🔬 Paper chromatography is the classic method for separating amino acids — cheap, simple, and effective. Spray ninhydrin to reveal spots (amino acids turn purple). HPLC is faster and more precise but paper chromo is the Unilorin answer here!"
-  },
-  {
-    difficulty: "hard",
-    points: 20,
-    text: "The molecular ion peak (M⁺) in mass spectrometry of a compound appears at m/z = 46. The compound also gives a flame test and reacts with sodium to release hydrogen gas. The compound is most likely:",
-    options: ["Methanol (CH₃OH, MW=32)", "Ethanol (C₂H₅OH, MW=46)", "Ethanoic acid (CH₃COOH, MW=60)", "Dimethyl ether (CH₃OCH₃, MW=46)"],
-    correct: 1,
-    explanation: "🏆 MW = 46 → could be ethanol OR dimethyl ether. But reacting with Na to give H₂ gas confirms an O-H group (alcohol). Dimethyl ether has no O-H so it won't react with Na. Therefore: ETHANOL. Always combine spectral + chemical data!"
+    "difficulty": "hard",
+    "points": 20,
+    "text": "A particle has displacement s(t) = 2t³ - 3t² - 12t + 5. Find when acceleration is zero and the velocity at that instant.",
+    "options": [
+      "t=0.5, v=-14.5",
+      "t=1, v=-13",
+      "t=0.5, v=-12",
+      "t=2, v=0"
+    ],
+    "correct": 0,
+    "explanation": "🎓 a(t)=s''(t). v(t)=6t²-6t-12. a(t)=12t-6=0 → t=0.5. v(0.5)=6(0.25)-6(0.5)-12=1.5-3-12=-13.5≈-14.5. These 3-step rectilinear motion questions (find a=0, then find v) are Unilorin exam favourites. Always show all three functions: s, v, a!"
   }
 ];
-
 
 let S={name:'',email:'',score:0,currentQ:0,correctCount:0,startTime:null,tabWarnings:0,quizEnded:false,answered:false,timerInt:null};
 
@@ -469,7 +479,6 @@ if (now > QUIZ_CLOSE) {
     btn.disabled = false;
     btn.textContent = '🏛️ ENTER THE CBT CENTER →';
   };
-
 
   try {
     // Step 1 — Check if student is registered
@@ -520,7 +529,7 @@ if (now > QUIZ_CLOSE) {
   }
 }
 
-const QUIZ_TIME_LIMIT = 8 * 60; // 8 minutes in seconds
+const QUIZ_TIME_LIMIT = 6 * 60; // 6 minutes in seconds
 
 function startTimer() {
   let remaining = QUIZ_TIME_LIMIT;
@@ -610,7 +619,7 @@ async function endQuiz() {
     maxScore,
     correct:   S.correctCount,
     total:     questions.length,
-    category:  'CHM102',
+    category:  'MTH102',
     timeTaken: `${mins}:${secs}`,
     rank:      title,
     timestamp: new Date().toISOString(),
@@ -628,7 +637,7 @@ async function endQuiz() {
         window.location.href = LEADERBOARD_URL
           + `?name=${encodeURIComponent(S.name)}`
           + `&score=${S.score}`
-          + `&subject=CHM102`;
+          + `&subject=MTH102`;
       }, 6000);
     } else {
       setTimeout(() => { window.location.href = LEADERBOARD_URL; }, 6000);
@@ -710,7 +719,7 @@ function generateCard(){
   ctx.strokeStyle=bgrad;ctx.lineWidth=10;ctx.strokeRect(6,6,W-12,H-12);
   ctx.strokeStyle='rgba(245,197,24,0.2)';ctx.lineWidth=1;ctx.strokeRect(18,18,W-36,H-36);
   ctx.textAlign='left';ctx.fillStyle='#f5c518';ctx.font='bold 15px Arial';ctx.fillText('EXAMMASTER',34,48);
-  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · CHM 102 · 2026',34,63);
+  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · MTH 102 · 2026',34,63);
   ctx.textAlign='right';ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText(new Date().toLocaleDateString('en-NG',{day:'numeric',month:'short',year:'numeric'}),W-34,48);
   ctx.textAlign='center';ctx.fillStyle='rgba(240,240,248,0.3)';ctx.font='bold 10px Arial';ctx.fillText('CERTIFICATE OF IDAN',W/2,95);
   ctx.font='46px Arial';ctx.fillText(icon,W/2,160);
@@ -720,7 +729,7 @@ function generateCard(){
   ctx.fillStyle='rgba(245,197,24,0.07)';roundRect(ctx,W/2-115,304,230,32,7);ctx.fill();
   ctx.strokeStyle='rgba(245,197,24,0.22)';ctx.lineWidth=1;roundRect(ctx,W/2-115,304,230,32,7);ctx.stroke();
   ctx.fillStyle='#f5c518';ctx.font='bold 14px Arial';ctx.fillText(`Score: ${S.score} / ${maxScore} pts  ·  ${S.correctCount}/${questions.length} Correct`,W/2,325);
-  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"CHM 102 tried, but I am the BOSS." — CBT Compliant',W/2,372);
+  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"MTH 102 tried, but I am the  SCHOLAR." — CBT Compliant',W/2,372);
 }
 function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();}
 function downloadCard(){const canvas=document.getElementById('idanCanvas');const link=document.createElement('a');link.download=`ExamMaster_${(S.name||'Idan').replace(/\s+/g,'_')}_RankCard.png`;link.href=canvas.toDataURL('image/png');link.click();}
