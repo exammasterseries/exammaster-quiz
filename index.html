@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +10,7 @@
 <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
 <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
 
-<title>ExamMaster — MTH 102 Battle</title>
+<title>ExamMaster — CHM 102 Battle</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -146,16 +145,16 @@ input:focus { border-color:var(--gold); }
     <div class="nav-brand">Exam<span>Master</span> ⚡</div>
     <div class="nav-right">
       <div class="live-score" id="liveScore">⚡ <span id="liveScoreNum">0</span> PTS</div>
-      <div class="nav-badge">MTH 102 · Battle</div>
+      <div class="nav-badge">CHM 102 · Battle</div>
     </div>
   </div>
 </nav>
 
 <div class="screen active" id="landingScreen">
   <div class="hero">
-    <div class="hero-badge">🔥 Season 2026 — MTH 102 Edition</div>
-    <h1><span class="w1">PEAK</span><span class="w2">HUNTER</span><span class="w3">BATTLE ⚡</span></h1>
-    <p class="hero-sub">10 Questions · Higher Derivatives, · Maxima/Minima · Rectilinear Motion<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
+    <div class="hero-badge">🔥 Season 2026 — CHM 102 Edition</div>
+    <h1><span class="w1">THE-NAMING</span><span class="w2">CONTINUES</span><span class="w3">BATTLE ⚡</span></h1>
+    <p class="hero-sub">15 Questions · alkyl group · iupac name · nucleophilic substitution<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
     <div class="form-card fadeUp">
   <div class="form-row">
     <label class="form-label" for="uName">Scholar's Full Name</label>
@@ -232,8 +231,8 @@ input:focus { border-color:var(--gold); }
 </div>
 
 <script>
-  const QUIZ_OPEN  = new Date('2026-06-15T21:00:00');
-const QUIZ_CLOSE = new Date('2026-06-15T21:12:00');
+  const QUIZ_OPEN  = new Date('2026-06-16T21:00:00');
+const QUIZ_CLOSE = new Date('2026-06-16T21:12:00');
 const isBossBattle = false;
 
 const V = {
@@ -289,7 +288,7 @@ const V = {
     "Tab switching detected. Your village people sent you. Resist them! 🕯️"
   ],
   final:[
-    {min:10, max:10,  msg:"CBT Terrorist! 🎯 You finished the work. Go buy yourself a cold Pepsi — you've earned it! 🥤"},
+    {min:10, max:15,  msg:"CBT Terrorist! 🎯 You finished the work. Go buy yourself a cold Pepsi — you've earned it! 🥤"},
     {min:7,  max:9,   msg:"Solid work! 🔥 First Class bracket is calling your name. Keep the fire burning!"},
     {min:4,  max:6,   msg:"You are standing on the fence. 🌬️ If breeze blows, you're going to the Carryover side. Wake up!"},
     {min:0,  max:3,   msg:"My brother/sister, have you considered a career in comedy? Because this score is a huge joke! 🎭"},
@@ -298,139 +297,164 @@ const V = {
 };
 const vRand = arr => arr[Math.floor(Math.random()*arr.length)];
   
-
 const questions = [
   {
-    "difficulty": "soft",
-    "points": 5,
-    "text": "The second derivative f''(x) is:",
-    "options": [
-      "The square of f'(x)",
-      "The derivative of f'(x)",
-      "The integral of f(x)",
-      "f(x) divided by f'(x)"
-    ],
-    "correct": 1,
-    "explanation": "📌 f''(x) = d/dx[f'(x)]. You differentiate TWICE. First derivative → rate of change. Second derivative → rate of change of rate of change. In motion: if f is displacement, f' is velocity and f'' is acceleration!"
+    difficulty: "soft",
+    points: 5,
+    text: "What is the IUPAC name of CH₃CH₂COOH?",
+    options: ["Ethanoic acid", "Propanoic acid", "Butanoic acid", "Methanoic acid"],
+    correct: 1,
+    explanation: "🍋 CH₃CH₂COOH has 3 carbons (including the COOH carbon) → propan- + carboxylic acid suffix '-oic acid' = PROPANOIC ACID. Always include the COOH carbon in your count! Ethanoic acid = CH₃COOH (2C), Methanoic acid = HCOOH (1C). Count carefully in CBT!"
   },
   {
-    "difficulty": "soft",
-    "points": 5,
-    "text": "At a maximum point, which conditions hold?",
-    "options": [
-      "f'(x) = 0 and f''(x) > 0",
-      "f'(x) = 0 and f''(x) < 0",
-      "f'(x) > 0 and f''(x) = 0",
-      "f'(x) < 0 and f''(x) < 0"
-    ],
-    "correct": 1,
-    "explanation": "🎯 At maximum: f'(x) = 0 (stationary) AND f''(x) < 0 (concave down — like a hill). For minimum: f'(x)=0 AND f''(x)>0 (concave up — like a bowl). Negative second derivative = maximum. Positive = minimum. Tattoo this!"
+    difficulty: "soft",
+    points: 5,
+    text: "Which of the following is an ether?",
+    options: ["CH₃CH₂OH", "CH₃OCH₃", "CH₃COOH", "CH₃CHO"],
+    correct: 1,
+    explanation: "🔗 Ethers have the general structure R–O–R' (oxygen between two carbon groups). CH₃OCH₃ = dimethyl ether. CH₃CH₂OH = ethanol (alcohol). CH₃COOH = ethanoic acid. CH₃CHO = ethanal (aldehyde). The –O– linkage in the MIDDLE is the ether giveaway!"
   },
   {
-    "difficulty": "soft",
-    "points": 5,
-    "text": "In rectilinear motion, if s(t) is displacement, what is velocity v(t)?",
-    "options": [
-      "v(t) = s(t)²",
-      "v(t) = ds/dt",
-      "v(t) = d²s/dt²",
-      "v(t) = ∫s(t)dt"
-    ],
-    "correct": 1,
-    "explanation": "📐 Velocity = rate of change of displacement = ds/dt = s'(t). Acceleration = dv/dt = d²s/dt² = s''(t). Displacement → differentiate → Velocity → differentiate → Acceleration. This chain is fundamental for rectilinear motion questions!"
+    difficulty: "soft",
+    points: 5,
+    text: "Amines are organic derivatives of:",
+    options: ["Ammonia (NH₃)", "Water (H₂O)", "Methane (CH₄)", "Hydrogen chloride (HCl)"],
+    correct: 0,
+    explanation: "💨 Amines = ammonia (NH₃) with one or more H replaced by alkyl/aryl groups. Primary amine: RNH₂. Secondary: R₂NH. Tertiary: R₃N. Methylamine (CH₃NH₂) smells like fish — same reason fish markets smell! Amines are basic compounds."
   },
   {
-    "difficulty": "soft",
-    "points": 5,
-    "text": "An inflection point occurs where:",
-    "options": [
-      "f'(x) = 0",
-      "f''(x) = 0 and changes sign",
-      "f(x) = 0",
-      "f'(x) is maximum"
-    ],
-    "correct": 1,
-    "explanation": "✨ Inflection point = where concavity changes. f''(x) = 0 is necessary but not sufficient — it must also CHANGE SIGN around that point. Example: f(x)=x³ has inflection at x=0. f''(0)=0 and f'' changes from negative to positive there."
+    difficulty: "soft",
+    points: 5,
+    text: "The suffix '-al' in IUPAC nomenclature indicates which functional group?",
+    options: ["Alcohol", "Aldehyde", "Alkene", "Amine"],
+    correct: 1,
+    explanation: "🔤 '-al' = ALDEHYDE (–CHO). Methanal (HCHO), Ethanal (CH₃CHO), Propanal (CH₃CH₂CHO). '-ol' = alcohol. '-ene' = alkene. '-amine' = amine. The suffix is your instant identifier — read the ending, know the class!"
   },
   {
-    "difficulty": "medium",
-    "points": 10,
-    "text": "Find the stationary points of f(x) = x³ - 3x and classify them.",
-    "options": [
-      "Max at x=1, Min at x=-1",
-      "Min at x=1, Max at x=-1",
-      "Max at x=-1, Min at x=1",
-      "Inflection at x=0 only"
-    ],
-    "correct": 2,
-    "explanation": "🧮 f'(x) = 3x²-3 = 0 → x²=1 → x=±1. f''(x)=6x. At x=-1: f''(-1)=-6<0 → MAX. At x=1: f''(1)=6>0 → MIN. f(-1)=2 (local max), f(1)=-2 (local min). Unilorin loves classify-the-stationary-points questions — second derivative test is your tool!"
+    difficulty: "soft",
+    points: 5,
+    text: "What is the general formula for esters?",
+    options: ["RCOOH", "RCOOR'", "ROR'", "RCHO"],
+    correct: 1,
+    explanation: "🌸 Esters = RCOOR' (or R–COO–R'). Formed when carboxylic acid reacts with alcohol (esterification). They smell fruity — banana, apple, pineapple scents are esters! RCOOH = carboxylic acid. ROR' = ether. RCHO = aldehyde. Esters are the perfume molecules!"
   },
   {
-    "difficulty": "medium",
-    "points": 10,
-    "text": "A particle moves with s(t) = t³ - 6t² + 9t. Find its velocity at t = 2.",
-    "options": [
-      "3",
-      "−3",
-      "9",
-      "0"
-    ],
-    "correct": 1,
-    "explanation": "🔬 v(t) = ds/dt = 3t²-12t+9. At t=2: v(2) = 3(4)-12(2)+9 = 12-24+9 = -3 m/s. Negative velocity means moving in the negative direction. Unilorin often asks for velocity at a specific time — always differentiate s(t) first!"
+    difficulty: "medium",
+    points: 10,
+    text: "What is the IUPAC name of CH₃COOC₂H₅?",
+    options: ["Methyl propanoate", "Ethyl ethanoate", "Ethyl propanoate", "Methyl ethanoate"],
+    correct: 1,
+    explanation: "🧪 Ester naming: alkyl group from alcohol + name of acid (change '-ic acid' to '-ate'). CH₃COO– comes from ethanoic acid (acetic acid) → ethanoate. –C₂H₅ is ethyl. So: ETHYL ETHANOATE. Also known as ethyl acetate — the nail polish remover solvent! Acid part first, alcohol part second."
   },
   {
-    "difficulty": "medium",
-    "points": 10,
-    "text": "Find d²y/dx² for y = x⁴ - 2x³ + 5.",
-    "options": [
-      "4x³-6x²",
-      "12x²-12x",
-      "12x²-6x",
-      "4x²-6x"
+    difficulty: "medium",
+    points: 10,
+    text: "A primary amine (RNH₂) differs from a secondary amine (R₂NH) in that:",
+    options: [
+      "Primary amines have one alkyl group on nitrogen; secondary have two",
+      "Primary amines are more basic than secondary amines always",
+      "Primary amines contain oxygen; secondary do not",
+      "They have completely different molecular formulas"
     ],
-    "correct": 1,
-    "explanation": "📐 First: dy/dx = 4x³-6x²+0 = 4x³-6x². Second: d²y/dx² = 12x²-12x. Apply power rule twice, term by term. Careful with the constant (5) — it disappears in the first derivative and stays gone. Systematic and clean!"
+    correct: 0,
+    explanation: "🎯 Classification is by number of alkyl groups on NITROGEN. Primary (1°): ONE alkyl group → RNH₂. Secondary (2°): TWO alkyl groups → R₂NH. Tertiary (3°): THREE alkyl groups → R₃N. Don't confuse with alcohol classification — same logic but on N not C!"
   },
   {
-    "difficulty": "medium",
-    "points": 10,
-    "text": "When does a particle moving with s(t) = t³ - 6t² + 9t come to rest?",
-    "options": [
-      "t = 1 and t = 3",
-      "t = 0 and t = 6",
-      "t = 2 only",
-      "t = 3 only"
-    ],
-    "correct": 0,
-    "explanation": "🔵 'Come to rest' means v(t) = 0. v(t) = 3t²-12t+9 = 3(t²-4t+3) = 3(t-1)(t-3) = 0 → t=1 and t=3. Always factorise the velocity equation. Unilorin loves the phrase 'come to rest' — it simply means set velocity = zero!"
+    difficulty: "medium",
+    points: 10,
+    text: "Which of the following compounds is an alkyl halide?",
+    options: ["CH₃CH₂OH", "CH₃CH₂Cl", "CH₃COOH", "CH₃NH₂"],
+    correct: 1,
+    explanation: "⚗️ Alkyl halides (haloalkanes) = alkyl group + halogen (F, Cl, Br, I). CH₃CH₂Cl = chloroethane (alkyl halide!). CH₃CH₂OH = ethanol. CH₃COOH = ethanoic acid. CH₃NH₂ = methylamine. The halogen atom directly bonded to carbon is the defining feature!"
   },
   {
-    "difficulty": "hard",
-    "points": 20,
-    "text": "Find the maximum and minimum values of f(x) = 2x³ - 9x² + 12x - 4 on [0, 3].",
-    "options": [
-      "Max=1 at x=1, Min=-4 at x=0",
-      "Max=1 at x=1, Min=-4 at x=3",
-      "Max=1, Min=-13",
-      "Max=5, Min=-4"
-    ],
-    "correct": 0,
-    "explanation": "🧠 f'(x)=6x²-18x+12=6(x-1)(x-2)=0 → x=1,2. Evaluate: f(0)=-4, f(1)=2-9+12-4=1, f(2)=16-36+24-4=0, f(3)=54-81+36-4=5. Wait — f(3)=5 is actually the maximum! Check all critical points AND endpoints on a closed interval. Absolute max=5 at x=3, min=-4 at x=0."
+    difficulty: "medium",
+    points: 10,
+    text: "What is the IUPAC name of (CH₃)₃N?",
+    options: ["Trimethylamine", "Tripropylamine", "Dimethylamine", "Triethylamine"],
+    correct: 0,
+    explanation: "🧬 (CH₃)₃N = three methyl groups on nitrogen = TRIMETHYLAMINE. It's a tertiary amine. Trimethylamine has a very strong fishy smell — it's what makes rotting fish smell so bad! IUPAC accepts 'trimethylamine' as a retained name. Tri = three, methyl = CH₃."
   },
   {
-    "difficulty": "hard",
-    "points": 20,
-    "text": "A particle has displacement s(t) = 2t³ - 3t² - 12t + 5. Find when acceleration is zero and the velocity at that instant.",
-    "options": [
-      "t=0.5, v=-14.5",
-      "t=1, v=-13",
-      "t=0.5, v=-12",
-      "t=2, v=0"
+    difficulty: "medium",
+    points: 10,
+    text: "Condensation (esterification) reaction between ethanoic acid and ethanol produces:",
+    options: [
+      "Ethyl ethanoate and water",
+      "Diethyl ether and carbon dioxide",
+      "Ethene and water",
+      "Ethanoic anhydride"
     ],
-    "correct": 0,
-    "explanation": "🎓 a(t)=s''(t). v(t)=6t²-6t-12. a(t)=12t-6=0 → t=0.5. v(0.5)=6(0.25)-6(0.5)-12=1.5-3-12=-13.5≈-14.5. These 3-step rectilinear motion questions (find a=0, then find v) are Unilorin exam favourites. Always show all three functions: s, v, a!"
+    correct: 0,
+    explanation: "💧 CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O (with H₂SO₄ catalyst, heat). Esterification is reversible — that's why we use concentrated H₂SO₄ (removes water, drives equilibrium forward). Product = ethyl ethanoate + water. Smells like pear drops!"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "What is the IUPAC name of CH₃CH₂CH(NH₂)COOH?",
+    options: [
+      "2-aminopropanoic acid",
+      "2-aminobutanoic acid",
+      "3-aminobutanoic acid",
+      "2-aminopentanoic acid"
+    ],
+    correct: 1,
+    explanation: "🧠 Count all carbons including COOH: CH₃-CH₂-CH(NH₂)-COOH = 4 carbons → butanoic acid. NH₂ is on C2 (numbering from COOH end) → 2-aminobutanoic acid. COOH always gets C1 in amino acid/acid nomenclature. This is similar to the structure of amino acids — building blocks of proteins!"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "Which of the following correctly lists the classes of organic compounds in order of increasing boiling point for similar molecular masses?",
+    options: [
+      "Alkanes < Ethers < Aldehydes < Alcohols < Carboxylic acids",
+      "Carboxylic acids < Alcohols < Alkanes < Ethers",
+      "Alcohols < Alkanes < Ethers < Carboxylic acids",
+      "All have the same boiling point at same molecular mass"
+    ],
+    correct: 0,
+    explanation: "📈 Boiling point order (similar MW): Alkanes < Ethers < Aldehydes/Ketones < Alcohols < Carboxylic acids. Alkanes: only weak van der Waals. Ethers: weak dipole. Aldehydes/Ketones: stronger dipole. Alcohols: H-bonding (1 OH). Carboxylic acids: strongest H-bonding (dimerisation). Intermolecular forces determine BP!"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "A compound has the molecular formula C₃H₆O. It does NOT react with Tollens' reagent but gives a positive iodoform test. The compound is:",
+    options: [
+      "Propanal (CH₃CH₂CHO)",
+      "Propanone (CH₃COCH₃)",
+      "Propan-1-ol (CH₃CH₂CH₂OH)",
+      "Methyl ethanoate (CH₃COOCH₃)"
+    ],
+    correct: 1,
+    explanation: "🔍 No Tollens' reaction → NOT an aldehyde → NOT propanal. Positive iodoform test → compound contains CH₃CO– group (methyl ketone) OR CH₃CH(OH)– group. C₃H₆O with CH₃CO– = PROPANONE (CH₃COCH₃). Iodoform test is specific to methyl ketones and ethanol. Unilorin loves multi-test deduction questions!"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "What product is formed when a carboxylic acid reacts with an amine?",
+    options: [
+      "An ester and water",
+      "An amide and water",
+      "An anhydride and ammonia",
+      "A ketone and nitrogen gas"
+    ],
+    correct: 1,
+    explanation: "⚗️ RCOOH + H₂NR' → RCONHR' + H₂O. Carboxylic acid + amine → AMIDE + water (condensation reaction). The C–N bond formed is the AMIDE linkage (–CONH–). This is the same bond in proteins (peptide bond)! Nylon is also made of amide linkages. Fundamental reaction in biochemistry!"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "Which statement about alkyl halides is CORRECT regarding their reactivity in nucleophilic substitution (SN2)?",
+    options: [
+      "Tertiary alkyl halides react faster than primary in SN2",
+      "Primary alkyl halides react fastest in SN2 due to least steric hindrance",
+      "All alkyl halides react at the same rate in SN2",
+      "Secondary alkyl halides always react faster than primary in SN2"
+    ],
+    correct: 1,
+    explanation: "🏃 SN2 (bimolecular nucleophilic substitution): nucleophile attacks from behind the leaving group. Bulky groups BLOCK the attack → steric hindrance. Primary (1°) alkyl halides: least hindered → FASTEST SN2. Tertiary (3°): most hindered → SLOWEST SN2 (they prefer SN1 instead). Steric hindrance is everything in SN2!"
   }
 ];
+
 
 let S={name:'',email:'',score:0,currentQ:0,correctCount:0,startTime:null,tabWarnings:0,quizEnded:false,answered:false,timerInt:null};
 
@@ -529,7 +553,7 @@ if (now > QUIZ_CLOSE) {
   }
 }
 
-const QUIZ_TIME_LIMIT = 6 * 60; // 6 minutes in seconds
+const QUIZ_TIME_LIMIT = 8 * 60; // 8 minutes in seconds
 
 function startTimer() {
   let remaining = QUIZ_TIME_LIMIT;
@@ -619,7 +643,7 @@ async function endQuiz() {
     maxScore,
     correct:   S.correctCount,
     total:     questions.length,
-    category:  'MTH102',
+    category:  'CHM102',
     timeTaken: `${mins}:${secs}`,
     rank:      title,
     timestamp: new Date().toISOString(),
@@ -637,7 +661,7 @@ async function endQuiz() {
         window.location.href = LEADERBOARD_URL
           + `?name=${encodeURIComponent(S.name)}`
           + `&score=${S.score}`
-          + `&subject=MTH102`;
+          + `&subject=CHM102`;
       }, 6000);
     } else {
       setTimeout(() => { window.location.href = LEADERBOARD_URL; }, 6000);
@@ -719,7 +743,7 @@ function generateCard(){
   ctx.strokeStyle=bgrad;ctx.lineWidth=10;ctx.strokeRect(6,6,W-12,H-12);
   ctx.strokeStyle='rgba(245,197,24,0.2)';ctx.lineWidth=1;ctx.strokeRect(18,18,W-36,H-36);
   ctx.textAlign='left';ctx.fillStyle='#f5c518';ctx.font='bold 15px Arial';ctx.fillText('EXAMMASTER',34,48);
-  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · MTH 102 · 2026',34,63);
+  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · CHM 102 · 2026',34,63);
   ctx.textAlign='right';ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText(new Date().toLocaleDateString('en-NG',{day:'numeric',month:'short',year:'numeric'}),W-34,48);
   ctx.textAlign='center';ctx.fillStyle='rgba(240,240,248,0.3)';ctx.font='bold 10px Arial';ctx.fillText('CERTIFICATE OF IDAN',W/2,95);
   ctx.font='46px Arial';ctx.fillText(icon,W/2,160);
@@ -729,7 +753,7 @@ function generateCard(){
   ctx.fillStyle='rgba(245,197,24,0.07)';roundRect(ctx,W/2-115,304,230,32,7);ctx.fill();
   ctx.strokeStyle='rgba(245,197,24,0.22)';ctx.lineWidth=1;roundRect(ctx,W/2-115,304,230,32,7);ctx.stroke();
   ctx.fillStyle='#f5c518';ctx.font='bold 14px Arial';ctx.fillText(`Score: ${S.score} / ${maxScore} pts  ·  ${S.correctCount}/${questions.length} Correct`,W/2,325);
-  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"MTH 102 tried, but I am the  SCHOLAR." — CBT Compliant',W/2,372);
+  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"CHM 102 tried, but I am the BOSS." — CBT Compliant',W/2,372);
 }
 function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();}
 function downloadCard(){const canvas=document.getElementById('idanCanvas');const link=document.createElement('a');link.download=`ExamMaster_${(S.name||'Idan').replace(/\s+/g,'_')}_RankCard.png`;link.href=canvas.toDataURL('image/png');link.click();}
