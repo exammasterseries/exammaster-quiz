@@ -10,7 +10,7 @@
 <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
 <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
 
-<title>ExamMaster — CHM 102 Battle</title>
+<title>ExamMaster — PHY 102 Battle</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -145,16 +145,16 @@ input:focus { border-color:var(--gold); }
     <div class="nav-brand">Exam<span>Master</span> ⚡</div>
     <div class="nav-right">
       <div class="live-score" id="liveScore">⚡ <span id="liveScoreNum">0</span> PTS</div>
-      <div class="nav-badge">CHM 102 · Battle</div>
+      <div class="nav-badge">PHY 102 · Battle</div>
     </div>
   </div>
 </nav>
 
 <div class="screen active" id="landingScreen">
   <div class="hero">
-    <div class="hero-badge">🔥 Season 2026 — CHM 102 Edition</div>
-    <h1><span class="w1">THE-NAMING</span><span class="w2">CONTINUES</span><span class="w3">BATTLE ⚡</span></h1>
-    <p class="hero-sub">15 Questions · alkyl group · iupac name · nucleophilic substitution<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
+    <div class="hero-badge">🔥 Season 2026 — PHY 102 Edition</div>
+    <h1><span class="w1">FARADAY'S</span><span class="w2">AVENGER</span><span class="w3">BATTLE ⚡</span></h1>
+    <p class="hero-sub">10 Questions · Faraday's Law, · Lenz's Law  · Electromagnetic Induction<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
     <div class="form-card fadeUp">
   <div class="form-row">
     <label class="form-label" for="uName">Scholar's Full Name</label>
@@ -231,8 +231,8 @@ input:focus { border-color:var(--gold); }
 </div>
 
 <script>
-  const QUIZ_OPEN  = new Date('2026-06-16T21:00:00');
-const QUIZ_CLOSE = new Date('2026-06-16T21:12:00');
+  const QUIZ_OPEN  = new Date('2026-06-17T21:00:00');
+const QUIZ_CLOSE = new Date('2026-06-17T21:12:00');
 const isBossBattle = false;
 
 const V = {
@@ -288,7 +288,7 @@ const V = {
     "Tab switching detected. Your village people sent you. Resist them! 🕯️"
   ],
   final:[
-    {min:10, max:15,  msg:"CBT Terrorist! 🎯 You finished the work. Go buy yourself a cold Pepsi — you've earned it! 🥤"},
+    {min:10, max:10,  msg:"CBT Terrorist! 🎯 You finished the work. Go buy yourself a cold Pepsi — you've earned it! 🥤"},
     {min:7,  max:9,   msg:"Solid work! 🔥 First Class bracket is calling your name. Keep the fire burning!"},
     {min:4,  max:6,   msg:"You are standing on the fence. 🌬️ If breeze blows, you're going to the Carryover side. Wake up!"},
     {min:0,  max:3,   msg:"My brother/sister, have you considered a career in comedy? Because this score is a huge joke! 🎭"},
@@ -296,166 +296,140 @@ const V = {
   ]
 };
 const vRand = arr => arr[Math.floor(Math.random()*arr.length)];
-  
+
 const questions = [
   {
-    difficulty: "soft",
-    points: 5,
-    text: "What is the IUPAC name of CH₃CH₂COOH?",
-    options: ["Ethanoic acid", "Propanoic acid", "Butanoic acid", "Methanoic acid"],
-    correct: 1,
-    explanation: "🍋 CH₃CH₂COOH has 3 carbons (including the COOH carbon) → propan- + carboxylic acid suffix '-oic acid' = PROPANOIC ACID. Always include the COOH carbon in your count! Ethanoic acid = CH₃COOH (2C), Methanoic acid = HCOOH (1C). Count carefully in CBT!"
-  },
-  {
-    difficulty: "soft",
-    points: 5,
-    text: "Which of the following is an ether?",
-    options: ["CH₃CH₂OH", "CH₃OCH₃", "CH₃COOH", "CH₃CHO"],
-    correct: 1,
-    explanation: "🔗 Ethers have the general structure R–O–R' (oxygen between two carbon groups). CH₃OCH₃ = dimethyl ether. CH₃CH₂OH = ethanol (alcohol). CH₃COOH = ethanoic acid. CH₃CHO = ethanal (aldehyde). The –O– linkage in the MIDDLE is the ether giveaway!"
-  },
-  {
-    difficulty: "soft",
-    points: 5,
-    text: "Amines are organic derivatives of:",
-    options: ["Ammonia (NH₃)", "Water (H₂O)", "Methane (CH₄)", "Hydrogen chloride (HCl)"],
-    correct: 0,
-    explanation: "💨 Amines = ammonia (NH₃) with one or more H replaced by alkyl/aryl groups. Primary amine: RNH₂. Secondary: R₂NH. Tertiary: R₃N. Methylamine (CH₃NH₂) smells like fish — same reason fish markets smell! Amines are basic compounds."
-  },
-  {
-    difficulty: "soft",
-    points: 5,
-    text: "The suffix '-al' in IUPAC nomenclature indicates which functional group?",
-    options: ["Alcohol", "Aldehyde", "Alkene", "Amine"],
-    correct: 1,
-    explanation: "🔤 '-al' = ALDEHYDE (–CHO). Methanal (HCHO), Ethanal (CH₃CHO), Propanal (CH₃CH₂CHO). '-ol' = alcohol. '-ene' = alkene. '-amine' = amine. The suffix is your instant identifier — read the ending, know the class!"
-  },
-  {
-    difficulty: "soft",
-    points: 5,
-    text: "What is the general formula for esters?",
-    options: ["RCOOH", "RCOOR'", "ROR'", "RCHO"],
-    correct: 1,
-    explanation: "🌸 Esters = RCOOR' (or R–COO–R'). Formed when carboxylic acid reacts with alcohol (esterification). They smell fruity — banana, apple, pineapple scents are esters! RCOOH = carboxylic acid. ROR' = ether. RCHO = aldehyde. Esters are the perfume molecules!"
-  },
-  {
-    difficulty: "medium",
-    points: 10,
-    text: "What is the IUPAC name of CH₃COOC₂H₅?",
-    options: ["Methyl propanoate", "Ethyl ethanoate", "Ethyl propanoate", "Methyl ethanoate"],
-    correct: 1,
-    explanation: "🧪 Ester naming: alkyl group from alcohol + name of acid (change '-ic acid' to '-ate'). CH₃COO– comes from ethanoic acid (acetic acid) → ethanoate. –C₂H₅ is ethyl. So: ETHYL ETHANOATE. Also known as ethyl acetate — the nail polish remover solvent! Acid part first, alcohol part second."
-  },
-  {
-    difficulty: "medium",
-    points: 10,
-    text: "A primary amine (RNH₂) differs from a secondary amine (R₂NH) in that:",
-    options: [
-      "Primary amines have one alkyl group on nitrogen; secondary have two",
-      "Primary amines are more basic than secondary amines always",
-      "Primary amines contain oxygen; secondary do not",
-      "They have completely different molecular formulas"
+    "difficulty": "soft",
+    "points": 5,
+    "text": "Faraday's Law of electromagnetic induction states that the induced EMF is:",
+    "options": [
+      "Directly proportional to the current in the coil",
+      "Equal to the negative rate of change of magnetic flux",
+      "Equal to the magnetic field times the area",
+      "Inversely proportional to the resistance of the coil"
     ],
-    correct: 0,
-    explanation: "🎯 Classification is by number of alkyl groups on NITROGEN. Primary (1°): ONE alkyl group → RNH₂. Secondary (2°): TWO alkyl groups → R₂NH. Tertiary (3°): THREE alkyl groups → R₃N. Don't confuse with alcohol classification — same logic but on N not C!"
+    "correct": 1,
+    "explanation": "📌 ε = -dΦ/dt. The induced EMF equals the negative rate of change of magnetic flux through the circuit. The negative sign is Lenz's Law built in — it tells you the direction opposes the change. More turns N: ε = -N dΦ/dt. This law is the foundation of generators, transformers, and wireless charging. Unilorin tests both statement and formula!"
   },
   {
-    difficulty: "medium",
-    points: 10,
-    text: "Which of the following compounds is an alkyl halide?",
-    options: ["CH₃CH₂OH", "CH₃CH₂Cl", "CH₃COOH", "CH₃NH₂"],
-    correct: 1,
-    explanation: "⚗️ Alkyl halides (haloalkanes) = alkyl group + halogen (F, Cl, Br, I). CH₃CH₂Cl = chloroethane (alkyl halide!). CH₃CH₂OH = ethanol. CH₃COOH = ethanoic acid. CH₃NH₂ = methylamine. The halogen atom directly bonded to carbon is the defining feature!"
-  },
-  {
-    difficulty: "medium",
-    points: 10,
-    text: "What is the IUPAC name of (CH₃)₃N?",
-    options: ["Trimethylamine", "Tripropylamine", "Dimethylamine", "Triethylamine"],
-    correct: 0,
-    explanation: "🧬 (CH₃)₃N = three methyl groups on nitrogen = TRIMETHYLAMINE. It's a tertiary amine. Trimethylamine has a very strong fishy smell — it's what makes rotting fish smell so bad! IUPAC accepts 'trimethylamine' as a retained name. Tri = three, methyl = CH₃."
-  },
-  {
-    difficulty: "medium",
-    points: 10,
-    text: "Condensation (esterification) reaction between ethanoic acid and ethanol produces:",
-    options: [
-      "Ethyl ethanoate and water",
-      "Diethyl ether and carbon dioxide",
-      "Ethene and water",
-      "Ethanoic anhydride"
+    "difficulty": "soft",
+    "points": 5,
+    "text": "Lenz's Law states that the induced current will:",
+    "options": [
+      "Flow in the same direction as the changing flux",
+      "Oppose the change in magnetic flux that caused it",
+      "Always flow clockwise",
+      "Increase the changing magnetic field"
     ],
-    correct: 0,
-    explanation: "💧 CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O (with H₂SO₄ catalyst, heat). Esterification is reversible — that's why we use concentrated H₂SO₄ (removes water, drives equilibrium forward). Product = ethyl ethanoate + water. Smells like pear drops!"
+    "correct": 1,
+    "explanation": "⚡ Lenz's Law = Nature's stubbornness! The induced current always opposes the change that created it — it's electromagnetic inertia. Magnet approaching a coil: induced current creates a field opposing the incoming magnet (repels it). Magnet leaving: induced current tries to pull it back. Lenz's Law is conservation of energy in disguise. Unilorin loves this conceptual question!"
   },
   {
-    difficulty: "hard",
-    points: 20,
-    text: "What is the IUPAC name of CH₃CH₂CH(NH₂)COOH?",
-    options: [
-      "2-aminopropanoic acid",
-      "2-aminobutanoic acid",
-      "3-aminobutanoic acid",
-      "2-aminopentanoic acid"
+    "difficulty": "soft",
+    "points": 5,
+    "text": "Magnetic flux Φ through a surface of area A in a field B at angle θ to the normal is:",
+    "options": [
+      "Φ = BA sinθ",
+      "Φ = BA tanθ",
+      "Φ = BA cosθ",
+      "Φ = B/A cosθ"
     ],
-    correct: 1,
-    explanation: "🧠 Count all carbons including COOH: CH₃-CH₂-CH(NH₂)-COOH = 4 carbons → butanoic acid. NH₂ is on C2 (numbering from COOH end) → 2-aminobutanoic acid. COOH always gets C1 in amino acid/acid nomenclature. This is similar to the structure of amino acids — building blocks of proteins!"
+    "correct": 2,
+    "explanation": "🎯 Φ = BA cosθ where θ is the angle between B and the NORMAL to the surface. Maximum flux when B is parallel to normal (θ=0°, cosθ=1). Zero flux when B is parallel to surface (θ=90°, cosθ=0). Unit = Weber (Wb) = T·m². Don't confuse with Lorentz force (sinθ) — flux uses cosθ because it's a dot product!"
   },
   {
-    difficulty: "hard",
-    points: 20,
-    text: "Which of the following correctly lists the classes of organic compounds in order of increasing boiling point for similar molecular masses?",
-    options: [
-      "Alkanes < Ethers < Aldehydes < Alcohols < Carboxylic acids",
-      "Carboxylic acids < Alcohols < Alkanes < Ethers",
-      "Alcohols < Alkanes < Ethers < Carboxylic acids",
-      "All have the same boiling point at same molecular mass"
+    "difficulty": "soft",
+    "points": 5,
+    "text": "The SI unit of magnetic flux is:",
+    "options": [
+      "Tesla (T)",
+      "Ampere (A)",
+      "Weber (Wb)",
+      "Henry (H)"
     ],
-    correct: 0,
-    explanation: "📈 Boiling point order (similar MW): Alkanes < Ethers < Aldehydes/Ketones < Alcohols < Carboxylic acids. Alkanes: only weak van der Waals. Ethers: weak dipole. Aldehydes/Ketones: stronger dipole. Alcohols: H-bonding (1 OH). Carboxylic acids: strongest H-bonding (dimerisation). Intermolecular forces determine BP!"
+    "correct": 2,
+    "explanation": "📐 Magnetic flux Φ is measured in Weber (Wb). 1 Wb = 1 T·m². Named after Wilhelm Weber. Note: B (flux density) is in Tesla. Φ (flux) is in Weber. Φ = BA, so Wb = T·m². Unilorin unit identification — Tesla is for B field, Weber is for flux. They're related but different quantities!"
   },
   {
-    difficulty: "hard",
-    points: 20,
-    text: "A compound has the molecular formula C₃H₆O. It does NOT react with Tollens' reagent but gives a positive iodoform test. The compound is:",
-    options: [
-      "Propanal (CH₃CH₂CHO)",
-      "Propanone (CH₃COCH₃)",
-      "Propan-1-ol (CH₃CH₂CH₂OH)",
-      "Methyl ethanoate (CH₃COOCH₃)"
+    "difficulty": "medium",
+    "points": 10,
+    "text": "A coil of 200 turns has its magnetic flux changed from 0.05 Wb to 0.02 Wb in 0.1s. Find the induced EMF.",
+    "options": [
+      "60 V",
+      "6 V",
+      "0.6 V",
+      "600 V"
     ],
-    correct: 1,
-    explanation: "🔍 No Tollens' reaction → NOT an aldehyde → NOT propanal. Positive iodoform test → compound contains CH₃CO– group (methyl ketone) OR CH₃CH(OH)– group. C₃H₆O with CH₃CO– = PROPANONE (CH₃COCH₃). Iodoform test is specific to methyl ketones and ethanol. Unilorin loves multi-test deduction questions!"
+    "correct": 0,
+    "explanation": "🧮 ε = -N(ΔΦ/Δt) = -200 × (0.02-0.05)/0.1 = -200 × (-0.03)/0.1 = -200 × (-0.3) = 60V. Magnitude = 60V. ΔΦ = final - initial = 0.02-0.05 = -0.03 Wb (flux decreased). The negative sign from ΔΦ and the negative in Faraday's Law cancel — EMF magnitude = 60V. Always use |ε| = N|ΔΦ/Δt| for magnitude in Unilorin CBT!"
   },
   {
-    difficulty: "hard",
-    points: 20,
-    text: "What product is formed when a carboxylic acid reacts with an amine?",
-    options: [
-      "An ester and water",
-      "An amide and water",
-      "An anhydride and ammonia",
-      "A ketone and nitrogen gas"
+    "difficulty": "medium",
+    "points": 10,
+    "text": "A straight conductor of length 0.5m moves at 4 m/s perpendicular to a magnetic field B=0.3T. Find the motional EMF induced.",
+    "options": [
+      "0.6 V",
+      "6 V",
+      "0.06 V",
+      "60 V"
     ],
-    correct: 1,
-    explanation: "⚗️ RCOOH + H₂NR' → RCONHR' + H₂O. Carboxylic acid + amine → AMIDE + water (condensation reaction). The C–N bond formed is the AMIDE linkage (–CONH–). This is the same bond in proteins (peptide bond)! Nylon is also made of amide linkages. Fundamental reaction in biochemistry!"
+    "correct": 0,
+    "explanation": "🔬 Motional EMF: ε = BLv sinθ = 0.3 × 0.5 × 4 × sin90° = 0.6V. Perpendicular motion means sinθ=1 — maximum EMF. This is how generators work — conductors swept through B fields generate EMF. Formula: ε = BLv (for perpendicular case). Unilorin loves motional EMF calculations — it's Faraday's Law in practical form!"
   },
   {
-    difficulty: "hard",
-    points: 20,
-    text: "Which statement about alkyl halides is CORRECT regarding their reactivity in nucleophilic substitution (SN2)?",
-    options: [
-      "Tertiary alkyl halides react faster than primary in SN2",
-      "Primary alkyl halides react fastest in SN2 due to least steric hindrance",
-      "All alkyl halides react at the same rate in SN2",
-      "Secondary alkyl halides always react faster than primary in SN2"
+    "difficulty": "medium",
+    "points": 10,
+    "text": "A rectangular loop (0.4m × 0.3m) is in a field B=2T. If B drops to zero in 0.5s, find the induced EMF.",
+    "options": [
+      "0.24V",
+      "0.48 V",
+      "2.4 V",
+      "4.8 V"
     ],
-    correct: 1,
-    explanation: "🏃 SN2 (bimolecular nucleophilic substitution): nucleophile attacks from behind the leaving group. Bulky groups BLOCK the attack → steric hindrance. Primary (1°) alkyl halides: least hindered → FASTEST SN2. Tertiary (3°): most hindered → SLOWEST SN2 (they prefer SN1 instead). Steric hindrance is everything in SN2!"
+    "correct": 1,
+    "explanation": "📐 Φ_initial = BA = 2 × (0.4×0.3) = 2 × 0.12 = 0.24 Wb. Φ_final = 0. ΔΦ = 0.24 Wb. ε = N|ΔΦ/Δt| = 1 × 0.24/0.5 = 0.48V. N=1 (single loop). Calculate area first, then flux, then EMF. Unilorin always gives you dimensions — never forget to calculate A = L×W before finding flux!"
+  },
+  {
+    "difficulty": "medium",
+    "points": 10,
+    "text": "By Lenz's Law, when a north pole of a magnet approaches a conducting loop, the induced current in the loop (viewed from the magnet side) flows:",
+    "options": [
+      "Clockwise, creating a south pole facing the magnet",
+      "Anticlockwise, creating a north pole facing the magnet",
+      "Clockwise, creating a north pole facing the magnet",
+      "In no particular direction"
+    ],
+    "correct": 1,
+    "explanation": "🧮 Lenz's Law: induced current opposes the approaching north pole by creating its own north pole facing the magnet (like poles repel = opposition!). By right-hand rule, to create a north pole facing the magnet, current flows anticlockwise when viewed from the magnet side. Direction questions require both Lenz's Law and right-hand rule together — Unilorin medium level!"
+  },
+  {
+    "difficulty": "hard",
+    "points": 20,
+    "text": "A coil of area 0.02m² and 100 turns rotates at 50 rev/s in a field B=0.5T. Find the maximum induced EMF.",
+    "options": [
+      "314 V",
+      "628 V",
+      "157 V",
+      "100 V"
+    ],
+    "correct": 0,
+    "explanation": "🧠 For a rotating coil: ε_max = NBAω where ω = 2πf = 2π×50 = 100π rad/s. ε_max = 100 × 0.5 × 0.02 × 100π = 100 × 0.5 × 0.02 × 314.16 = 100 × 3.1416 = 314.16 ≈ 314V. The rotating coil is the generator — ε = NBAω sinωt, maximum when sinωt=1. ω = 2πf is the critical conversion. Unilorin hard: rotating coil EMF formula!"
+  },
+  {
+    "difficulty": "hard",
+    "points": 20,
+    "text": "A square loop of side 0.2m and resistance 4Ω is pulled out of a uniform field B=1.5T in 0.4s. Find the induced EMF, current, and force needed to pull it.",
+    "options": [
+      "ε=0.15V, I=0.0375A, F=0.01125N",
+      "ε=0.15V, I=0.075A, F=0.01125N",
+      "ε=0.3V, I=0.075A, F=0.01125N",
+      "ε=0.15V, I=0.0375A, F=0.045N"
+    ],
+    "correct": 0,
+    "explanation": "🎓 Area = 0.2²=0.04m². ΔΦ = B×A = 1.5×0.04 = 0.06Wb. ε = ΔΦ/Δt = 0.06/0.4 = 0.15V. I = ε/R = 0.15/4 = 0.0375A. Force on conductor: F = BIL = 1.5×0.0375×0.2 = 0.01125N. Three-step hard question: EMF → current → force. The force needed equals the magnetic braking force (Lenz's Law — it opposes the pulling!). Classic Unilorin 3-part hard question!"
   }
 ];
-
-
+  
 let S={name:'',email:'',score:0,currentQ:0,correctCount:0,startTime:null,tabWarnings:0,quizEnded:false,answered:false,timerInt:null};
 
 ['uName','uPhone','uCode'].forEach(id=>document.getElementById(id).addEventListener('input',checkForm));
@@ -643,7 +617,7 @@ async function endQuiz() {
     maxScore,
     correct:   S.correctCount,
     total:     questions.length,
-    category:  'CHM102',
+    category:  'PHY102',
     timeTaken: `${mins}:${secs}`,
     rank:      title,
     timestamp: new Date().toISOString(),
@@ -661,8 +635,8 @@ async function endQuiz() {
         window.location.href = LEADERBOARD_URL
           + `?name=${encodeURIComponent(S.name)}`
           + `&score=${S.score}`
-          + `&subject=CHM102`;
-      }, 6000);
+          + `&subject=PHY102`;
+      }, 000);
     } else {
       setTimeout(() => { window.location.href = LEADERBOARD_URL; }, 6000);
     }
@@ -743,7 +717,7 @@ function generateCard(){
   ctx.strokeStyle=bgrad;ctx.lineWidth=10;ctx.strokeRect(6,6,W-12,H-12);
   ctx.strokeStyle='rgba(245,197,24,0.2)';ctx.lineWidth=1;ctx.strokeRect(18,18,W-36,H-36);
   ctx.textAlign='left';ctx.fillStyle='#f5c518';ctx.font='bold 15px Arial';ctx.fillText('EXAMMASTER',34,48);
-  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · CHM 102 · 2026',34,63);
+  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · PHY 102 · 2026',34,63);
   ctx.textAlign='right';ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText(new Date().toLocaleDateString('en-NG',{day:'numeric',month:'short',year:'numeric'}),W-34,48);
   ctx.textAlign='center';ctx.fillStyle='rgba(240,240,248,0.3)';ctx.font='bold 10px Arial';ctx.fillText('CERTIFICATE OF IDAN',W/2,95);
   ctx.font='46px Arial';ctx.fillText(icon,W/2,160);
@@ -753,7 +727,7 @@ function generateCard(){
   ctx.fillStyle='rgba(245,197,24,0.07)';roundRect(ctx,W/2-115,304,230,32,7);ctx.fill();
   ctx.strokeStyle='rgba(245,197,24,0.22)';ctx.lineWidth=1;roundRect(ctx,W/2-115,304,230,32,7);ctx.stroke();
   ctx.fillStyle='#f5c518';ctx.font='bold 14px Arial';ctx.fillText(`Score: ${S.score} / ${maxScore} pts  ·  ${S.correctCount}/${questions.length} Correct`,W/2,325);
-  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"CHM 102 tried, but I am the BOSS." — CBT Compliant',W/2,372);
+  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"PHY 102 tried, but I am the  SCHOLAR." — CBT Compliant',W/2,372);
 }
 function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();}
 function downloadCard(){const canvas=document.getElementById('idanCanvas');const link=document.createElement('a');link.download=`ExamMaster_${(S.name||'Idan').replace(/\s+/g,'_')}_RankCard.png`;link.href=canvas.toDataURL('image/png');link.click();}
