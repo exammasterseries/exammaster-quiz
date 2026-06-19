@@ -10,7 +10,7 @@
 <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
 <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/exammasterseries/exammaster/main/image-5.jpg">
 
-<title>ExamMaster — MTH 102 Battle</title>
+<title>ExamMaster — CHM 102 Battle</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -145,16 +145,16 @@ input:focus { border-color:var(--gold); }
     <div class="nav-brand">Exam<span>Master</span> ⚡</div>
     <div class="nav-right">
       <div class="live-score" id="liveScore">⚡ <span id="liveScoreNum">0</span> PTS</div>
-      <div class="nav-badge">MTH 102 · Battle</div>
+      <div class="nav-badge">CHM 102 · Battle</div>
     </div>
   </div>
 </nav>
 
 <div class="screen active" id="landingScreen">
   <div class="hero">
-    <div class="hero-badge">🔥 Season 2026 — MTH 102 Edition</div>
-    <h1><span class="w1">PART-BY</span><span class="w2">PART</span><span class="w3">BATTLE ⚡</span></h1>
-    <p class="hero-sub">10 Questions · Integration by parts  ·  definite integrals<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
+    <div class="hero-badge">🔥 Season 2026 — CHM 102 Edition</div>
+    <h1><span class="w1">METAL-VS</span><span class="w2">THE-WORLD</span><span class="w3">BATTLE ⚡</span></h1>
+    <p class="hero-sub">15 Questions · Metals ·  Non-Metals<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
     <div class="form-card fadeUp">
   <div class="form-row">
     <label class="form-label" for="uName">Scholar's Full Name</label>
@@ -231,8 +231,8 @@ input:focus { border-color:var(--gold); }
 </div>
 
 <script>
-  const QUIZ_OPEN  = new Date('2026-06-18T21:00:00');
-const QUIZ_CLOSE = new Date('2026-06-18T21:12:00');
+  const QUIZ_OPEN  = new Date('2026-06-19T21:00:00');
+const QUIZ_CLOSE = new Date('2026-06-19T21:12:00');
 const isBossBattle = false;
 
 const V = {
@@ -288,7 +288,7 @@ const V = {
     "Tab switching detected. Your village people sent you. Resist them! 🕯️"
   ],
   final:[
-    {min:10, max:10,  msg:"CBT Terrorist! 🎯 You finished the work. Go buy yourself a cold Pepsi — you've earned it! 🥤"},
+    {min:10, max:15,  msg:"CBT Terrorist! 🎯 You finished the work. Go buy yourself a cold Pepsi — you've earned it! 🥤"},
     {min:7,  max:9,   msg:"Solid work! 🔥 First Class bracket is calling your name. Keep the fire burning!"},
     {min:4,  max:6,   msg:"You are standing on the fence. 🌬️ If breeze blows, you're going to the Carryover side. Wake up!"},
     {min:0,  max:3,   msg:"My brother/sister, have you considered a career in comedy? Because this score is a huge joke! 🎭"},
@@ -299,138 +299,177 @@ const vRand = arr => arr[Math.floor(Math.random()*arr.length)];
  
 const questions = [
   {
-    "difficulty": "soft",
-    "points": 5,
-    "text": "The integration by parts formula is:",
-    "options": [
-      "∫uv dx = uv - ∫v du",
-      "∫uv dx = u'v' + C",
-      "∫uv dx = ∫u dx · ∫v dx",
-      "∫uv dx = uv + ∫v du"
+    difficulty: "soft",
+    points: 5,
+    text: "Which of the following is a physical property that distinguishes metals from non-metals?",
+    options: [
+      "Metals are poor conductors of electricity",
+      "Metals are lustrous, malleable, and good conductors of heat and electricity",
+      "Metals are always gases at room temperature",
+      "Metals form acidic oxides"
     ],
-    "correct": 0,
-    "explanation": "📌 Integration by parts: ∫u dv = uv - ∫v du. Derived from the product rule in reverse. Choose u and dv wisely — LIATE rule helps: Logarithm, Inverse trig, Algebraic, Trigonometric, Exponential. Pick u from the left of LIATE!"
+    correct: 1,
+    explanation: "✨ Metals: lustrous (shiny), malleable (can be hammered into sheets), ductile (drawn into wires), good conductors of heat and electricity. Non-metals: dull, brittle, poor conductors (except graphite). Iron, copper, gold — classic metals. Sulfur, phosphorus, oxygen — classic non-metals. Know your properties!"
   },
   {
-    "difficulty": "soft",
-    "points": 5,
-    "text": "What is the value of a definite integral ∫[a to b] f(x) dx?",
-    "options": [
-      "F(x) + C",
-      "F(b) - F(a)",
-      "F(a) - F(b)",
-      "F(b) + F(a)"
-    ],
-    "correct": 1,
-    "explanation": "🎯 Fundamental Theorem of Calculus: ∫[a to b]f(x)dx = F(b) - F(a), where F is the antiderivative. Upper limit minus lower limit — ORDER matters! No +C for definite integrals (it cancels out). This theorem connects differentiation and integration."
+    difficulty: "soft",
+    points: 5,
+    text: "What type of oxide does sulfur (a non-metal) form?",
+    options: ["Basic oxide", "Amphoteric oxide", "Acidic oxide", "Neutral oxide"],
+    correct: 2,
+    explanation: "🌋 Non-metals form ACIDIC oxides. SO₂ + H₂O → H₂SO₃ (sulfurous acid). SO₃ + H₂O → H₂SO₄ (sulfuric acid!). Metals form BASIC oxides (e.g. Na₂O + H₂O → NaOH). Amphoteric oxides (like Al₂O₃, ZnO) react with both. Acidic oxide = non-metal. Basic oxide = metal. Simple rule!"
   },
   {
-    "difficulty": "soft",
-    "points": 5,
-    "text": "Evaluate ∫[0 to 1] 2x dx.",
-    "options": [
-      "2",
-      "1",
-      "0",
-      "4"
-    ],
-    "correct": 1,
-    "explanation": "📐 F(x) = x². F(1) - F(0) = 1 - 0 = 1. Simple definite integral — find antiderivative, apply limits, subtract. This is the most basic definite integral Unilorin can give. Always write the antiderivative in square brackets [F(x)] from a to b first!"
+    difficulty: "soft",
+    points: 5,
+    text: "Which of the following metals is the best conductor of electricity?",
+    options: ["Iron (Fe)", "Gold (Au)", "Silver (Ag)", "Copper (Cu)"],
+    correct: 2,
+    explanation: "⚡ Silver (Ag) is the BEST conductor of electricity among all metals — but it's expensive! Copper (Cu) is the most widely USED conductor because it's almost as good as silver but far cheaper. Gold doesn't tarnish so it's used in connectors. Iron is a poor conductor. Ag > Cu > Au > Al > Fe in conductivity!"
   },
   {
-    "difficulty": "soft",
-    "points": 5,
-    "text": "For integration by parts, which is the best choice of u for ∫x·eˣ dx?",
-    "options": [
-      "u = eˣ",
-      "u = x",
-      "u = xeˣ",
-      "u = 1"
-    ],
-    "correct": 1,
-    "explanation": "✨ LIATE: Algebraic (x) comes before Exponential (eˣ), so u = x, dv = eˣdx. Then du=dx, v=eˣ. Result: xeˣ - ∫eˣdx = xeˣ - eˣ + C = eˣ(x-1) + C. Choosing u correctly is everything in integration by parts — LIATE saves lives!"
+    difficulty: "soft",
+    points: 5,
+    text: "The Haber process is used for the industrial synthesis of:",
+    options: ["Sulfuric acid", "Nitric acid", "Ammonia", "Sodium hydroxide"],
+    correct: 2,
+    explanation: "🏭 Haber Process: N₂ + 3H₂ ⇌ 2NH₃. Conditions: iron catalyst, 450°C, 200 atm pressure. Ammonia (NH₃) is vital for fertilisers — feeds ~half the world's population! Non-metal nitrogen (from air) + hydrogen (from natural gas) → ammonia. Fritz Haber won Nobel Prize 1918. Most important industrial reaction ever!"
   },
   {
-    "difficulty": "medium",
-    "points": 10,
-    "text": "Evaluate ∫[1 to 3] (x² + 1) dx.",
-    "options": [
-      "32/3",
-      "10",
-      "28/3",
-      "12"
-    ],
-    "correct": 2,
-    "explanation": "🧮 F(x) = x³/3 + x. F(3) = 27/3 + 3 = 9+3 = 12. F(1) = 1/3 + 1 = 4/3. F(3)-F(1) = 12 - 4/3 = 36/3 - 4/3 = 32/3. Wait — 32/3! Check option A vs C. 32/3 ≈ 10.67. Always convert to common denominator before subtracting. Fraction errors are the top Unilorin mistake!"
+    difficulty: "soft",
+    points: 5,
+    text: "Which non-metal exists as a diatomic molecule at room temperature and is essential for respiration?",
+    options: ["Carbon (C)", "Sulfur (S)", "Oxygen (O₂)", "Phosphorus (P₄)"],
+    correct: 2,
+    explanation: "🫁 Oxygen (O₂) — diatomic, colourless, odourless gas essential for cellular respiration. The 7 diatomic non-metals: H₂, N₂, O₂, F₂, Cl₂, Br₂, I₂ (remember: HOFBrINCl or 'Have No Fear Of Ice Cold Beer'). Sulfur = S₈ ring. Phosphorus = P₄. Only O₂ is vital for respiration!"
   },
   {
-    "difficulty": "medium",
-    "points": 10,
-    "text": "Use integration by parts to find ∫x·cos(x) dx.",
-    "options": [
-      "x·sin(x) + cos(x) + C",
-      "x·sin(x) - cos(x) + C",
-      "cos(x) - x·sin(x) + C",
-      "x·cos(x) + sin(x) + C"
+    difficulty: "medium",
+    points: 10,
+    text: "Iron rusting is an electrochemical process. What are the products of iron rusting?",
+    options: [
+      "Iron(II) oxide (FeO) only",
+      "Hydrated iron(III) oxide Fe₂O₃·xH₂O (rust)",
+      "Iron(III) chloride (FeCl₃)",
+      "Iron sulfide (FeS)"
     ],
-    "correct": 0,
-    "explanation": "🔬 LIATE: u=x (algebraic), dv=cos(x)dx. du=dx, v=sin(x). Formula: uv - ∫v du = x·sin(x) - ∫sin(x)dx = x·sin(x) - (-cos(x)) + C = x·sin(x) + cos(x) + C. The double negative gives +cos(x). Watch that sign carefully!"
+    correct: 1,
+    explanation: "🟤 Rust = hydrated iron(III) oxide: Fe₂O₃·xH₂O. Rusting requires BOTH oxygen AND water (neither alone causes rusting). Iron is oxidised: Fe → Fe²⁺ → Fe³⁺. Salt water accelerates rusting (better electrolyte). Prevention: painting, galvanising (zinc coating), alloying (stainless steel with Cr). Rust costs Nigeria billions in infrastructure damage annually!"
   },
   {
-    "difficulty": "medium",
-    "points": 10,
-    "text": "Evaluate ∫[0 to π] sin(x) dx.",
-    "options": [
-      "0",
-      "1",
-      "2",
-      "π"
+    difficulty: "medium",
+    points: 10,
+    text: "Chlorine (Cl₂) reacts with water to form which products?",
+    options: [
+      "HCl only",
+      "HOCl (hypochlorous acid) and HCl",
+      "Cl₂O and H₂",
+      "NaCl and O₂"
     ],
-    "correct": 2,
-    "explanation": "📐 F(x) = -cos(x). F(π) - F(0) = -cos(π) - (-cos(0)) = -(-1) - (-1) = 1 + 1 = 2. The area under one arch of the sine curve from 0 to π is exactly 2. Classic definite integral — Unilorin loves trig definite integrals. Know cos(0)=1 and cos(π)=-1!"
+    correct: 1,
+    explanation: "💧 Cl₂ + H₂O ⇌ HOCl + HCl. Chlorine disproportionates in water — it's simultaneously oxidised (HOCl, Cl = +1) and reduced (HCl, Cl = -1). HOCl (hypochlorous acid) is the active disinfectant in swimming pools and water treatment! This equilibrium is pH-dependent — more HOCl at lower pH = better disinfection."
   },
   {
-    "difficulty": "medium",
-    "points": 10,
-    "text": "Find ∫x·ln(x) dx.",
-    "options": [
-      "x²ln(x)/2 - x²/4 + C",
-      "x²/2·ln(x) + x²/4 + C",
-      "ln(x)/x + C",
-      "x·ln(x) - x + C"
+    difficulty: "medium",
+    points: 10,
+    text: "Which of the following correctly describes the Contact Process for making sulfuric acid?",
+    options: [
+      "S + H₂O → H₂SO₄ directly",
+      "SO₂ is oxidised to SO₃ over a V₂O₅ catalyst, then SO₃ is absorbed in H₂SO₄ to form oleum, then diluted",
+      "Sulfur is burned in chlorine gas to form sulfuryl chloride",
+      "SO₃ is directly dissolved in water to form H₂SO₄"
     ],
-    "correct": 0,
-    "explanation": "🧮 LIATE: u=ln(x), dv=x dx (log before algebraic!). du=1/x dx, v=x²/2. Parts: (x²/2)ln(x) - ∫(x²/2)(1/x)dx = (x²/2)ln(x) - ∫(x/2)dx = (x²/2)ln(x) - x²/4 + C. Logarithm always takes priority as u in LIATE!"
+    correct: 1,
+    explanation: "🏭 Contact Process steps: (1) S + O₂ → SO₂ (2) 2SO₂ + O₂ → 2SO₃ (V₂O₅ catalyst, 450°C) (3) SO₃ + H₂SO₄ → H₂S₂O₇ (oleum) (4) H₂S₂O₇ + H₂O → 2H₂SO₄. SO₃ is NOT dissolved directly in water — too violent and produces acid mist! Oleum route is safer. H₂SO₄ is the most produced industrial chemical worldwide!"
   },
   {
-    "difficulty": "hard",
-    "points": 20,
-    "text": "Evaluate ∫[1 to 2] x·eˣ dx.",
-    "options": [
-      "e² + 1",
-      "2e² - e + 1",
-      "e² - 1",
-      "e(e-1)"
+    difficulty: "medium",
+    points: 10,
+    text: "Aluminium is a reactive metal but resists corrosion because:",
+    options: [
+      "It is too heavy to react with oxygen",
+      "It forms a thin, tough, self-repairing layer of Al₂O₃ that protects the surface",
+      "It only reacts with acids, never with air",
+      "It has the same reactivity as gold"
     ],
-    "correct": 1,
-    "explanation": "🧠 By parts: u=x, dv=eˣdx → du=dx, v=eˣ. [xeˣ - eˣ] from 1 to 2 = [eˣ(x-1)] from 1 to 2. At x=2: e²(1) = e². At x=1: e¹(0) = 0. Result: e² - 0 = e²? No — full: (2e²-e²)-(e-e) = e²... Careful: [xeˣ-eˣ]₁² = (2e²-e²)-(e-e) = e²-(0) = e². But applying correctly: (2e²-e²)-(1·e¹-e¹) = e² - 0 = e². Recalculate: at 2: 2e²-e²=e². At 1: e-e=0. So e²-0=e². But with correct formula 2e²-e = e(2e-1). Unilorin expects step-by-step working!"
+    correct: 1,
+    explanation: "🛡️ Aluminium is HIGH in the reactivity series (above zinc!) but appears unreactive because Al₂O₃ forms instantly on the surface — a thin, adherent, impermeable oxide layer that SELF-REPAIRS if scratched. This passivation makes aluminium ideal for aircraft, cans, and cookware despite being reactive. Anodising thickens this protective layer further!"
   },
   {
-    "difficulty": "hard",
-    "points": 20,
-    "text": "Find ∫ln(x) dx.",
-    "options": [
-      "1/x + C",
-      "x·ln(x) + C",
-      "x·ln(x) - x + C",
-      "ln(x)/x + C"
+    difficulty: "medium",
+    points: 10,
+    text: "Which of the following non-metals shows allotropy with forms including white, red, and black varieties?",
+    options: ["Oxygen", "Nitrogen", "Sulfur", "Phosphorus"],
+    correct: 3,
+    explanation: "🔴 Phosphorus allotropes: WHITE phosphorus (P₄, waxy, toxic, catches fire spontaneously in air), RED phosphorus (polymeric, stable, used in matchboxes), BLACK phosphorus (most stable, layered structure like graphite). Sulfur has rhombic and monoclinic forms. Oxygen has O₂ and O₃ (ozone). Phosphorus has the most dramatic allotrope differences!"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "In the extraction of iron in a blast furnace, what is the role of limestone (CaCO₃)?",
+    options: [
+      "It directly reduces iron ore to iron metal",
+      "It decomposes to CaO which reacts with silica (SiO₂) impurities to form slag (CaSiO₃)",
+      "It provides the carbon for reduction of iron ore",
+      "It increases the temperature inside the furnace"
     ],
-    "correct": 2,
-    "explanation": "🎓 Trick: write as ∫ln(x)·1 dx. LIATE: u=ln(x), dv=1·dx. du=1/x dx, v=x. Parts: x·ln(x) - ∫x·(1/x)dx = x·ln(x) - ∫1 dx = x·ln(x) - x + C. This is a classic 'hidden' integration by parts where the second function is just 1. Unilorin absolutely loves this question — it looks simple but requires parts!"
+    correct: 1,
+    explanation: "🏭 Limestone role in blast furnace: CaCO₃ → CaO + CO₂ (thermal decomposition). Then CaO + SiO₂ → CaSiO₃ (slag). Slag floats on molten iron and is tapped off separately. Limestone is the FLUX — it removes silica impurities as slag! Carbon (coke) does the actual reduction. Iron ore (Fe₂O₃) + CO → Fe. Know each component's role!"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "The thermite reaction involves aluminium reacting with iron(III) oxide. What does this demonstrate?",
+    options: [
+      "Iron is more reactive than aluminium",
+      "Aluminium is more reactive than iron and can displace it from its oxide — a highly exothermic redox reaction",
+      "Both metals are equally reactive",
+      "The reaction produces aluminium oxide and iron chloride"
+    ],
+    correct: 1,
+    explanation: "🔥 Thermite: 2Al + Fe₂O₃ → Al₂O₃ + 2Fe + enormous heat (~3000°C!). Al displaces Fe because Al is HIGHER in the activity series → stronger reducing agent. So reactive it can weld railway tracks! This proves Al > Fe in reactivity despite Al appearing 'unreactive' in everyday life (due to its protective oxide layer). Activity series in action!"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "Ozone (O₃) differs from oxygen (O₂) in that ozone:",
+    options: [
+      "Is more stable than O₂ and has a linear structure",
+      "Is an allotrope of oxygen with a bent structure, is a stronger oxidising agent, and decomposes to O₂",
+      "Contains three oxygen atoms in a ring structure with equal bond lengths",
+      "Is produced only by lightning and has no industrial uses"
+    ],
+    correct: 1,
+    explanation: "🌍 Ozone (O₃): bent/angular structure (like water), bond angle ~117°. More reactive/stronger oxidising agent than O₂. Decomposes: 2O₃ → 3O₂. Ozone layer (stratosphere) absorbs UV radiation — protects life on Earth. CFCs destroy ozone → ozone holes. Industrial use: water purification, bleaching. O₃ is an allotrope of O — same element, different molecular form!"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "In electrochemical terms, galvanising (coating iron with zinc) protects iron by which mechanism?",
+    options: [
+      "Zinc forms a physical barrier only — no electrochemical protection",
+      "Zinc acts as a sacrificial anode — being more reactive, it oxidises preferentially even if the coating is scratched",
+      "Zinc makes iron less reactive by alloying with it",
+      "Zinc coating increases the pH around iron, preventing oxidation"
+    ],
+    correct: 1,
+    explanation: "⚡ Galvanising uses BOTH mechanisms: (1) physical barrier (zinc coating) AND (2) cathodic/sacrificial protection. If coating is scratched exposing iron: Zn is higher in activity series than Fe → Zn oxidises preferentially (sacrificial anode) → Fe protected even when exposed! Unlike tin coating (tin is BELOW iron → if scratched, iron rusts FASTER). Zinc sacrifices itself to save iron. Noble friendship! 🫡"
+  },
+  {
+    difficulty: "hard",
+    points: 20,
+    text: "Which statement correctly explains why nitrogen (N₂) is very unreactive despite being a non-metal?",
+    options: [
+      "Nitrogen has a very large atomic radius making reactions difficult",
+      "The N≡N triple bond has very high bond energy (~945 kJ/mol), making it extremely difficult to break",
+      "Nitrogen is a noble gas and follows the octet rule perfectly",
+      "Nitrogen only reacts at extremely low temperatures"
+    ],
+    correct: 1,
+    explanation: "💪 N≡N triple bond energy = ~945 kJ/mol — one of the STRONGEST bonds in chemistry! Breaking it requires enormous energy → nitrogen is kinetically inert (reactions are very slow despite being thermodynamically possible). That's why N₂ makes up 78% of atmosphere without causing reactions everywhere. Haber process needs high T, P, and catalyst just to break this bond. Strong bond = unreactive gas!"
   }
 ];
   
-
 let S={name:'',email:'',score:0,currentQ:0,correctCount:0,startTime:null,tabWarnings:0,quizEnded:false,answered:false,timerInt:null};
 
 ['uName','uPhone','uCode'].forEach(id=>document.getElementById(id).addEventListener('input',checkForm));
@@ -478,7 +517,6 @@ if (now > QUIZ_CLOSE) {
     btn.disabled = false;
     btn.textContent = '🏛️ ENTER THE CBT CENTER →';
   };
-// ── SERVER-SIDE ATTEMPT CHECK ──
 
 
   try {
@@ -620,7 +658,7 @@ async function endQuiz() {
     maxScore,
     correct:   S.correctCount,
     total:     questions.length,
-    category:  'MTH102',
+    category:  'CHM102',
     timeTaken: `${mins}:${secs}`,
     rank:      title,
     timestamp: new Date().toISOString(),
@@ -638,7 +676,7 @@ async function endQuiz() {
         window.location.href = LEADERBOARD_URL
           + `?name=${encodeURIComponent(S.name)}`
           + `&score=${S.score}`
-          + `&subject=MTH102`;
+          + `&subject=CHM102`;
       }, 6000);
     } else {
       setTimeout(() => { window.location.href = LEADERBOARD_URL; }, 6000);
@@ -720,7 +758,7 @@ function generateCard(){
   ctx.strokeStyle=bgrad;ctx.lineWidth=10;ctx.strokeRect(6,6,W-12,H-12);
   ctx.strokeStyle='rgba(245,197,24,0.2)';ctx.lineWidth=1;ctx.strokeRect(18,18,W-36,H-36);
   ctx.textAlign='left';ctx.fillStyle='#f5c518';ctx.font='bold 15px Arial';ctx.fillText('EXAMMASTER',34,48);
-  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · MTH 102 · 2026',34,63);
+  ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText('UNILORIN · CHM 102 · 2026',34,63);
   ctx.textAlign='right';ctx.fillStyle='rgba(245,197,24,0.45)';ctx.font='10px Arial';ctx.fillText(new Date().toLocaleDateString('en-NG',{day:'numeric',month:'short',year:'numeric'}),W-34,48);
   ctx.textAlign='center';ctx.fillStyle='rgba(240,240,248,0.3)';ctx.font='bold 10px Arial';ctx.fillText('CERTIFICATE OF IDAN',W/2,95);
   ctx.font='46px Arial';ctx.fillText(icon,W/2,160);
@@ -730,7 +768,7 @@ function generateCard(){
   ctx.fillStyle='rgba(245,197,24,0.07)';roundRect(ctx,W/2-115,304,230,32,7);ctx.fill();
   ctx.strokeStyle='rgba(245,197,24,0.22)';ctx.lineWidth=1;roundRect(ctx,W/2-115,304,230,32,7);ctx.stroke();
   ctx.fillStyle='#f5c518';ctx.font='bold 14px Arial';ctx.fillText(`Score: ${S.score} / ${maxScore} pts  ·  ${S.correctCount}/${questions.length} Correct`,W/2,325);
-  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"MTH 102 tried, but I am the  SCHOLAR." — CBT Compliant',W/2,372);
+  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"CHM 102 tried, but I am the SCHOLAR." — CBT Compliant',W/2,372);
 }
 function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();}
 function downloadCard(){const canvas=document.getElementById('idanCanvas');const link=document.createElement('a');link.download=`ExamMaster_${(S.name||'Idan').replace(/\s+/g,'_')}_RankCard.png`;link.href=canvas.toDataURL('image/png');link.click();}
