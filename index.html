@@ -153,8 +153,8 @@ input:focus { border-color:var(--gold); }
 <div class="screen active" id="landingScreen">
   <div class="hero">
     <div class="hero-badge">🔥 Season 2026 — CHM 102 Edition</div>
-    <h1><span class="w1">METAL-VS</span><span class="w2">THE-WORLD</span><span class="w3">BATTLE ⚡</span></h1>
-    <p class="hero-sub">15 Questions · Metals ·  Non-Metals<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
+    <h1><span class="w1">ORGANIC</span><span class="w2">KOMBAT</span><span class="w3">BATTLE ⚡</span></h1>
+    <p class="hero-sub">15 Questions · Saponification ·  Markovnikov ·  Substitution<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
     <div class="form-card fadeUp">
   <div class="form-row">
     <label class="form-label" for="uName">Scholar's Full Name</label>
@@ -231,8 +231,8 @@ input:focus { border-color:var(--gold); }
 </div>
 
 <script>
-  const QUIZ_OPEN  = new Date('2026-06-19T21:00:00');
-const QUIZ_CLOSE = new Date('2026-06-19T21:12:00');
+  const QUIZ_OPEN  = new Date('2026-06-20T21:00:00');
+const QUIZ_CLOSE = new Date('2026-06-20T21:12:00');
 const isBossBattle = false;
 
 const V = {
@@ -296,180 +296,166 @@ const V = {
   ]
 };
 const vRand = arr => arr[Math.floor(Math.random()*arr.length)];
- 
+  
 const questions = [
   {
     difficulty: "soft",
     points: 5,
-    text: "Which of the following is a physical property that distinguishes metals from non-metals?",
-    options: [
-      "Metals are poor conductors of electricity",
-      "Metals are lustrous, malleable, and good conductors of heat and electricity",
-      "Metals are always gases at room temperature",
-      "Metals form acidic oxides"
-    ],
+    text: "What type of reaction do alkanes predominantly undergo?",
+    options: ["Addition reactions", "Free radical substitution reactions", "Elimination reactions", "Nucleophilic substitution reactions"],
     correct: 1,
-    explanation: "✨ Metals: lustrous (shiny), malleable (can be hammered into sheets), ductile (drawn into wires), good conductors of heat and electricity. Non-metals: dull, brittle, poor conductors (except graphite). Iron, copper, gold — classic metals. Sulfur, phosphorus, oxygen — classic non-metals. Know your properties!"
+    explanation: "🔥 Alkanes are SATURATED (no double/triple bonds) → can't do addition. They undergo FREE RADICAL SUBSTITUTION — H atoms replaced by halogens in presence of UV light. CH₄ + Cl₂ → CH₃Cl + HCl (UV light). Three stages: initiation, propagation, termination. Alkanes are generally unreactive — free radical substitution is their main reaction!"
   },
   {
     difficulty: "soft",
     points: 5,
-    text: "What type of oxide does sulfur (a non-metal) form?",
-    options: ["Basic oxide", "Amphoteric oxide", "Acidic oxide", "Neutral oxide"],
-    correct: 2,
-    explanation: "🌋 Non-metals form ACIDIC oxides. SO₂ + H₂O → H₂SO₃ (sulfurous acid). SO₃ + H₂O → H₂SO₄ (sulfuric acid!). Metals form BASIC oxides (e.g. Na₂O + H₂O → NaOH). Amphoteric oxides (like Al₂O₃, ZnO) react with both. Acidic oxide = non-metal. Basic oxide = metal. Simple rule!"
+    text: "Which reagent is used to test for the presence of a C=C double bond in alkenes?",
+    options: ["Fehling's solution", "Bromine water (Br₂/H₂O)", "Tollens' reagent", "Litmus paper"],
+    correct: 1,
+    explanation: "🟤 Bromine water (orange/brown) is DECOLOURISED by alkenes — the Br₂ adds across the C=C double bond (electrophilic addition). Alkenes → decolourises bromine water instantly. Alkanes → no reaction (bromine water stays orange). This is the CLASSIC test for unsaturation (double bonds) in organic chemistry!"
   },
   {
     difficulty: "soft",
     points: 5,
-    text: "Which of the following metals is the best conductor of electricity?",
-    options: ["Iron (Fe)", "Gold (Au)", "Silver (Ag)", "Copper (Cu)"],
-    correct: 2,
-    explanation: "⚡ Silver (Ag) is the BEST conductor of electricity among all metals — but it's expensive! Copper (Cu) is the most widely USED conductor because it's almost as good as silver but far cheaper. Gold doesn't tarnish so it's used in connectors. Iron is a poor conductor. Ag > Cu > Au > Al > Fe in conductivity!"
+    text: "What is the product when ethanol (CH₃CH₂OH) is oxidised using acidified potassium dichromate (K₂Cr₂O₇/H⁺)?",
+    options: ["Ethane", "Ethanoic acid", "Diethyl ether", "Ethene"],
+    correct: 1,
+    explanation: "🟠 Oxidation of primary alcohol: CH₃CH₂OH → CH₃CHO (ethanal, aldehyde) → CH₃COOH (ethanoic acid). K₂Cr₂O₇ changes colour from ORANGE to GREEN as Cr⁶⁺ → Cr³⁺. With excess oxidising agent and reflux → carboxylic acid. This colour change was used in old breathalyser tests! Primary alcohol → aldehyde → carboxylic acid."
   },
   {
     difficulty: "soft",
     points: 5,
-    text: "The Haber process is used for the industrial synthesis of:",
-    options: ["Sulfuric acid", "Nitric acid", "Ammonia", "Sodium hydroxide"],
-    correct: 2,
-    explanation: "🏭 Haber Process: N₂ + 3H₂ ⇌ 2NH₃. Conditions: iron catalyst, 450°C, 200 atm pressure. Ammonia (NH₃) is vital for fertilisers — feeds ~half the world's population! Non-metal nitrogen (from air) + hydrogen (from natural gas) → ammonia. Fritz Haber won Nobel Prize 1918. Most important industrial reaction ever!"
+    text: "Ethyne (acetylene, HC≡CH) undergoes which type of reactions most readily?",
+    options: ["Substitution", "Addition reactions across the triple bond", "Combustion only", "Elimination"],
+    correct: 1,
+    explanation: "⚡ Alkynes have a C≡C triple bond — lots of π electrons available → ADDITION reactions. HC≡CH + H₂ → CH₂=CH₂ (ethene) → CH₃CH₃ (ethane) with excess H₂. Also adds HX, X₂, H₂O. Triple bond = electron-rich = loves electrophiles. Ethyne burns with a very hot, sooty flame — used in welding!"
   },
   {
     difficulty: "soft",
     points: 5,
-    text: "Which non-metal exists as a diatomic molecule at room temperature and is essential for respiration?",
-    options: ["Carbon (C)", "Sulfur (S)", "Oxygen (O₂)", "Phosphorus (P₄)"],
+    text: "What is the characteristic smell associated with esters?",
+    options: ["Pungent fishy smell", "Rotten egg smell", "Sweet, fruity smell", "Bleach-like smell"],
     correct: 2,
-    explanation: "🫁 Oxygen (O₂) — diatomic, colourless, odourless gas essential for cellular respiration. The 7 diatomic non-metals: H₂, N₂, O₂, F₂, Cl₂, Br₂, I₂ (remember: HOFBrINCl or 'Have No Fear Of Ice Cold Beer'). Sulfur = S₈ ring. Phosphorus = P₄. Only O₂ is vital for respiration!"
+    explanation: "🍎 Esters smell SWEET and FRUITY! Ethyl ethanoate = pear/nail polish smell. Pentyl ethanoate = banana. Octyl ethanoate = orange. They're used in perfumes, food flavourings, and solvents. Amines smell fishy. H₂S smells like rotten eggs. Chlorine smells like bleach. Esters = nature's perfume molecules!"
   },
   {
     difficulty: "medium",
     points: 10,
-    text: "Iron rusting is an electrochemical process. What are the products of iron rusting?",
-    options: [
-      "Iron(II) oxide (FeO) only",
-      "Hydrated iron(III) oxide Fe₂O₃·xH₂O (rust)",
-      "Iron(III) chloride (FeCl₃)",
-      "Iron sulfide (FeS)"
-    ],
+    text: "What is the major product when propene (CH₃CH=CH₂) reacts with HBr following Markovnikov's rule?",
+    options: ["1-bromopropane (CH₃CH₂CH₂Br)", "2-bromopropane (CH₃CHBrCH₃)", "1,2-dibromopropane", "Propan-1-ol"],
     correct: 1,
-    explanation: "🟤 Rust = hydrated iron(III) oxide: Fe₂O₃·xH₂O. Rusting requires BOTH oxygen AND water (neither alone causes rusting). Iron is oxidised: Fe → Fe²⁺ → Fe³⁺. Salt water accelerates rusting (better electrolyte). Prevention: painting, galvanising (zinc coating), alloying (stainless steel with Cr). Rust costs Nigeria billions in infrastructure damage annually!"
+    explanation: "📏 Markovnikov: H adds to C with MORE hydrogens. In CH₃CH=CH₂: CH₂ end has 2H, CH has 1H → H adds to CH₂ end, Br adds to middle carbon (CH). Product: CH₃CHBrCH₃ = 2-BROMOPROPANE. The more substituted carbon gets the Br (more stable carbocation intermediate). Anti-Markovnikov occurs with peroxides (free radical mechanism)!"
   },
   {
     difficulty: "medium",
     points: 10,
-    text: "Chlorine (Cl₂) reacts with water to form which products?",
-    options: [
-      "HCl only",
-      "HOCl (hypochlorous acid) and HCl",
-      "Cl₂O and H₂",
-      "NaCl and O₂"
-    ],
-    correct: 1,
-    explanation: "💧 Cl₂ + H₂O ⇌ HOCl + HCl. Chlorine disproportionates in water — it's simultaneously oxidised (HOCl, Cl = +1) and reduced (HCl, Cl = -1). HOCl (hypochlorous acid) is the active disinfectant in swimming pools and water treatment! This equilibrium is pH-dependent — more HOCl at lower pH = better disinfection."
+    text: "Dehydration of ethanol (CH₃CH₂OH) at 170°C with concentrated H₂SO₄ produces:",
+    options: ["Ethanal", "Ethane", "Ethene", "Diethyl ether"],
+    correct: 2,
+    explanation: "🌡️ Temperature determines product! 170°C + conc. H₂SO₄ → ETHENE (CH₂=CH₂) via elimination (loss of H₂O from same molecule). 140°C + conc. H₂SO₄ → DIETHYL ETHER (intermolecular dehydration, two alcohol molecules). Higher temp = elimination = alkene. Lower temp = substitution = ether. Temperature controls the reaction pathway!"
   },
   {
     difficulty: "medium",
     points: 10,
-    text: "Which of the following correctly describes the Contact Process for making sulfuric acid?",
+    text: "Which of the following reactions produces an ether?",
     options: [
-      "S + H₂O → H₂SO₄ directly",
-      "SO₂ is oxidised to SO₃ over a V₂O₅ catalyst, then SO₃ is absorbed in H₂SO₄ to form oleum, then diluted",
-      "Sulfur is burned in chlorine gas to form sulfuryl chloride",
-      "SO₃ is directly dissolved in water to form H₂SO₄"
+      "Oxidation of a primary alcohol",
+      "Williamson synthesis: RO⁻ + R'X → ROR' + X⁻",
+      "Hydrolysis of an ester",
+      "Reduction of a ketone"
     ],
     correct: 1,
-    explanation: "🏭 Contact Process steps: (1) S + O₂ → SO₂ (2) 2SO₂ + O₂ → 2SO₃ (V₂O₅ catalyst, 450°C) (3) SO₃ + H₂SO₄ → H₂S₂O₇ (oleum) (4) H₂S₂O₇ + H₂O → 2H₂SO₄. SO₃ is NOT dissolved directly in water — too violent and produces acid mist! Oleum route is safer. H₂SO₄ is the most produced industrial chemical worldwide!"
+    explanation: "⚗️ Williamson Ether Synthesis: alkoxide ion (RO⁻) + alkyl halide (R'X) → ether (ROR') + halide ion (X⁻). SN2 reaction. Example: CH₃O⁻ + CH₃CH₂Br → CH₃OCH₂CH₃ (methyl ethyl ether) + Br⁻. This is the best lab method for making unsymmetrical ethers. Named after Alexander Williamson (1852)!"
   },
   {
     difficulty: "medium",
     points: 10,
-    text: "Aluminium is a reactive metal but resists corrosion because:",
+    text: "What distinguishes an aldehyde from a ketone in terms of structure AND chemical reactivity?",
     options: [
-      "It is too heavy to react with oxygen",
-      "It forms a thin, tough, self-repairing layer of Al₂O₃ that protects the surface",
-      "It only reacts with acids, never with air",
-      "It has the same reactivity as gold"
+      "Aldehydes have C=O in the middle of the chain; ketones have C=O at the end",
+      "Aldehydes have C=O at the END of the chain (with H attached) and are easily oxidised; ketones resist oxidation",
+      "Ketones react with Tollens' reagent; aldehydes do not",
+      "There is no difference in reactivity between aldehydes and ketones"
     ],
     correct: 1,
-    explanation: "🛡️ Aluminium is HIGH in the reactivity series (above zinc!) but appears unreactive because Al₂O₃ forms instantly on the surface — a thin, adherent, impermeable oxide layer that SELF-REPAIRS if scratched. This passivation makes aluminium ideal for aircraft, cans, and cookware despite being reactive. Anodising thickens this protective layer further!"
+    explanation: "🔬 Aldehyde: –CHO at chain END (C=O with H). Ketone: C=O in MIDDLE (no H on carbonyl C). Reactivity difference: Aldehydes are easily OXIDISED to carboxylic acids (positive Tollens', Fehling's, Benedict's tests). Ketones resist oxidation (negative Tollens' and Fehling's). The H on aldehyde carbonyl makes it a reducing agent — ketones lack this!"
   },
   {
     difficulty: "medium",
     points: 10,
-    text: "Which of the following non-metals shows allotropy with forms including white, red, and black varieties?",
-    options: ["Oxygen", "Nitrogen", "Sulfur", "Phosphorus"],
-    correct: 3,
-    explanation: "🔴 Phosphorus allotropes: WHITE phosphorus (P₄, waxy, toxic, catches fire spontaneously in air), RED phosphorus (polymeric, stable, used in matchboxes), BLACK phosphorus (most stable, layered structure like graphite). Sulfur has rhombic and monoclinic forms. Oxygen has O₂ and O₃ (ozone). Phosphorus has the most dramatic allotrope differences!"
+    text: "Saponification is the reaction of an ester with:",
+    options: ["Dilute acid to form alcohol and carboxylic acid", "Aqueous NaOH (base) to form alcohol and sodium carboxylate salt", "Ammonia to form amide", "Hydrogen gas to form alcohol"],
+    correct: 1,
+    explanation: "🧼 Saponification = ester + NaOH(aq) → alcohol + sodium carboxylate salt. RCOOR' + NaOH → RCOONa + R'OH. This is how SOAP is made — fats (esters) + NaOH → glycerol + sodium fatty acid salts (soap!). Unlike acid hydrolysis, saponification is IRREVERSIBLE. The word comes from Latin 'sapo' = soap. Chemistry in your bathroom daily!"
   },
   {
     difficulty: "hard",
     points: 20,
-    text: "In the extraction of iron in a blast furnace, what is the role of limestone (CaCO₃)?",
+    text: "In the free radical halogenation of methane, the PROPAGATION steps are:",
     options: [
-      "It directly reduces iron ore to iron metal",
-      "It decomposes to CaO which reacts with silica (SiO₂) impurities to form slag (CaSiO₃)",
-      "It provides the carbon for reduction of iron ore",
-      "It increases the temperature inside the furnace"
+      "Cl₂ → 2Cl• (initiation) and CH₃• + Cl• → CH₃Cl (termination)",
+      "Cl• + CH₄ → HCl + CH₃• then CH₃• + Cl₂ → CH₃Cl + Cl• (cycle repeats)",
+      "CH₄ + Cl₂ → CH₃Cl + HCl in one step",
+      "Cl₂ → Cl⁺ + Cl⁻ then Cl⁺ attacks CH₄"
     ],
     correct: 1,
-    explanation: "🏭 Limestone role in blast furnace: CaCO₃ → CaO + CO₂ (thermal decomposition). Then CaO + SiO₂ → CaSiO₃ (slag). Slag floats on molten iron and is tapped off separately. Limestone is the FLUX — it removes silica impurities as slag! Carbon (coke) does the actual reduction. Iron ore (Fe₂O₃) + CO → Fe. Know each component's role!"
+    explanation: "⚙️ Free radical mechanism: INITIATION: Cl₂ → 2Cl• (UV). PROPAGATION (two steps, self-sustaining cycle): Step 1: Cl• + CH₄ → HCl + CH₃•. Step 2: CH₃• + Cl₂ → CH₃Cl + Cl•. The Cl• regenerated keeps the chain going! TERMINATION: two radicals combine (Cl•+Cl•, CH₃•+CH₃•, or Cl•+CH₃•). Propagation is the key step — it's the chain reaction!"
   },
   {
     difficulty: "hard",
     points: 20,
-    text: "The thermite reaction involves aluminium reacting with iron(III) oxide. What does this demonstrate?",
+    text: "What product is formed when a primary alkyl halide reacts with aqueous KOH versus alcoholic KOH?",
     options: [
-      "Iron is more reactive than aluminium",
-      "Aluminium is more reactive than iron and can displace it from its oxide — a highly exothermic redox reaction",
-      "Both metals are equally reactive",
-      "The reaction produces aluminium oxide and iron chloride"
+      "Both give the same alkene product",
+      "Aqueous KOH → alcohol (SN2 substitution); alcoholic KOH → alkene (E2 elimination)",
+      "Aqueous KOH → alkene; alcoholic KOH → alcohol",
+      "Both give carboxylic acid as product"
     ],
     correct: 1,
-    explanation: "🔥 Thermite: 2Al + Fe₂O₃ → Al₂O₃ + 2Fe + enormous heat (~3000°C!). Al displaces Fe because Al is HIGHER in the activity series → stronger reducing agent. So reactive it can weld railway tracks! This proves Al > Fe in reactivity despite Al appearing 'unreactive' in everyday life (due to its protective oxide layer). Activity series in action!"
+    explanation: "🎯 AQUEOUS KOH: OH⁻ acts as NUCLEOPHILE → SN2 substitution → alcohol. RCH₂X + KOH(aq) → RCH₂OH + KX. ALCOHOLIC KOH: OH⁻ acts as BASE → E2 elimination → alkene. RCH₂CH₂X + KOH(alc) → RCH=CH₂ + KX + H₂O. Solvent determines the reaction! Water favours substitution; alcohol solvent favours elimination. Classic Unilorin distinction question!"
   },
   {
     difficulty: "hard",
     points: 20,
-    text: "Ozone (O₃) differs from oxygen (O₂) in that ozone:",
+    text: "Which mechanism correctly describes the reaction of carboxylic acids with alcohols to form esters?",
     options: [
-      "Is more stable than O₂ and has a linear structure",
-      "Is an allotrope of oxygen with a bent structure, is a stronger oxidising agent, and decomposes to O₂",
-      "Contains three oxygen atoms in a ring structure with equal bond lengths",
-      "Is produced only by lightning and has no industrial uses"
+      "The OH of the alcohol is lost along with H from the carboxylic acid to form water",
+      "Nucleophilic acyl substitution: the alcohol oxygen attacks the carbonyl carbon; the OH of the acid is lost as water",
+      "Free radical addition of alcohol across C=O double bond",
+      "Electrophilic aromatic substitution of the carboxylic acid"
     ],
     correct: 1,
-    explanation: "🌍 Ozone (O₃): bent/angular structure (like water), bond angle ~117°. More reactive/stronger oxidising agent than O₂. Decomposes: 2O₃ → 3O₂. Ozone layer (stratosphere) absorbs UV radiation — protects life on Earth. CFCs destroy ozone → ozone holes. Industrial use: water purification, bleaching. O₃ is an allotrope of O — same element, different molecular form!"
+    explanation: "⚗️ Esterification mechanism: (1) H⁺ protonates C=O of acid → more electrophilic carbonyl. (2) Alcohol oxygen (nucleophile) attacks carbonyl carbon. (3) Proton transfers. (4) –OH₂ leaves (water formed). (5) Deprotonation → ester. The ACID OH is lost (confirmed by ¹⁸O labelling experiments). H₂SO₄ is catalyst — it activates the carbonyl, then is regenerated!"
   },
   {
     difficulty: "hard",
     points: 20,
-    text: "In electrochemical terms, galvanising (coating iron with zinc) protects iron by which mechanism?",
+    text: "An unknown compound gives a positive iodoform test AND decolourises bromine water. What functional groups are most likely present?",
     options: [
-      "Zinc forms a physical barrier only — no electrochemical protection",
-      "Zinc acts as a sacrificial anode — being more reactive, it oxidises preferentially even if the coating is scratched",
-      "Zinc makes iron less reactive by alloying with it",
-      "Zinc coating increases the pH around iron, preventing oxidation"
+      "Aldehyde and alkyne",
+      "Methyl ketone (CH₃CO–) or secondary alcohol with CH₃CH(OH)– group AND a C=C double bond",
+      "Carboxylic acid and alkene",
+      "Ether and alkyne"
     ],
     correct: 1,
-    explanation: "⚡ Galvanising uses BOTH mechanisms: (1) physical barrier (zinc coating) AND (2) cathodic/sacrificial protection. If coating is scratched exposing iron: Zn is higher in activity series than Fe → Zn oxidises preferentially (sacrificial anode) → Fe protected even when exposed! Unlike tin coating (tin is BELOW iron → if scratched, iron rusts FASTER). Zinc sacrifices itself to save iron. Noble friendship! 🫡"
+    explanation: "🔍 TWO clues: (1) Positive iodoform test → CH₃CO– (methyl ketone) OR CH₃CH(OH)– group present. (2) Decolourises bromine water → C=C double bond present. Combine both: compound has methyl ketone/secondary alcohol group AND an alkene. Example: CH₃COCH=CH₂ (methyl vinyl ketone). Multi-test deduction = highest order reasoning in organic chemistry. Work through each test systematically!"
   },
   {
     difficulty: "hard",
     points: 20,
-    text: "Which statement correctly explains why nitrogen (N₂) is very unreactive despite being a non-metal?",
+    text: "What is the product of the reaction between acetyl chloride (CH₃COCl) and excess ammonia (NH₃)?",
     options: [
-      "Nitrogen has a very large atomic radius making reactions difficult",
-      "The N≡N triple bond has very high bond energy (~945 kJ/mol), making it extremely difficult to break",
-      "Nitrogen is a noble gas and follows the octet rule perfectly",
-      "Nitrogen only reacts at extremely low temperatures"
+      "CH₃COOH + NH₄Cl",
+      "CH₃CONH₂ (ethanamide) + NH₄Cl",
+      "CH₃NH₂ + CO + HCl",
+      "CH₃COO⁻ + NH₄⁺ + Cl⁻"
     ],
     correct: 1,
-    explanation: "💪 N≡N triple bond energy = ~945 kJ/mol — one of the STRONGEST bonds in chemistry! Breaking it requires enormous energy → nitrogen is kinetically inert (reactions are very slow despite being thermodynamically possible). That's why N₂ makes up 78% of atmosphere without causing reactions everywhere. Haber process needs high T, P, and catalyst just to break this bond. Strong bond = unreactive gas!"
+    explanation: "💡 Acid chlorides (acyl chlorides) are VERY reactive — they react vigorously with nucleophiles. CH₃COCl + 2NH₃ → CH₃CONH₂ + NH₄Cl. First NH₃ acts as nucleophile → attacks carbonyl → displaces Cl⁻ → forms amide. Second NH₃ neutralises HCl formed. Product = ETHANAMIDE (an amide) + ammonium chloride. Acid chlorides are among the most reactive carbonyl compounds!"
   }
 ];
-  
+
+
 let S={name:'',email:'',score:0,currentQ:0,correctCount:0,startTime:null,tabWarnings:0,quizEnded:false,answered:false,timerInt:null};
 
 ['uName','uPhone','uCode'].forEach(id=>document.getElementById(id).addEventListener('input',checkForm));
@@ -517,7 +503,6 @@ if (now > QUIZ_CLOSE) {
     btn.disabled = false;
     btn.textContent = '🏛️ ENTER THE CBT CENTER →';
   };
-
 
   try {
     // Step 1 — Check if student is registered
@@ -768,7 +753,7 @@ function generateCard(){
   ctx.fillStyle='rgba(245,197,24,0.07)';roundRect(ctx,W/2-115,304,230,32,7);ctx.fill();
   ctx.strokeStyle='rgba(245,197,24,0.22)';ctx.lineWidth=1;roundRect(ctx,W/2-115,304,230,32,7);ctx.stroke();
   ctx.fillStyle='#f5c518';ctx.font='bold 14px Arial';ctx.fillText(`Score: ${S.score} / ${maxScore} pts  ·  ${S.correctCount}/${questions.length} Correct`,W/2,325);
-  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"CHM 102 tried, but I am the SCHOLAR." — CBT Compliant',W/2,372);
+  ctx.fillStyle='rgba(112,112,160,0.5)';ctx.font='italic 11px Georgia,serif';ctx.fillText('"CHM 102 tried, but I am the BOSS." — CBT Compliant',W/2,372);
 }
 function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();}
 function downloadCard(){const canvas=document.getElementById('idanCanvas');const link=document.createElement('a');link.download=`ExamMaster_${(S.name||'Idan').replace(/\s+/g,'_')}_RankCard.png`;link.href=canvas.toDataURL('image/png');link.click();}
