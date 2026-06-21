@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -153,8 +153,8 @@ input:focus { border-color:var(--gold); }
 <div class="screen active" id="landingScreen">
   <div class="hero">
     <div class="hero-badge">🔥 Season 2026 — CHM 102 Edition</div>
-    <h1><span class="w1">ORGANIC</span><span class="w2">KOMBAT</span><span class="w3">BATTLE ⚡</span></h1>
-    <p class="hero-sub">15 Questions · Saponification ·  Markovnikov ·  Substitution<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
+    <h1><span class="w1">COMPARATIVE</span><span class="w2">CHEMISTRY</span><span class="w3">BATTLE ⚡</span></h1>
+    <p class="hero-sub">15 Questions · Group IA · Group IIA · Group IVA<br><strong style="color:var(--gold);">CBT Compliant · Idan Certified</strong></p>
     <div class="form-card fadeUp">
   <div class="form-row">
     <label class="form-label" for="uName">Scholar's Full Name</label>
@@ -231,8 +231,8 @@ input:focus { border-color:var(--gold); }
 </div>
 
 <script>
-  const QUIZ_OPEN  = new Date('2026-06-20T21:00:00');
-const QUIZ_CLOSE = new Date('2026-06-20T21:12:00');
+  const QUIZ_OPEN  = new Date('2026-06-22T21:00:00');
+const QUIZ_CLOSE = new Date('2026-06-22T21:12:00');
 const isBossBattle = false;
 
 const V = {
@@ -296,165 +296,180 @@ const V = {
   ]
 };
 const vRand = arr => arr[Math.floor(Math.random()*arr.length)];
-  
+ 
 const questions = [
   {
     difficulty: "soft",
     points: 5,
-    text: "What type of reaction do alkanes predominantly undergo?",
-    options: ["Addition reactions", "Free radical substitution reactions", "Elimination reactions", "Nucleophilic substitution reactions"],
-    correct: 1,
-    explanation: "🔥 Alkanes are SATURATED (no double/triple bonds) → can't do addition. They undergo FREE RADICAL SUBSTITUTION — H atoms replaced by halogens in presence of UV light. CH₄ + Cl₂ → CH₃Cl + HCl (UV light). Three stages: initiation, propagation, termination. Alkanes are generally unreactive — free radical substitution is their main reaction!"
-  },
-  {
-    difficulty: "soft",
-    points: 5,
-    text: "Which reagent is used to test for the presence of a C=C double bond in alkenes?",
-    options: ["Fehling's solution", "Bromine water (Br₂/H₂O)", "Tollens' reagent", "Litmus paper"],
-    correct: 1,
-    explanation: "🟤 Bromine water (orange/brown) is DECOLOURISED by alkenes — the Br₂ adds across the C=C double bond (electrophilic addition). Alkenes → decolourises bromine water instantly. Alkanes → no reaction (bromine water stays orange). This is the CLASSIC test for unsaturation (double bonds) in organic chemistry!"
-  },
-  {
-    difficulty: "soft",
-    points: 5,
-    text: "What is the product when ethanol (CH₃CH₂OH) is oxidised using acidified potassium dichromate (K₂Cr₂O₇/H⁺)?",
-    options: ["Ethane", "Ethanoic acid", "Diethyl ether", "Ethene"],
-    correct: 1,
-    explanation: "🟠 Oxidation of primary alcohol: CH₃CH₂OH → CH₃CHO (ethanal, aldehyde) → CH₃COOH (ethanoic acid). K₂Cr₂O₇ changes colour from ORANGE to GREEN as Cr⁶⁺ → Cr³⁺. With excess oxidising agent and reflux → carboxylic acid. This colour change was used in old breathalyser tests! Primary alcohol → aldehyde → carboxylic acid."
-  },
-  {
-    difficulty: "soft",
-    points: 5,
-    text: "Ethyne (acetylene, HC≡CH) undergoes which type of reactions most readily?",
-    options: ["Substitution", "Addition reactions across the triple bond", "Combustion only", "Elimination"],
-    correct: 1,
-    explanation: "⚡ Alkynes have a C≡C triple bond — lots of π electrons available → ADDITION reactions. HC≡CH + H₂ → CH₂=CH₂ (ethene) → CH₃CH₃ (ethane) with excess H₂. Also adds HX, X₂, H₂O. Triple bond = electron-rich = loves electrophiles. Ethyne burns with a very hot, sooty flame — used in welding!"
-  },
-  {
-    difficulty: "soft",
-    points: 5,
-    text: "What is the characteristic smell associated with esters?",
-    options: ["Pungent fishy smell", "Rotten egg smell", "Sweet, fruity smell", "Bleach-like smell"],
+    text: "Which of the following is a Group IA (alkali metal) element?",
+    options: ["Magnesium (Mg)", "Calcium (Ca)", "Sodium (Na)", "Aluminium (Al)"],
     correct: 2,
-    explanation: "🍎 Esters smell SWEET and FRUITY! Ethyl ethanoate = pear/nail polish smell. Pentyl ethanoate = banana. Octyl ethanoate = orange. They're used in perfumes, food flavourings, and solvents. Amines smell fishy. H₂S smells like rotten eggs. Chlorine smells like bleach. Esters = nature's perfume molecules!"
+    explanation: "⚡ Group IA alkali metals: Li, Na, K, Rb, Cs, Fr. Sodium (Na) is the most common — in table salt (NaCl), seawater, and your body fluids! Mg and Ca are Group IIA. Al is Group IIIA. Group IA = 1 valence electron → very reactive, always +1 oxidation state!"
   },
   {
-    difficulty: "medium",
-    points: 10,
-    text: "What is the major product when propene (CH₃CH=CH₂) reacts with HBr following Markovnikov's rule?",
-    options: ["1-bromopropane (CH₃CH₂CH₂Br)", "2-bromopropane (CH₃CHBrCH₃)", "1,2-dibromopropane", "Propan-1-ol"],
-    correct: 1,
-    explanation: "📏 Markovnikov: H adds to C with MORE hydrogens. In CH₃CH=CH₂: CH₂ end has 2H, CH has 1H → H adds to CH₂ end, Br adds to middle carbon (CH). Product: CH₃CHBrCH₃ = 2-BROMOPROPANE. The more substituted carbon gets the Br (more stable carbocation intermediate). Anti-Markovnikov occurs with peroxides (free radical mechanism)!"
-  },
-  {
-    difficulty: "medium",
-    points: 10,
-    text: "Dehydration of ethanol (CH₃CH₂OH) at 170°C with concentrated H₂SO₄ produces:",
-    options: ["Ethanal", "Ethane", "Ethene", "Diethyl ether"],
+    difficulty: "soft",
+    points: 5,
+    text: "What happens when Group IA metals react with water?",
+    options: [
+      "Nothing — they are unreactive with water",
+      "They form metal oxides only",
+      "They form metal hydroxides and release hydrogen gas",
+      "They dissolve to form acidic solutions"
+    ],
     correct: 2,
-    explanation: "🌡️ Temperature determines product! 170°C + conc. H₂SO₄ → ETHENE (CH₂=CH₂) via elimination (loss of H₂O from same molecule). 140°C + conc. H₂SO₄ → DIETHYL ETHER (intermolecular dehydration, two alcohol molecules). Higher temp = elimination = alkene. Lower temp = substitution = ether. Temperature controls the reaction pathway!"
+    explanation: "💧 2Na + 2H₂O → 2NaOH + H₂↑. Group IA metals react VIGOROUSLY with water to form metal hydroxide (alkaline solution) + hydrogen gas. Reactivity increases DOWN the group: Li < Na < K < Rb < Cs. Potassium catches fire on water! Don't try this at home — or do, just film it 😄"
+  },
+  {
+    difficulty: "soft",
+    points: 5,
+    text: "Which property is characteristic of Group IIA (alkaline earth metals)?",
+    options: [
+      "They form +1 ions only",
+      "They are all gases at room temperature",
+      "They form +2 ions and have two valence electrons",
+      "They are all radioactive"
+    ],
+    correct: 2,
+    explanation: "🌍 Group IIA: Be, Mg, Ca, Sr, Ba, Ra. Two valence electrons → always form +2 ions. More reactive than Group IIA but LESS reactive than Group IA. Calcium (Ca²⁺) is essential for bones and teeth! Magnesium (Mg²⁺) is in chlorophyll (plant photosynthesis). Group IIA = alkaline earth metals."
+  },
+  {
+    difficulty: "soft",
+    points: 5,
+    text: "What is the most stable allotrope of carbon in Group IVA?",
+    options: ["Fullerene", "Diamond", "Graphite", "Carbon nanotube"],
+    correct: 2,
+    explanation: "💎 Graphite is the most thermodynamically STABLE allotrope of carbon at standard conditions (not diamond — that's a common misconception!). Diamond is metastable — it converts to graphite extremely slowly. Graphite has lower Gibbs free energy. Carbon is in Group IVA with Si, Ge, Sn, Pb."
+  },
+  {
+    difficulty: "soft",
+    points: 5,
+    text: "Going down Group IA, the first ionisation energy:",
+    options: [
+      "Increases — more electrons to lose",
+      "Decreases — outer electrons are further from nucleus and more shielded",
+      "Remains constant",
+      "First increases then decreases"
+    ],
+    correct: 1,
+    explanation: "📉 Down Group IA: atomic radius INCREASES, shielding INCREASES, nuclear attraction on outer electron DECREASES → ionisation energy DECREASES. Li (520 kJ/mol) > Na (496) > K (419) > Rb (403) > Cs (376). Easier to remove the outer electron as you go down — that's why Cs is MORE reactive than Li!"
   },
   {
     difficulty: "medium",
     points: 10,
-    text: "Which of the following reactions produces an ether?",
-    options: [
-      "Oxidation of a primary alcohol",
-      "Williamson synthesis: RO⁻ + R'X → ROR' + X⁻",
-      "Hydrolysis of an ester",
-      "Reduction of a ketone"
-    ],
-    correct: 1,
-    explanation: "⚗️ Williamson Ether Synthesis: alkoxide ion (RO⁻) + alkyl halide (R'X) → ether (ROR') + halide ion (X⁻). SN2 reaction. Example: CH₃O⁻ + CH₃CH₂Br → CH₃OCH₂CH₃ (methyl ethyl ether) + Br⁻. This is the best lab method for making unsymmetrical ethers. Named after Alexander Williamson (1852)!"
+    text: "Which Group IIA metal does NOT react with cold water but reacts with steam?",
+    options: ["Calcium (Ca)", "Barium (Ba)", "Magnesium (Mg)", "Strontium (Sr)"],
+    correct: 2,
+    explanation: "🔥 Mg reacts SLOWLY with cold water (surface oxide layer) but vigorously with STEAM: Mg + H₂O(steam) → MgO + H₂. Ca, Sr, Ba react readily with cold water. Be barely reacts even with steam (most resistant). Reactivity order in Group IIA with water: Be < Mg < Ca < Sr < Ba — increases down the group!"
   },
   {
     difficulty: "medium",
     points: 10,
-    text: "What distinguishes an aldehyde from a ketone in terms of structure AND chemical reactivity?",
+    text: "Silicon (Si) in Group IVA differs from carbon in that silicon:",
     options: [
-      "Aldehydes have C=O in the middle of the chain; ketones have C=O at the end",
-      "Aldehydes have C=O at the END of the chain (with H attached) and are easily oxidised; ketones resist oxidation",
-      "Ketones react with Tollens' reagent; aldehydes do not",
-      "There is no difference in reactivity between aldehydes and ketones"
+      "Cannot form four bonds",
+      "Does not exist as a solid",
+      "Can expand its octet using empty 3d orbitals and forms stable Si-O bonds (silicates)",
+      "Is always a gas at room temperature"
     ],
-    correct: 1,
-    explanation: "🔬 Aldehyde: –CHO at chain END (C=O with H). Ketone: C=O in MIDDLE (no H on carbonyl C). Reactivity difference: Aldehydes are easily OXIDISED to carboxylic acids (positive Tollens', Fehling's, Benedict's tests). Ketones resist oxidation (negative Tollens' and Fehling's). The H on aldehyde carbonyl makes it a reducing agent — ketones lack this!"
+    correct: 2,
+    explanation: "⚙️ Key Si vs C difference: Silicon has empty 3d orbitals → can expand octet beyond 4 bonds. Si forms VERY stable Si-O bonds → silicates (rocks, glass, sand = SiO₂). Carbon forms C-C chains (organic chemistry); Silicon forms Si-O chains (silicones, geology). Both are Group IVA but chemistry differs significantly!"
   },
   {
     difficulty: "medium",
     points: 10,
-    text: "Saponification is the reaction of an ester with:",
-    options: ["Dilute acid to form alcohol and carboxylic acid", "Aqueous NaOH (base) to form alcohol and sodium carboxylate salt", "Ammonia to form amide", "Hydrogen gas to form alcohol"],
+    text: "The diagonal relationship in the periodic table means that Li resembles which element?",
+    options: ["Na (below it)", "Be (diagonal to it)", "Mg (diagonal to it)", "K (two below it)"],
+    correct: 2,
+    explanation: "↗️ Diagonal relationship: Li resembles Mg (not Na directly below!). Na resembles Ca. Be resembles Al. This is because charge density (charge/radius ratio) is similar diagonally. Li and Mg both: form nitrides directly with N₂, carbonates decompose on heating, form covalent organometallic compounds. Diagonal relationships are Unilorin exam favourites!"
+  },
+  {
+    difficulty: "medium",
+    points: 10,
+    text: "Which of the following oxides is amphoteric (reacts with both acids and bases)?",
+    options: ["Na₂O (sodium oxide)", "CaO (calcium oxide)", "CO₂ (carbon dioxide)", "GeO₂ (germanium dioxide)"],
+    correct: 3,
+    explanation: "⚖️ Amphoteric oxides react with BOTH acids AND bases. In Group IVA: CO₂ (acidic), SiO₂ (acidic), GeO₂ (amphoteric!), SnO₂ (amphoteric), PbO (amphoteric). Trend: oxides become more BASIC going down group IVA and more ACIDIC going across period. GeO₂ sits at the amphoteric crossover point!"
+  },
+  {
+    difficulty: "medium",
+    points: 10,
+    text: "The thermal stability of Group IIA carbonates (MCO₃) follows which trend?",
+    options: [
+      "Decreases down the group — larger ions are less stable",
+      "Increases down the group — larger cations stabilise the large CO₃²⁻ ion better",
+      "Remains the same throughout the group",
+      "BeCO₃ is the most thermally stable"
+    ],
     correct: 1,
-    explanation: "🧼 Saponification = ester + NaOH(aq) → alcohol + sodium carboxylate salt. RCOOR' + NaOH → RCOONa + R'OH. This is how SOAP is made — fats (esters) + NaOH → glycerol + sodium fatty acid salts (soap!). Unlike acid hydrolysis, saponification is IRREVERSIBLE. The word comes from Latin 'sapo' = soap. Chemistry in your bathroom daily!"
+    explanation: "🌡️ Thermal stability of Group IIA carbonates INCREASES down the group: BeCO₃ < MgCO₃ < CaCO₃ < SrCO₃ < BaCO₃. Larger cations (down the group) polarise the CO₃²⁻ ion LESS → more stable. BeCO₃ decomposes at room temperature! CaCO₃ (limestone) needs ~840°C. BaCO₃ needs ~1400°C. Larger ion = more stable carbonate!"
   },
   {
     difficulty: "hard",
     points: 20,
-    text: "In the free radical halogenation of methane, the PROPAGATION steps are:",
+    text: "Why does lithium (Li) form a nitride (Li₃N) directly with nitrogen gas, unlike other Group IA metals?",
     options: [
-      "Cl₂ → 2Cl• (initiation) and CH₃• + Cl• → CH₃Cl (termination)",
-      "Cl• + CH₄ → HCl + CH₃• then CH₃• + Cl₂ → CH₃Cl + Cl• (cycle repeats)",
-      "CH₄ + Cl₂ → CH₃Cl + HCl in one step",
-      "Cl₂ → Cl⁺ + Cl⁻ then Cl⁺ attacks CH₄"
+      "Lithium has the highest ionisation energy in Group IA",
+      "Lithium's small ionic radius gives Li⁺ high charge density, stabilising the N³⁻ lattice",
+      "Lithium is the only metal that can donate 3 electrons",
+      "Lithium reacts with nitrogen because it is the least reactive Group IA metal"
     ],
     correct: 1,
-    explanation: "⚙️ Free radical mechanism: INITIATION: Cl₂ → 2Cl• (UV). PROPAGATION (two steps, self-sustaining cycle): Step 1: Cl• + CH₄ → HCl + CH₃•. Step 2: CH₃• + Cl₂ → CH₃Cl + Cl•. The Cl• regenerated keeps the chain going! TERMINATION: two radicals combine (Cl•+Cl•, CH₃•+CH₃•, or Cl•+CH₃•). Propagation is the key step — it's the chain reaction!"
+    explanation: "🧠 Li is unique in Group IA — it directly reacts with N₂: 6Li + N₂ → 2Li₃N. Why? Li⁺ is the SMALLEST Group IA ion → highest charge density → best able to stabilise the highly charged N³⁻ anion in the lattice (lattice energy is high enough to make this thermodynamically favourable). This is also why Li resembles Mg (diagonal relationship)!"
   },
   {
     difficulty: "hard",
     points: 20,
-    text: "What product is formed when a primary alkyl halide reacts with aqueous KOH versus alcoholic KOH?",
+    text: "In Group IVA, the trend in metallic character going from C to Pb is:",
     options: [
-      "Both give the same alkene product",
-      "Aqueous KOH → alcohol (SN2 substitution); alcoholic KOH → alkene (E2 elimination)",
-      "Aqueous KOH → alkene; alcoholic KOH → alcohol",
-      "Both give carboxylic acid as product"
+      "Decreases — carbon is more metallic than lead",
+      "Increases — carbon is non-metallic, silicon is a metalloid, tin and lead are metals",
+      "Remains constant — all Group IVA elements are metalloids",
+      "Alternates between metallic and non-metallic"
     ],
     correct: 1,
-    explanation: "🎯 AQUEOUS KOH: OH⁻ acts as NUCLEOPHILE → SN2 substitution → alcohol. RCH₂X + KOH(aq) → RCH₂OH + KX. ALCOHOLIC KOH: OH⁻ acts as BASE → E2 elimination → alkene. RCH₂CH₂X + KOH(alc) → RCH=CH₂ + KX + H₂O. Solvent determines the reaction! Water favours substitution; alcohol solvent favours elimination. Classic Unilorin distinction question!"
+    explanation: "📊 Group IVA metallic character INCREASES down the group: C (non-metal) → Si (metalloid/semiconductor) → Ge (metalloid) → Sn (metal) → Pb (metal). This is a general periodic trend — metallic character increases going DOWN any group. Lead (Pb) is a soft, dense metal used in batteries. Carbon (diamond) is an insulator. Same group, completely different characters!"
   },
   {
     difficulty: "hard",
     points: 20,
-    text: "Which mechanism correctly describes the reaction of carboxylic acids with alcohols to form esters?",
+    text: "Beryllium (Be) is anomalous in Group IIA because it:",
     options: [
-      "The OH of the alcohol is lost along with H from the carboxylic acid to form water",
-      "Nucleophilic acyl substitution: the alcohol oxygen attacks the carbonyl carbon; the OH of the acid is lost as water",
-      "Free radical addition of alcohol across C=O double bond",
-      "Electrophilic aromatic substitution of the carboxylic acid"
+      "Forms ionic compounds more readily than other Group IIA metals",
+      "Has the largest atomic radius in the group",
+      "Forms predominantly covalent compounds due to its very small size and high charge density",
+      "Reacts most vigorously with water in the group"
     ],
-    correct: 1,
-    explanation: "⚗️ Esterification mechanism: (1) H⁺ protonates C=O of acid → more electrophilic carbonyl. (2) Alcohol oxygen (nucleophile) attacks carbonyl carbon. (3) Proton transfers. (4) –OH₂ leaves (water formed). (5) Deprotonation → ester. The ACID OH is lost (confirmed by ¹⁸O labelling experiments). H₂SO₄ is catalyst — it activates the carbonyl, then is regenerated!"
+    correct: 2,
+    explanation: "🔬 Be is anomalous: small size + high charge density → very high polarising power → bonds become COVALENT rather than ionic. BeCl₂ is covalent (not ionic like MgCl₂). Be doesn't react with water (even steam barely). Forms complex ions and amphoteric oxide (BeO). Be behaves more like aluminium (diagonal relationship) than Mg. Small size = big anomaly!"
   },
   {
     difficulty: "hard",
     points: 20,
-    text: "An unknown compound gives a positive iodoform test AND decolourises bromine water. What functional groups are most likely present?",
+    text: "The inert pair effect in Group IVA explains why lead (Pb) preferentially forms Pb²⁺ rather than Pb⁴⁺. This occurs because:",
     options: [
-      "Aldehyde and alkyne",
-      "Methyl ketone (CH₃CO–) or secondary alcohol with CH₃CH(OH)– group AND a C=C double bond",
-      "Carboxylic acid and alkene",
-      "Ether and alkyne"
+      "Lead has only 2 valence electrons",
+      "The 6s² electron pair in Pb becomes increasingly stable (non-bonding) due to relativistic effects and poor shielding by d and f electrons",
+      "Pb⁴⁺ compounds are more soluble than Pb²⁺",
+      "Lead cannot expand its octet"
     ],
     correct: 1,
-    explanation: "🔍 TWO clues: (1) Positive iodoform test → CH₃CO– (methyl ketone) OR CH₃CH(OH)– group present. (2) Decolourises bromine water → C=C double bond present. Combine both: compound has methyl ketone/secondary alcohol group AND an alkene. Example: CH₃COCH=CH₂ (methyl vinyl ketone). Multi-test deduction = highest order reasoning in organic chemistry. Work through each test systematically!"
+    explanation: "⚗️ Inert pair effect: going DOWN Group IVA, the s² electron pair becomes harder to involve in bonding. In Pb, the 6s² pair is 'inert' — relativistic contraction of 6s orbital + poor shielding by d/f electrons makes 6s electrons MORE stable and harder to remove. So Pb prefers +2 (losing only 2p electrons) over +4. Same effect makes Tl prefer +1, Bi prefer +3!"
   },
   {
     difficulty: "hard",
     points: 20,
-    text: "What is the product of the reaction between acetyl chloride (CH₃COCl) and excess ammonia (NH₃)?",
+    text: "Which statement correctly compares the solubility of Group IIA sulphates in water?",
     options: [
-      "CH₃COOH + NH₄Cl",
-      "CH₃CONH₂ (ethanamide) + NH₄Cl",
-      "CH₃NH₂ + CO + HCl",
-      "CH₃COO⁻ + NH₄⁺ + Cl⁻"
+      "Solubility increases down the group: MgSO₄ < CaSO₄ < SrSO₄ < BaSO₄",
+      "Solubility decreases down the group: MgSO₄ > CaSO₄ > SrSO₄ > BaSO₄",
+      "All Group IIA sulphates have equal solubility",
+      "BaSO₄ is the most soluble Group IIA sulphate"
     ],
     correct: 1,
-    explanation: "💡 Acid chlorides (acyl chlorides) are VERY reactive — they react vigorously with nucleophiles. CH₃COCl + 2NH₃ → CH₃CONH₂ + NH₄Cl. First NH₃ acts as nucleophile → attacks carbonyl → displaces Cl⁻ → forms amide. Second NH₃ neutralises HCl formed. Product = ETHANAMIDE (an amide) + ammonium chloride. Acid chlorides are among the most reactive carbonyl compounds!"
+    explanation: "💧 Group IIA sulphate solubility DECREASES down the group: MgSO₄ (soluble) > CaSO₄ (slightly soluble) > SrSO₄ (insoluble) > BaSO₄ (virtually insoluble). As cation size increases, lattice energy decreases but so does hydration energy — hydration energy decreases FASTER → less soluble. BaSO₄ insolubility is used in barium meals for X-ray imaging of the gut!"
   }
 ];
-
+    
 
 let S={name:'',email:'',score:0,currentQ:0,correctCount:0,startTime:null,tabWarnings:0,quizEnded:false,answered:false,timerInt:null};
 
